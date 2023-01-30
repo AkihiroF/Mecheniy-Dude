@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="" />
+    <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player/PlayerMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player/PlayerMovement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,7 +25,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2L2s9cbJHaimr6n2eAiIvvSjzph" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,6 +38,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -64,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675080362040</updated>
       <workItem from="1675080365440" duration="37000" />
+      <workItem from="1675096247217" duration="6193000" />
     </task>
     <servers />
   </component>
