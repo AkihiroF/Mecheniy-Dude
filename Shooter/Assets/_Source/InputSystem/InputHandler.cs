@@ -16,7 +16,7 @@ namespace _Source.InputSystem
         public void MoveAction(InputAction.CallbackContext obj)
         {
             var direction = obj.ReadValue<Vector2>();
-            Debug.Log(direction);
+            //Debug.Log(direction);
             //_movement.SetDirectionMoving(direction);
         }
     }

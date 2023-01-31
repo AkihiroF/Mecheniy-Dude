@@ -105,7 +105,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""177b67a5-012c-45d6-8ea4-399c1bfb225c"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PlayerSheme"",
