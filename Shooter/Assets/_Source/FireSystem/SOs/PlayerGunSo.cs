@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Source.FireSystem.Player.SOs
+namespace _Source.FireSystem.SOs
 {
     [CreateAssetMenu(menuName = "Fire System/PlayerGun", fileName = "Gun")]
     public class PlayerGunSo : ScriptableObject
@@ -8,43 +8,18 @@ namespace _Source.FireSystem.Player.SOs
         [SerializeField] private GameObject gun;
         [SerializeField] private ClipSo ammo;
 
-        public int CountAmmo
+        public ClipSo ClipInfo
         {
             get
             {
-                return ammo.CountBullet;
+                return ammo;
             }
         }
-
-        public int CountClip
-        {
-            get
-            {
-                return ammo.CountClips;
-            }
-        }
-
-        public float SpeedBullet
-        {
-            get
-            {
-                return ammo.SpeedBullet;
-            }
-        }
-
         public GameObject GunObject
         {
             get
             {
                 return gun;
-            }
-        }
-
-        public GameObject BulletObject
-        {
-            get
-            {
-                return ammo.BulletPrefab;
             }
         }
     }

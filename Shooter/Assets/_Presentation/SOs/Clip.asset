@@ -16,3 +16,4 @@ MonoBehaviour:
   countBulletInClip: 10
   countClips: 1
   speedBullet: 200
+  damage: 12

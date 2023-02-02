@@ -138,4 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contactLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128

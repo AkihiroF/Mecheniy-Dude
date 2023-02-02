@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Source.FireSystem.SOs;
 using UnityEngine;
 
 namespace _Source.FireSystem.Player
@@ -10,6 +11,7 @@ namespace _Source.FireSystem.Player
         private int _countReload;
         private int _currentCountAmmo;
         private float _speedBullet;
+        private float _damage;
         private GameObject _bulletObject;
         private List<BulletController> _bulletPool;
         
@@ -19,13 +21,14 @@ namespace _Source.FireSystem.Player
             _bulletPool.Add(bullet);
         }
 
-        public void SetParameters(int countAmmo, GameObject bulletObject, int countReload, float speedBullet)
+        public void SetParameters(ClipSo info)
         {
-            _countAmmo = countAmmo;
-            _currentCountAmmo = countAmmo;
-            _bulletObject = bulletObject;
-            _countReload = countReload;
-            _speedBullet = speedBullet;
+            _countAmmo = info.CountBullet;
+            _currentCountAmmo = _countAmmo;
+            _bulletObject = info.BulletPrefab;
+            _countReload = info.CountClips;
+            _speedBullet = info.SpeedBullet;
+            _damage = info.Damage;
             _bulletPool = new List<BulletController>();
         }
 
@@ -43,7 +46,7 @@ namespace _Source.FireSystem.Player
             {
                 var newBullet = Instantiate(_bulletObject)
                     .GetComponent<BulletController>();
-                newBullet.SetParameters(this, _speedBullet);
+                newBullet.SetParameters(this, _speedBullet, _damage);
                 SetPositionBullet(newBullet.transform);
                 newBullet.FireBullet();
                 _currentCountAmmo--;

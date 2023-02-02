@@ -1,5 +1,6 @@
 using System;
 using _Source.FireSystem.Player;
+using _Source.HealthSystem;
 using UnityEngine;
 
 namespace _Source.FireSystem
@@ -8,14 +9,16 @@ namespace _Source.FireSystem
     {
         [SerializeField] private LayerMask contactLayer;
         private float _speedMoving;
+        private float _damage;
         private Rigidbody2D _rb;
         private PlayerGunController _controller;
 
-        public void SetParameters(PlayerGunController controller, float speed)
+        public void SetParameters(PlayerGunController controller, float speed, float damage)
         {
             _controller = controller;
             _speedMoving = speed;
             _rb = GetComponent<Rigidbody2D>();
+            _damage = damage;
         }
 
         public void FireBullet()
@@ -26,14 +29,12 @@ namespace _Source.FireSystem
         private void OnTriggerEnter2D(Collider2D col)
         {
             var obj = col.gameObject;
+            
             if ((contactLayer.value & (1 << obj.layer)) > 0)
-            {
-                
-                //interact with object
-                
-                this.gameObject.SetActive(false);
-                _controller.ReturnBulletInPool(this);
-            }
+                obj.GetComponent<ABaseHealth>().GetDamage(_damage);
+            
+            this.gameObject.SetActive(false);
+            _controller.ReturnBulletInPool(this);
         }
     }
 }

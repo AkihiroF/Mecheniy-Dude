@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 57172553}
   - component: {fileID: 57172554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63758819}
   - component: {fileID: 63758820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,8 @@ GameObject:
   - component: {fileID: 633774051}
   - component: {fileID: 633774054}
   - component: {fileID: 633774055}
-  m_Layer: 0
+  - component: {fileID: 633774056}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,6 +801,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointPositionGun: {fileID: 2131583066}
   firstGun: {fileID: 11400000, guid: 34b7550916c1648e6afc52f841bff892, type: 2}
+--- !u!114 &633774056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633774050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7545b1a762b34aecb4ff747de3959ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
 --- !u!1 &671961017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1016,8 @@ GameObject:
   - component: {fileID: 2026680320}
   - component: {fileID: 2026680319}
   - component: {fileID: 2026680318}
-  m_Layer: 0
+  - component: {fileID: 2026680322}
+  m_Layer: 7
   m_Name: www
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1113,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1123,6 +1138,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026680322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026680317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49dff5438710495990c3c3b36eec1268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 45
 --- !u!1 &2060337344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,7 +1293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2131583066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PointForGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

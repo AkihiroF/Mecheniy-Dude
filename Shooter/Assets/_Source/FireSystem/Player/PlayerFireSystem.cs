@@ -1,4 +1,4 @@
-using _Source.FireSystem.Player.SOs;
+using _Source.FireSystem.SOs;
 using UnityEngine;
 
 namespace _Source.FireSystem.Player
@@ -22,7 +22,7 @@ namespace _Source.FireSystem.Player
 
         private void SetParamInGun()
         {
-            _currentGun.SetParameters(firstGun.CountAmmo, firstGun.BulletObject, firstGun.CountClip, firstGun.SpeedBullet);
+            _currentGun.SetParameters(firstGun.ClipInfo);
         }
 
         public void Fire()
