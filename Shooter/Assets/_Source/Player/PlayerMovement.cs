@@ -18,11 +18,6 @@ namespace _Source.Player
 
         public void SetInput(Input input) => _input = input;
 
-        public void SetDirectionMoving(Vector2 direction)
-        {
-            _directionMoving = direction;
-        }
-
         private void FixedUpdate()
         {
             PlayerRotate();
@@ -34,8 +29,8 @@ namespace _Source.Player
         {
             Vector3 mousePosition = _input.Player.Rotate.ReadValue<Vector2>();
             var ss = _camera.WorldToScreenPoint(transform.position);
-            var dir = mousePosition - ss;
-            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf. Rad2Deg;
+            var direction = mousePosition - ss;
+            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf. Rad2Deg;
             transform. rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 

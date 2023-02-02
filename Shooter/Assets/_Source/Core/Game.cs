@@ -1,10 +1,10 @@
 using _Source.InputSystem;
-using _Source.Player;
 
 namespace _Source.Core
 {
     public class Game
     {
+        
         public Game(Input input, InputHandler inputHandler)
         {
             _input = input;
@@ -17,10 +17,9 @@ namespace _Source.Core
 
         private void Bind()
         {
-            var movement = _input.Player.Moving;
-            movement.performed += _inputHandler.MoveAction;
+            var input = _input.Player;
+            input.Fire.performed += _inputHandler.InputFire;
         }
-
         private void EnableInput() 
             => _input.Player.Enable();
 

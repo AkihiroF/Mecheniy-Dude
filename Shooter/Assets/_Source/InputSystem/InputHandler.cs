@@ -1,23 +1,21 @@
-using _Source.Player;
-using UnityEngine;
+using _Source.FireSystem.Player;
 using UnityEngine.InputSystem;
 
 namespace _Source.InputSystem
 {
     public class InputHandler
     {
-        private PlayerMovement _movement;
+        private PlayerFireSystem _fireSystem;
 
-        public InputHandler(PlayerMovement movement)
+        public InputHandler(PlayerFireSystem playerFireSystem)
         {
-            _movement = movement;
+            _fireSystem = playerFireSystem;
         }
 
-        public void MoveAction(InputAction.CallbackContext obj)
+
+        public void InputFire(InputAction.CallbackContext obj)
         {
-            var direction = obj.ReadValue<Vector2>();
-            //Debug.Log(direction);
-            //_movement.SetDirectionMoving(direction);
+            _fireSystem.Fire();
         }
     }
 }
