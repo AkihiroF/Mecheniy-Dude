@@ -25,6 +25,7 @@ namespace _Source.FireSystem
             var obj = other.gameObject;
             if ((layerAttack.value & (1 << obj.layer)) > 0)
                 StopAttack();
+            
         }
 
         private void StartAttack(ABaseHealth target)
