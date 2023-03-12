@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/NewEnemy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/NewEnemy.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/EnemyFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/EnemyFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/TestEnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/TestEnemyHealth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +82,7 @@
       <workItem from="1675160470664" duration="7802000" />
       <workItem from="1675255014999" duration="18450000" />
       <workItem from="1675422893206" duration="4473000" />
+      <workItem from="1678640992418" duration="96000" />
     </task>
     <servers />
   </component>

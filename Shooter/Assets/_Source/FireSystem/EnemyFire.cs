@@ -14,7 +14,6 @@ namespace _Source.FireSystem
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("Enter");
             var obj = other.gameObject;
             if ((layerAttack.value & (1 << obj.layer)) > 0)
                 StartAttack(obj.GetComponent<ABaseHealth>());

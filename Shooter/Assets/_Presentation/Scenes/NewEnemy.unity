@@ -1817,6 +1817,7 @@ GameObject:
   - component: {fileID: 1669956651}
   - component: {fileID: 1669956652}
   - component: {fileID: 1669956653}
+  - component: {fileID: 1669956654}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -1953,7 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0131104bcd4949fb9efb4328e383f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedAttack: 4
+  speedAttack: 2
   damage: 10
   layerAttack:
     serializedVersion: 2
@@ -1992,6 +1993,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &1669956654
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669956645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.62
 --- !u!1 &1695863928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2272,7 @@ GameObject:
   - component: {fileID: 1854776194}
   - component: {fileID: 1854776196}
   - component: {fileID: 1854776195}
+  - component: {fileID: 1854776197}
   m_Layer: 7
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -2430,11 +2448,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0131104bcd4949fb9efb4328e383f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedAttack: 4
+  speedAttack: 2
   damage: 10
   layerAttack:
     serializedVersion: 2
     m_Bits: 64
+--- !u!58 &1854776197
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854776187}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.59
 --- !u!1 &1931675414
 GameObject:
   m_ObjectHideFlags: 0
