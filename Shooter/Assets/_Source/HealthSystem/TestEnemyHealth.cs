@@ -6,7 +6,6 @@ namespace _Source.HealthSystem
     {
         public override void GetDamage(float damage)
         {
-            Debug.Log($"Damage - {damage}, current hp = {CurrentHp}");
             if (CurrentHp - damage <= 0)
             {
                 Dead();

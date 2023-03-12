@@ -1,69 +1,47 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace _Source.Holy_Shit
 {
     public class Enemy : MonoBehaviour
     {
-        
-        public float speed;
-        private float _waitTime;
-        public float startWaitTime;
+        private GameObject _player;
+        private NavMeshAgent _agent;
 
-        public bool cheker;
-
-
-        private Transform _player;
         public Transform[] moveSpots;
-        public int randomSpot;
+        private int _index = 0;
+
 
         void Start()
         {
-            _waitTime = startWaitTime;
-            randomSpot = Random.Range(0, moveSpots.Length);
-            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            _player = GameObject.FindGameObjectWithTag("Player");
 
+            _agent = GetComponent<NavMeshAgent>();
+            _agent.updateRotation = false;
+            _agent.updateUpAxis = false;
+
+            _agent.SetDestination(moveSpots[_index].position);
         }
 
-        void Update()
+        private void Update()
         {
-            if(cheker == false)
+            if (Vector2.Distance(transform.position, _player.transform.position) <= 10)
             {
-                transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
-
-                if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
-                {
-                    if (_waitTime <= 0)
-                    {
-                        randomSpot = Random.Range(0, moveSpots.Length);
-                        _waitTime = startWaitTime;
-                    }
-                    else
-                    {
-                        _waitTime -= Time.deltaTime;
-                    }
-                }
+                _agent.SetDestination(_player.transform.position);
             }
             else
             {
-                transform.position = Vector2.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
+                //Debug.Log(_agent.hasPath);
+                if(!_agent.hasPath)
+                {
+                    _index++;
+                    if (_index >= moveSpots.Length)
+                    {
+                        _index = 0;
+                    }
+                    _agent.SetDestination(moveSpots[_index].position);
+                }   
             }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if(collision.gameObject.CompareTag("Player"))
-            {
-                cheker = true;
-            }
-
-        }
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if(collision.gameObject.CompareTag("Player"))
-            {
-                cheker = false;
-            }
-
         }
     }
 }

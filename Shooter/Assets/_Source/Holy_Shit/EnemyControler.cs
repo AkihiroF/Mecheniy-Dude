@@ -1,27 +1,30 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace _Source.Holy_Shit
 {
     public class EnemyControler : MonoBehaviour
     {
-        public float speed;
-        private Transform _player;
-   
+        private GameObject _player;
+        private NavMeshAgent _agent;
 
 
         void Start()
         {
-            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            _player = GameObject.FindGameObjectWithTag("Player");
+
+            _agent = GetComponent<NavMeshAgent>();
+            _agent.updateRotation = false;
+            _agent.updateUpAxis = false;
         }
 
-
-
-        private void OnTriggerStay2D(Collider2D collision)
+        private void Update()
         {
-            if(collision.gameObject.CompareTag("Player"))
+            if (Vector2.Distance(transform.position , _player.transform.position) <= 10)
             {
-                transform.position = Vector2.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
+                _agent.SetDestination(_player.transform.position);
             }
+           
         }
 
 
