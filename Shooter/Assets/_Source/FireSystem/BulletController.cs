@@ -1,4 +1,3 @@
-using System;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using UnityEngine;
@@ -32,7 +31,6 @@ namespace _Source.FireSystem
             
             if ((contactLayer.value & (1 << obj.layer)) > 0)
                 obj.GetComponent<ABaseHealth>().GetDamage(_damage);
-            
             this.gameObject.SetActive(false);
             _controller.ReturnBulletInPool(this);
         }
