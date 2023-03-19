@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/NewEnemy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/NewEnemy.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/EnemyFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/EnemyFire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/TestEnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/TestEnemyHealth.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_/Stuff/CodeMonkey/Utils/UtilsClass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,6 +92,8 @@
       <workItem from="1675255014999" duration="18450000" />
       <workItem from="1675422893206" duration="4473000" />
       <workItem from="1678640992418" duration="96000" />
+      <workItem from="1679049987244" duration="8447000" />
+      <workItem from="1679222533446" duration="6359000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Enemy
   - EnemyColision
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Unvisible
+    uniqueID: 1175610405
+    locked: 0
+  - name: FieldOfView
+    uniqueID: 1148222735
+    locked: 0
+  - name: Shadow
+    uniqueID: 3245903225
+    locked: 0
+  - name: VisibleObject
+    uniqueID: 2220077655
     locked: 0
