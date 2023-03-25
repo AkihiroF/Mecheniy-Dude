@@ -53,6 +53,42 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""caa7960e-8190-4513-9847-bd7b64bb066c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwithWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""31e7c515-e2f9-4f2c-a1ee-356f5f231bec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Healing"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff0f2d2a-c4a8-40e0-af52-1a0f0f66576f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interactive"",
+                    ""type"": ""Button"",
+                    ""id"": ""e32b325e-f9a8-4151-a30a-4ac337130f15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +168,61 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bda84f4-fe09-4548-af4e-a8aa47d0efca"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerSheme"",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32b117b3-8b58-4fbf-8c8c-a9215cbca6e1"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwithWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28d1fabe-d654-4d01-8c30-6cbca4518b29"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwithWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddcdbb95-c3c8-41f1-9408-61d758980731"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Healing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2503ed3-d68e-4cf2-a5a3-377f1812662d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interactive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -155,6 +246,10 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_Moving = m_Player.FindAction("Moving", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
+        m_Player_SwithWeapon = m_Player.FindAction("SwithWeapon", throwIfNotFound: true);
+        m_Player_Healing = m_Player.FindAction("Healing", throwIfNotFound: true);
+        m_Player_Interactive = m_Player.FindAction("Interactive", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -217,6 +312,10 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Moving;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Reload;
+    private readonly InputAction m_Player_SwithWeapon;
+    private readonly InputAction m_Player_Healing;
+    private readonly InputAction m_Player_Interactive;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -224,6 +323,10 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @Moving => m_Wrapper.m_Player_Moving;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Reload => m_Wrapper.m_Player_Reload;
+        public InputAction @SwithWeapon => m_Wrapper.m_Player_SwithWeapon;
+        public InputAction @Healing => m_Wrapper.m_Player_Healing;
+        public InputAction @Interactive => m_Wrapper.m_Player_Interactive;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -242,6 +345,18 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @SwithWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwithWeapon;
+                @SwithWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwithWeapon;
+                @SwithWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwithWeapon;
+                @Healing.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHealing;
+                @Healing.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHealing;
+                @Healing.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHealing;
+                @Interactive.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
+                @Interactive.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
+                @Interactive.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -255,6 +370,18 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
+                @SwithWeapon.started += instance.OnSwithWeapon;
+                @SwithWeapon.performed += instance.OnSwithWeapon;
+                @SwithWeapon.canceled += instance.OnSwithWeapon;
+                @Healing.started += instance.OnHealing;
+                @Healing.performed += instance.OnHealing;
+                @Healing.canceled += instance.OnHealing;
+                @Interactive.started += instance.OnInteractive;
+                @Interactive.performed += instance.OnInteractive;
+                @Interactive.canceled += instance.OnInteractive;
             }
         }
     }
@@ -273,5 +400,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnMoving(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
+        void OnSwithWeapon(InputAction.CallbackContext context);
+        void OnHealing(InputAction.CallbackContext context);
+        void OnInteractive(InputAction.CallbackContext context);
     }
 }

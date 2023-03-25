@@ -15,7 +15,7 @@ TagManager:
   - Enemy
   - EnemyColision
   - Obstacles
-  - 
+  - InteractiveObject
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: VisibleObject
     uniqueID: 2220077655
+    locked: 0
+  - name: UI
+    uniqueID: 264239495
     locked: 0

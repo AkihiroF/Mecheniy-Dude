@@ -1,5 +1,8 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Source.FireSystem.SOs;
+using _Source.Player;
 using UnityEngine;
 
 namespace _Source.FireSystem.Player
@@ -7,14 +10,20 @@ namespace _Source.FireSystem.Player
     public class PlayerGunController : MonoBehaviour
     {
         [SerializeField] private Transform pointExitBullet;
-        private int _countAmmo;
-        private int _countReload;
-        private int _currentCountAmmo;
+        [SerializeField] private float timeReload;
+
+        public event Action<int, int> OnFireFromWeapon; 
+        
+        private ClipSo _ammoInfo;
+        private int _countAmmoInClip;
+        private int _currentCountAmmoInGun;
         private float _speedBullet;
         private float _damage;
         private GameObject _bulletObject;
         private List<BulletController> _bulletPool;
-        
+
+        private bool _isReloading;
+
 
         public void ReturnBulletInPool(BulletController bullet)
         {
@@ -23,13 +32,17 @@ namespace _Source.FireSystem.Player
 
         public void SetParameters(ClipSo info)
         {
-            _countAmmo = info.CountBullet;
-            _currentCountAmmo = _countAmmo;
+            _countAmmoInClip = info.CountBullet;
+            _currentCountAmmoInGun = _countAmmoInClip;
             _bulletObject = info.BulletPrefab;
-            _countReload = info.CountClips;
             _speedBullet = info.SpeedBullet;
             _damage = info.Damage;
+            _ammoInfo = info;
             _bulletPool = new List<BulletController>();
+
+            _isReloading = false;
+            
+            InvokeFireFromWeapon();
         }
 
         private void InitialiseBullet()
@@ -40,7 +53,6 @@ namespace _Source.FireSystem.Player
                 SetPositionBullet(bullet.transform);
                 bullet.FireBullet();
                 _bulletPool.RemoveAt(0);
-                _currentCountAmmo--;
             }
             else
             {
@@ -49,7 +61,6 @@ namespace _Source.FireSystem.Player
                 newBullet.SetParameters(this, _speedBullet, _damage);
                 SetPositionBullet(newBullet.transform);
                 newBullet.FireBullet();
-                _currentCountAmmo--;
             }
         }
 
@@ -60,20 +71,58 @@ namespace _Source.FireSystem.Player
         }
         public void Fire()
         {
-            if (_currentCountAmmo > 0)
+            if(_isReloading)
+                return;
+            if (_currentCountAmmoInGun > 0)
             {
                 InitialiseBullet();
+                UpdateCountAmmo();
             }
             else
             {
-                if (_countReload > 0)
-                {
-                    Debug.Log("Reload");
-                    _currentCountAmmo = _countAmmo;
-                    _countReload--;
-                    InitialiseBullet();
-                }
+                StartReloadWeapon();
             }
+        }
+
+        private void UpdateCountAmmo()
+        {
+            _currentCountAmmoInGun--;
+            if (_currentCountAmmoInGun == 0)
+            {
+                StartReloadWeapon();
+            }
+            InvokeFireFromWeapon();
+        }
+
+        private void InvokeFireFromWeapon()
+        {
+            if (OnFireFromWeapon != null)
+                OnFireFromWeapon.Invoke(_currentCountAmmoInGun,
+                    InventoryPlayer.GetCountItem(_ammoInfo) / _countAmmoInClip);
+        }
+
+        public void StartReloadWeapon()
+        {
+            if(_currentCountAmmoInGun == _countAmmoInClip)
+                return;
+            _isReloading = true;
+            var currentCountAmmoInInventory = InventoryPlayer.UseItem(_ammoInfo, _countAmmoInClip - _currentCountAmmoInGun);
+            if (currentCountAmmoInInventory > 0)
+            {
+                PlayerFireSystem.StartAutomaticReloading();
+                StartCoroutine(ReloadWeapon(currentCountAmmoInInventory));
+            }
+            else
+                InvokeFireFromWeapon();
+        }
+
+        private IEnumerator ReloadWeapon(int countAmmo)
+        {
+            yield return new WaitForSeconds(timeReload);
+            _currentCountAmmoInGun += countAmmo;
+            PlayerFireSystem.FinishReloading();
+            _isReloading = false;
+            InvokeFireFromWeapon();
         }
     }
 }

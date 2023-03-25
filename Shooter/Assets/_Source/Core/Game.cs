@@ -19,6 +19,17 @@ namespace _Source.Core
         {
             var input = _input.Player;
             input.Fire.performed += _inputHandler.InputFire;
+            input.Reload.performed += _inputHandler.InputReload;
+            input.Healing.performed += _inputHandler.InputHealing;
+            input.Interactive.performed += _inputHandler.InputInteractive;
+        }
+
+        private void UnBind()
+        {
+            var input = _input.Player;
+            input.Fire.performed -= _inputHandler.InputFire;
+            input.Reload.performed -= _inputHandler.InputReload;
+            input.Healing.performed -= _inputHandler.InputHealing;
         }
         private void EnableInput() 
             => _input.Player.Enable();

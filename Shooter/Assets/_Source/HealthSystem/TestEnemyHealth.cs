@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace _Source.HealthSystem
 {
     public class TestEnemyHealth : ABaseHealth

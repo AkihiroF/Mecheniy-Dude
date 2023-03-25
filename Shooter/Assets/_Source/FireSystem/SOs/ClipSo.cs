@@ -7,7 +7,6 @@ namespace _Source.FireSystem.SOs
     {
         [SerializeField] private GameObject bullet;
         [SerializeField] private int countBulletInClip;
-        [SerializeField] private int countClips;
         [SerializeField] private float speedBullet;
         [SerializeField] private float damage;
 
@@ -18,7 +17,6 @@ namespace _Source.FireSystem.SOs
                 return bullet;
             }
         }
-
         public int CountBullet
         {
             get
@@ -26,22 +24,14 @@ namespace _Source.FireSystem.SOs
                 return  countBulletInClip;
             }
         }
-
-        public int CountClips
-        {
-            get
-            {
-                return countClips;
-            }
-        }
-
         public float SpeedBullet
         {
             get
             {
                 return speedBullet;
             }
-        }        public float Damage
+        }        
+        public float Damage
         {
             get
             {

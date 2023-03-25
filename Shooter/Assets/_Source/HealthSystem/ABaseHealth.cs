@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace _Source.HealthSystem
@@ -8,7 +7,7 @@ namespace _Source.HealthSystem
         protected float CurrentHp;
         [SerializeField] protected float maxHp;
 
-        private void Start()
+        protected  virtual void Start()
         {
             CurrentHp = maxHp;
         }

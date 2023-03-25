@@ -1,3 +1,4 @@
+using System;
 using _Source.FireSystem.SOs;
 using UnityEngine;
 
@@ -7,6 +8,13 @@ namespace _Source.FireSystem.Player
     {
         [SerializeField] private Transform pointPositionGun;
         [SerializeField] private PlayerGunSo firstGun;
+
+        public static event Action<string> OnFire;
+        public static event Action OnSwitchWeapon;
+        public static event Action OnStartReloadWeapon;
+        public static event Action OnFinishReloadWeapon;
+        
+        
         private GameObject _gunObj;
         private PlayerGunController _currentGun;
 
@@ -16,6 +24,7 @@ namespace _Source.FireSystem.Player
             {
                 _gunObj = Instantiate(firstGun.GunObject, pointPositionGun);
                 _currentGun = _gunObj.GetComponent<PlayerGunController>();
+                _currentGun.OnFireFromWeapon += PrintAmmo;
                 SetParamInGun();
             }
         }
@@ -25,9 +34,32 @@ namespace _Source.FireSystem.Player
             _currentGun.SetParameters(firstGun.ClipInfo);
         }
 
+        private void PrintAmmo(int countAmmo, int countClip)
+        {
+            if (OnFire != null)
+            {
+                OnFire.Invoke($"{countAmmo} / {countClip}");
+            }
+        }
+
         public void Fire()
         {
             _currentGun.Fire();
+        }
+
+
+        public void ReloadWeapon()
+        {
+            _currentGun.StartReloadWeapon();
+        }
+
+        public static void StartAutomaticReloading()
+        {
+            if (OnStartReloadWeapon != null) OnStartReloadWeapon.Invoke();
+        }
+        public static void FinishReloading()
+        {
+            if (OnFinishReloadWeapon != null) OnFinishReloadWeapon.Invoke();
         }
     }
 }
