@@ -12,6 +12,5 @@ namespace _Source.Interactable
             InventoryPlayer.AddItem(medicalKit);
             Destroy(this.gameObject);
         }
-        
     }
 }

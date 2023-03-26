@@ -12,7 +12,7 @@ namespace _Source.FireSystem.Player
         [SerializeField] private Transform pointExitBullet;
         [SerializeField] private float timeReload;
 
-        public event Action<int, int> OnFireFromWeapon; 
+        public event Action<int> OnFireFromWeapon; 
         
         private ClipSo _ammoInfo;
         private int _countAmmoInClip;
@@ -97,8 +97,7 @@ namespace _Source.FireSystem.Player
         private void InvokeFireFromWeapon()
         {
             if (OnFireFromWeapon != null)
-                OnFireFromWeapon.Invoke(_currentCountAmmoInGun,
-                    InventoryPlayer.GetCountItem(_ammoInfo) / _countAmmoInClip);
+                OnFireFromWeapon.Invoke(_currentCountAmmoInGun);
         }
 
         public void StartReloadWeapon()

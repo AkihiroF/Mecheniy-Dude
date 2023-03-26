@@ -60,7 +60,7 @@ namespace _Source.HealthSystem
             UpdateStateUI();
         }
 
-        private void UpdateStateUI()
+        public void UpdateStateUI()
         {
             if (OnHealing != null) OnHealing.Invoke(InventoryPlayer.GetCountItem(medicalKit));
         }

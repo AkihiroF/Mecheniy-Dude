@@ -18,7 +18,7 @@ namespace _Source.Interactable
             if(_objectsInRange.Count == 0)
                 return;
             var currentObj = _objectsInRange[0];
-            //_objectsInRange.RemoveAt(1);
+            _objectsInRange.RemoveAt(0);
             currentObj.WakeUp();
         }
 
@@ -27,7 +27,6 @@ namespace _Source.Interactable
             if ((interactiveLayer.value & (1 << other.gameObject.layer)) > 0)
             {
                 _objectsInRange.Add(other.GetComponent<IInteractiveObject>());
-                Debug.Log(_objectsInRange.Count);
             }
         }
 
@@ -36,7 +35,6 @@ namespace _Source.Interactable
             if (other.gameObject.layer == interactiveLayer)
             {
                 _objectsInRange.Remove(other.GetComponent<IInteractiveObject>());
-                Debug.Log(_objectsInRange.Count);
             }
         }
     }

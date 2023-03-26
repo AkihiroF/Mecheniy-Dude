@@ -37,6 +37,8 @@ namespace _Source.InputSystem
         public void InputInteractive(InputAction.CallbackContext obj)
         {
             _playerInteractive.GetItem();
+            _playerHealth.UpdateStateUI();
+            _fireSystem.PrintAmmo();
         }
     }
 }
