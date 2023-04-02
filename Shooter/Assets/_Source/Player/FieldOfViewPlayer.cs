@@ -41,8 +41,7 @@ namespace _Source.Player
             Vector2[] uv = new Vector2[vertices.Length]; 
             int[] triangles = new int[countIteration * 3]; 
 
-            vertices[0] = transform.InverseTransformPoint(_origin); 
-
+            vertices[0] = transform.InverseTransformPoint(_origin);
             int vertexIndex = 1; 
             int triangleIndex = 0; 
             for (int i = 0; i <= countIteration; i++) 

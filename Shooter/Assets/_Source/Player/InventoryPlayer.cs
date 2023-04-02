@@ -5,22 +5,27 @@ namespace _Source.Player
 {
     public static class InventoryPlayer
     {
-        private static Dictionary<object, int> _inventory;
+        public static Dictionary<object, int> Inventory { get; private set; }
 
         static InventoryPlayer()
         {
-            _inventory = new Dictionary<object, int>();
+            Inventory = new Dictionary<object, int>();
+        }
+
+        public static void SetInventory(Dictionary<object, int> savedInventory)
+        {
+            Inventory = savedInventory;
         }
 
         public static void AddItem(object typeObject, int count = 1)
         {
             try
             {
-                _inventory[typeObject] += count;
+                Inventory[typeObject] += count;
             }
             catch
             {
-                _inventory.Add(typeObject, count);
+                Inventory.Add(typeObject, count);
             }
         }
 
@@ -28,15 +33,15 @@ namespace _Source.Player
         {
             try
             {
-                if (_inventory[typeObject] >= count)
+                if (Inventory[typeObject] >= count)
                 {
-                    _inventory[typeObject] -= count;
+                    Inventory[typeObject] -= count;
                     return count;
                 }
                 else
                 {
-                    var currentValue = _inventory[typeObject];
-                    _inventory[typeObject] = 0;
+                    var currentValue = Inventory[typeObject];
+                    Inventory[typeObject] = 0;
                     return currentValue;
                 }
             }
@@ -50,7 +55,7 @@ namespace _Source.Player
         {
             try
             {
-                return _inventory[typeObject];
+                return Inventory[typeObject];
             }
             catch
             {
