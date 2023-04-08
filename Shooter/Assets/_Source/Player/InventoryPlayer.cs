@@ -5,27 +5,24 @@ namespace _Source.Player
 {
     public static class InventoryPlayer
     {
-        public static Dictionary<object, int> Inventory { get; private set; }
+        public static Dictionary<int, int> Inventory { get; private set; }
 
         static InventoryPlayer()
         {
-            Inventory = new Dictionary<object, int>();
+            Inventory = new Dictionary<int, int>();
         }
 
-        public static void SetInventory(Dictionary<object, int> savedInventory)
-        {
-            Inventory = savedInventory;
-        }
+        #region UseObject
 
         public static void AddItem(object typeObject, int count = 1)
         {
             try
             {
-                Inventory[typeObject] += count;
+                Inventory[typeObject.GetHashCode()] += count;
             }
             catch
             {
-                Inventory.Add(typeObject, count);
+                Inventory.Add(typeObject.GetHashCode(), count);
             }
         }
 
@@ -33,15 +30,15 @@ namespace _Source.Player
         {
             try
             {
-                if (Inventory[typeObject] >= count)
+                if (Inventory[typeObject.GetHashCode()] >= count)
                 {
-                    Inventory[typeObject] -= count;
+                    Inventory[typeObject.GetHashCode()] -= count;
                     return count;
                 }
                 else
                 {
-                    var currentValue = Inventory[typeObject];
-                    Inventory[typeObject] = 0;
+                    var currentValue = Inventory[typeObject.GetHashCode()];
+                    Inventory[typeObject.GetHashCode()] = 0;
                     return currentValue;
                 }
             }
@@ -55,12 +52,64 @@ namespace _Source.Player
         {
             try
             {
-                return Inventory[typeObject];
+                return Inventory[typeObject.GetHashCode()];
             }
             catch
             {
                 return -1;
             }
         }
+
+        #endregion
+
+        #region UseHashCode
+
+        public static void AddItem(int hashObject, int count = 1)
+        {
+            try
+            {
+                Inventory[hashObject] += count;
+            }
+            catch
+            {
+                Inventory.Add(hashObject, count);
+            }
+        }
+
+        public static int UseItem(int hashObject, int count = 1)
+        {
+            try
+            {
+                if (Inventory[hashObject] >= count)
+                {
+                    Inventory[hashObject] -= count;
+                    return count;
+                }
+                else
+                {
+                    var currentValue = Inventory[hashObject];
+                    Inventory[hashObject] = 0;
+                    return currentValue;
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        public static int GetCountItem(int hashObject)
+        {
+            try
+            {
+                return Inventory[hashObject];
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        #endregion
     }
 }

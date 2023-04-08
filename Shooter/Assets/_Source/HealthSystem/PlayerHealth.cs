@@ -10,13 +10,28 @@ namespace _Source.HealthSystem
     public class PlayerHealth : ABaseHealth
     {
         public static event Action<int> OnHealing;
+        public static event Action OnDead;
         [SerializeField] private SpriteRenderer body;
         [Tooltip("Gradation from minimum to maximum HP")][SerializeField] private List<Color> gradationsColors;
         [SerializeField] private MedicalKitSo medicalKit;
 
+        public float GetHp
+        {
+            get
+            {
+                return CurrentHp;
+            }
+        }
         protected  override void Start()
         {
             base.Start();
+            CheckHp();
+            UpdateStateUI();
+        }
+
+        public void SetSavedHeath(float hp)
+        {
+            CurrentHp = hp;
             CheckHp();
             UpdateStateUI();
         }
@@ -25,7 +40,7 @@ namespace _Source.HealthSystem
         {
             if (CurrentHp - damage <= 0)
             {
-                Debug.Log("Player Dead");
+                if (OnDead != null) OnDead.Invoke();
             }
             else
             {

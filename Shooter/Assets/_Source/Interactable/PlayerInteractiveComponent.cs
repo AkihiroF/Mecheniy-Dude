@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace _Source.Interactable
                 return;
             var currentObj = _objectsInRange[0];
             _objectsInRange.RemoveAt(0);
-            currentObj.WakeUp();
+            currentObj.Interact();
         }
 
         private void OnTriggerEnter2D(Collider2D other)

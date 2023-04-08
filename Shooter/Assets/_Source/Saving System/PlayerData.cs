@@ -1,17 +1,18 @@
 using System;
 using System.Collections.Generic;
-using _Source.FireSystem.Player;
-using _Source.HealthSystem;
+using _Source.FireSystem.SOs;
 using UnityEngine;
 
 namespace _Source.Saving_System
 {
     [Serializable]
-    public class PlayerData
+    public struct PlayerData
     {
-        public Dictionary<object, int> Inventory;
+        public List<int> keysInventory;
+        public List<int> valuesInventory;
         public Vector2 position;
-        public PlayerGunController currentGun;
-         public PlayerHealth hp;
+        public PlayerGunSo currentGun;
+         public float hp;
+         public int currentAmmoInGun;
     }
 }

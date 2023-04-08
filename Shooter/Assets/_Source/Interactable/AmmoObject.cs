@@ -16,7 +16,7 @@ namespace _Source.Interactable
                 return typeAmmo;
             }
         }
-        public void WakeUp()
+        public void Interact()
         {
             InventoryPlayer.AddItem(typeAmmo,countBullet);
             Destroy(this.gameObject);

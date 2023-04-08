@@ -1,15 +1,22 @@
+using System;
+using _Source.HealthSystem;
 using _Source.InputSystem;
+using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Source.Core
 {
     public class Game
     {
-        
+        public static event Action OnRestart; 
         public Game(Input input, InputHandler inputHandler)
         {
             _input = input;
             _inputHandler = inputHandler;
             Bind();
+            PlayerHealth.OnDead += PausedGame;
         }
 
         private Input _input;
@@ -40,6 +47,20 @@ namespace _Source.Core
         public void StartGame()
         {
             EnableInput();
+            Time.timeScale = 1;
+        }
+
+        public static void RestartGame()
+        {
+            if (OnRestart != null) OnRestart.Invoke();
+            DOTween.Clear();
+        }
+
+        private void PausedGame()
+        {
+            DisableInput();
+            UnBind();
+            Time.timeScale = 0;
         }
     }
 }

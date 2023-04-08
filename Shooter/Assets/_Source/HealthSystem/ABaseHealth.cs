@@ -9,7 +9,8 @@ namespace _Source.HealthSystem
 
         protected  virtual void Start()
         {
-            CurrentHp = maxHp;
+            if(CurrentHp <= 0)
+                CurrentHp = maxHp;
         }
 
         public abstract void GetDamage(float damage);

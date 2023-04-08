@@ -7,7 +7,7 @@ namespace _Source.Interactable
     public class MedKitObject : MonoBehaviour, IInteractiveObject
     {
         [SerializeField] private MedicalKitSo medicalKit;
-        public void WakeUp()
+        public void Interact()
         {
             InventoryPlayer.AddItem(medicalKit);
             Destroy(this.gameObject);

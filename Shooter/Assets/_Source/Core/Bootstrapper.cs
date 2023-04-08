@@ -17,9 +17,6 @@ namespace _Source.Core
         [SerializeField] private PlayerFireSystem playerFireSystem;
         [SerializeField] private PlayerHealth playerHealth;
         [SerializeField] private PlayerInteractiveComponent playerInteractiveComponent;
-        [SerializeField] private ClipSo testClip;
-        [SerializeField] private int count;
-        [SerializeField] private MedicalKitSo medicalKitSo;
         private void Awake()
         {
             var input = new Input();
@@ -27,9 +24,6 @@ namespace _Source.Core
             player.SetInput(input);
             var game = new Game(input, inputHandler);
             game.StartGame();
-            
-            InventoryPlayer.AddItem(testClip, count);
-            InventoryPlayer.AddItem(medicalKitSo, 1);
         }
     }
 }

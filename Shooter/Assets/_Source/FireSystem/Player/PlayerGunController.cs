@@ -30,10 +30,17 @@ namespace _Source.FireSystem.Player
             _bulletPool.Add(bullet);
         }
 
-        public void SetParameters(ClipSo info)
+        public void SetParameters(ClipSo info,int countAmmo = 0)
         {
             _countAmmoInClip = info.CountBullet;
-            _currentCountAmmoInGun = _countAmmoInClip;
+            if (countAmmo == 0)
+            {
+                _currentCountAmmoInGun = _countAmmoInClip;
+            }
+            else
+            {
+                _currentCountAmmoInGun = countAmmo;
+            }
             _bulletObject = info.BulletPrefab;
             _speedBullet = info.SpeedBullet;
             _damage = info.Damage;
