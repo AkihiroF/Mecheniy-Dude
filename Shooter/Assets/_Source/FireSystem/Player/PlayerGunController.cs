@@ -41,7 +41,7 @@ namespace _Source.FireSystem.Player
             {
                 _currentCountAmmoInGun = countAmmo;
             }
-            _bulletObject = info.BulletPrefab;
+            _bulletObject = info.BulletObjectPrefab;
             _speedBullet = info.SpeedBullet;
             _damage = info.Damage;
             _ammoInfo = info;

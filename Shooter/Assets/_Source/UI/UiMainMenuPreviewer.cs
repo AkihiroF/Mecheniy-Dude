@@ -1,7 +1,7 @@
 using System;
 using _Source.Saving_System;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 namespace _Source.UI
 {
@@ -18,7 +18,7 @@ namespace _Source.UI
             _isLoad = PlayerPrefs.GetString(SaverData.NameData).Length != 0;
             if (_isLoad)
             {
-                loadGameButton.visible = false;
+                loadGameButton.enabled = false;
             }
         }
         

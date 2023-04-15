@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Unvisible
+  - name: UnvisibleObject
     uniqueID: 1175610405
     locked: 0
   - name: FieldOfView

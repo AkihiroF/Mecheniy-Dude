@@ -30,7 +30,7 @@ namespace _Source.FireSystem.Player
             {
                 _currentGunSo = firstGun;
             }
-            _gunObj = Instantiate(_currentGunSo.GunObject, pointPositionGun);
+            _gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
             _currentGun = _gunObj.GetComponent<PlayerGunController>();
             _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             _currentClip = _currentGunSo.ClipInfo;

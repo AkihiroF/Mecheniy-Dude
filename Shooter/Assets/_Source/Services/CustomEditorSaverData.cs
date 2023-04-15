@@ -12,13 +12,13 @@ namespace _Source.Services
         private void OnEnable()
         {
             _saverComponent = serializedObject.FindProperty("saverComponent");
-            if(_saverComponent.objectReferenceValue is null)
+            if(_saverComponent.objectReferenceValue == null)
                 _playerSaverComponent = FindObjectOfType<PlayerSaverComponent>();
         }
 
         public override void OnInspectorGUI()
         {
-            if(_saverComponent.objectReferenceValue is null)
+            if(_saverComponent.objectReferenceValue == null)
                 _saverComponent.objectReferenceValue = _playerSaverComponent;
             EditorGUILayout.PropertyField(_saverComponent);
             serializedObject.ApplyModifiedProperties();

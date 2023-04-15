@@ -5,33 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/SceneLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/SceneLoader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiMainMenuPreviewer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiMainMenuPreviewer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorBootstrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorBootstrapper.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Materials/Test-1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Materials/Test-1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Materials/Test-2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Materials/Test-2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Bullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Bullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestGun.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestGun.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/SOs/Gun.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/SOs/Gun.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Saving.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Saving.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerGunController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/ABaseHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/ABaseHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/SOs/ClipSo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/SOs/ClipSo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/SOs/PlayerGunSo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/SOs/PlayerGunSo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/AmmoObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/AmmoObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/IInteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/IInteractiveObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/MedKitObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/MedKitObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/PlayerInteractiveComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/PlayerInteractiveComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/SaverData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/SaverData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/SOs/MedicalKitSo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/SOs/MedicalKitSo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiMainMenuPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiMainMenuPreviewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +140,9 @@
       <workItem from="1680431318622" duration="5187000" />
       <workItem from="1680789870004" duration="3290000" />
       <workItem from="1680950338968" duration="21511000" />
+      <workItem from="1680975163549" duration="618000" />
+      <workItem from="1681130563286" duration="3208000" />
+      <workItem from="1681565663467" duration="8213000" />
     </task>
     <servers />
   </component>

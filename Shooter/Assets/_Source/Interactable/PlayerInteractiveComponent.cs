@@ -19,7 +19,17 @@ namespace _Source.Interactable
             if(_objectsInRange.Count == 0)
                 return;
             var currentObj = _objectsInRange[0];
-            _objectsInRange.RemoveAt(0);
+            if (_objectsInRange.Count > 1)
+            {
+                _objectsInRange.RemoveAt(0);
+                var secondElement = _objectsInRange[0];
+                _objectsInRange.RemoveAt(0);
+                _objectsInRange.Insert(0, secondElement);
+            }
+            else
+            {
+                _objectsInRange = new List<IInteractiveObject>();
+            }
             currentObj.Interact();
         }
 
@@ -33,7 +43,7 @@ namespace _Source.Interactable
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.gameObject.layer == interactiveLayer)
+            if ((interactiveLayer.value & (1 << other.gameObject.layer)) > 0)
             {
                 _objectsInRange.Remove(other.GetComponent<IInteractiveObject>());
             }

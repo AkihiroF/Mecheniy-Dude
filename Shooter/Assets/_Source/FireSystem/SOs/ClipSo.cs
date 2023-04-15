@@ -1,20 +1,21 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Source.FireSystem.SOs
 {
     [CreateAssetMenu(menuName = "Fire System/ClipAmmo", fileName = "Clip")]
     public class ClipSo : ScriptableObject
     {
-        [SerializeField] private GameObject bullet;
+        [SerializeField] private GameObject bulletObject;
         [SerializeField] private int countBulletInClip;
         [SerializeField] private float speedBullet;
         [SerializeField] private float damage;
 
-        public GameObject BulletPrefab
+        public GameObject BulletObjectPrefab
         {
             get
             {
-                return bullet;
+                return bulletObject;
             }
         }
         public int CountBullet

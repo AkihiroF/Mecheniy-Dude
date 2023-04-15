@@ -70,7 +70,7 @@ namespace _Source.HealthSystem
             var kit = InventoryPlayer.UseItem(medicalKit);
             if (kit == 1)
             {
-                ReturnHealth(medicalKit.HP);
+                ReturnHealth(medicalKit.Hp);
             }
             UpdateStateUI();
         }
