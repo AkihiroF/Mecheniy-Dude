@@ -5,14 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/NewEnemy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/NewEnemy.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/EnemyFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/EnemyFire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/TestEnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/TestEnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/SOs/Clip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/SOs/Clip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Saving.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Saving.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiMainMenuPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiMainMenuPreviewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/MaterialReferenceManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,9 +52,24 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/akihirof/.local/share/Symbols/src&quot;
+    ]
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -83,6 +113,18 @@
       <workItem from="1675255014999" duration="18450000" />
       <workItem from="1675422893206" duration="4473000" />
       <workItem from="1678640992418" duration="96000" />
+      <workItem from="1679049987244" duration="8447000" />
+      <workItem from="1679222533446" duration="6359000" />
+      <workItem from="1679396010984" duration="5106000" />
+      <workItem from="1679745060716" duration="23623000" />
+      <workItem from="1679827712888" duration="1920000" />
+      <workItem from="1680431318622" duration="5187000" />
+      <workItem from="1680789870004" duration="3290000" />
+      <workItem from="1680950338968" duration="21511000" />
+      <workItem from="1680975163549" duration="618000" />
+      <workItem from="1681130563286" duration="3208000" />
+      <workItem from="1681565663467" duration="8213000" />
+      <workItem from="1681727361354" duration="4321000" />
     </task>
     <servers />
   </component>

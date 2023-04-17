@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2da205183740eb9098aee8f7ae4f83, type: 3}
   m_Name: Gun
   m_EditorClassIdentifier: 
-  gun: {fileID: 2720667609700782411, guid: 6df40e0753e444d45a327f12690e44ca, type: 3}
+  gunObject: {fileID: 2720667609700782411, guid: 6df40e0753e444d45a327f12690e44ca, type: 3}
   ammo: {fileID: 11400000, guid: fde250431043d4880b424ae53db168c3, type: 2}
