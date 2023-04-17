@@ -11,7 +11,7 @@ namespace _Source.Services
 
         public void LoadNewGame()
         {
-            PlayerPrefs.DeleteKey(SaverData.NameData);
+            PlayerPrefs.DeleteAll();
             SceneManager.LoadScene(idGame);
         }
         public void LoadGame()
@@ -23,6 +23,10 @@ namespace _Source.Services
         {
             SceneManager.LoadScene(idMainMenu);
         }
-        
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace _Source.Saving_System
 
         public void ClearData()
         {
-            PlayerPrefs.DeleteKey(SaverData.NameData);
+            PlayerPrefs.DeleteAll();
             Debug.Log("Data is deleted");
         }
 

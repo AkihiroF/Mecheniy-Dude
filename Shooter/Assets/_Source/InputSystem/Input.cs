@@ -89,6 +89,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Paused"",
+                    ""type"": ""Button"",
+                    ""id"": ""1891c99c-b5c1-4770-9203-669dc80d659d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -223,6 +232,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Interactive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38b258e3-1dc3-474f-8804-2d21753831f6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Paused"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -250,6 +270,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_SwithWeapon = m_Player.FindAction("SwithWeapon", throwIfNotFound: true);
         m_Player_Healing = m_Player.FindAction("Healing", throwIfNotFound: true);
         m_Player_Interactive = m_Player.FindAction("Interactive", throwIfNotFound: true);
+        m_Player_Paused = m_Player.FindAction("Paused", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -316,6 +337,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwithWeapon;
     private readonly InputAction m_Player_Healing;
     private readonly InputAction m_Player_Interactive;
+    private readonly InputAction m_Player_Paused;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -327,6 +349,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @SwithWeapon => m_Wrapper.m_Player_SwithWeapon;
         public InputAction @Healing => m_Wrapper.m_Player_Healing;
         public InputAction @Interactive => m_Wrapper.m_Player_Interactive;
+        public InputAction @Paused => m_Wrapper.m_Player_Paused;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -357,6 +380,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Interactive.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
                 @Interactive.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
                 @Interactive.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
+                @Paused.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPaused;
+                @Paused.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPaused;
+                @Paused.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPaused;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -382,6 +408,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Interactive.started += instance.OnInteractive;
                 @Interactive.performed += instance.OnInteractive;
                 @Interactive.canceled += instance.OnInteractive;
+                @Paused.started += instance.OnPaused;
+                @Paused.performed += instance.OnPaused;
+                @Paused.canceled += instance.OnPaused;
             }
         }
     }
@@ -404,5 +433,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnSwithWeapon(InputAction.CallbackContext context);
         void OnHealing(InputAction.CallbackContext context);
         void OnInteractive(InputAction.CallbackContext context);
+        void OnPaused(InputAction.CallbackContext context);
     }
 }

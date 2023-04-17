@@ -1,3 +1,4 @@
+using _Source.Core;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using _Source.Interactable;
@@ -10,6 +11,7 @@ namespace _Source.InputSystem
         private readonly PlayerFireSystem _fireSystem;
         private readonly PlayerHealth _playerHealth;
         private readonly PlayerInteractiveComponent _playerInteractive;
+        private  Game _game;
 
         public InputHandler(PlayerFireSystem playerFireSystem, PlayerHealth playerHealth, PlayerInteractiveComponent playerInteractive)
         {
@@ -18,21 +20,17 @@ namespace _Source.InputSystem
             _playerInteractive = playerInteractive;
         }
 
+        public void SetGame(Game game) 
+            => _game = game;
 
-        public void InputFire(InputAction.CallbackContext obj)
-        {
-            _fireSystem.Fire();
-        }
+        public void InputFire(InputAction.CallbackContext obj) 
+            => _fireSystem.Fire();
 
-        public void InputReload(InputAction.CallbackContext obj)
-        {
-            _fireSystem.ReloadWeapon();
-        }
+        public void InputReload(InputAction.CallbackContext obj) 
+            => _fireSystem.ReloadWeapon();
 
-        public void InputHealing(InputAction.CallbackContext obj)
-        {
-            _playerHealth.UseKit();
-        }
+        public void InputHealing(InputAction.CallbackContext obj) 
+            => _playerHealth.UseKit();
 
         public void InputInteractive(InputAction.CallbackContext obj)
         {
@@ -40,5 +38,8 @@ namespace _Source.InputSystem
             _playerHealth.UpdateStateUI();
             _fireSystem.PrintAmmo();
         }
+
+        public void InputPaused(InputAction.CallbackContext obj) 
+            => _game.PausedGame();
     }
 }

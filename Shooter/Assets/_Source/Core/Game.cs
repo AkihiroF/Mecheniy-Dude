@@ -2,21 +2,20 @@ using System;
 using _Source.HealthSystem;
 using _Source.InputSystem;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace _Source.Core
 {
     public class Game
     {
-        public static event Action OnRestart; 
+        public static event Action OnRestart;
+        public static event Action OnPaused;
         public Game(Input input, InputHandler inputHandler)
         {
             _input = input;
             _inputHandler = inputHandler;
-            Bind();
             PlayerHealth.OnDead += PausedGame;
+            _inputHandler.SetGame(this);
         }
 
         private Input _input;
@@ -29,6 +28,8 @@ namespace _Source.Core
             input.Reload.performed += _inputHandler.InputReload;
             input.Healing.performed += _inputHandler.InputHealing;
             input.Interactive.performed += _inputHandler.InputInteractive;
+
+            input.Paused.performed += _inputHandler.InputPaused;
         }
 
         private void UnBind()
@@ -37,6 +38,8 @@ namespace _Source.Core
             input.Fire.performed -= _inputHandler.InputFire;
             input.Reload.performed -= _inputHandler.InputReload;
             input.Healing.performed -= _inputHandler.InputHealing;
+            
+            input.Paused.performed -= _inputHandler.InputPaused;
         }
         private void EnableInput() 
             => _input.Player.Enable();
@@ -47,20 +50,22 @@ namespace _Source.Core
         public void StartGame()
         {
             EnableInput();
+            Bind();
             Time.timeScale = 1;
         }
 
-        public static void RestartGame()
+        public void RestartGame()
         {
             if (OnRestart != null) OnRestart.Invoke();
             DOTween.Clear();
         }
 
-        private void PausedGame()
+        public void PausedGame()
         {
             DisableInput();
             UnBind();
             Time.timeScale = 0;
+            if (OnPaused != null) OnPaused.Invoke();
         }
     }
 }
