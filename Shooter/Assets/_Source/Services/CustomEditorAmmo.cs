@@ -1,9 +1,9 @@
 using _Source.Interactable;
 using UnityEditor;
+
 namespace _Source.Services
 {
-#if (UNITY_EDITOR)
-    [CustomEditor(typeof(AmmoObject))]
+    [UnityEditor.CustomEditor(typeof(AmmoObject))]
     public class CustomEditorAmmo : Editor
     {
         private SerializedProperty _typeAmmo;
@@ -29,5 +29,4 @@ namespace _Source.Services
             serializedObject.ApplyModifiedProperties();
         }
     }
-    #endif
 }

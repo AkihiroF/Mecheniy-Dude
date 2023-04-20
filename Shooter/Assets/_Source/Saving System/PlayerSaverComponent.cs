@@ -13,30 +13,25 @@ namespace _Source.Saving_System
 
         private void Awake()
         {
-            if (PlayerPrefs.HasKey(SaverData.NameData))
+            var nameSave = SaverData.NameData;
+            var data = PlayerPrefs.GetString(nameSave);
+            if (data.Length != 0)
             {
-                var nameSave = SaverData.NameData;
-                var data = PlayerPrefs.GetString(nameSave);
-                if (data.Length != 0)
+                var currentdata = JsonUtility.FromJson<PlayerData>(data);
+                for (int i = 0; i < currentdata.keysInventory.Count; i++)
                 {
-                    var currentdata = JsonUtility.FromJson<PlayerData>(data);
-                    for (int i = 0; i < currentdata.keysInventory.Count; i++)
-                    {
-                        InventoryPlayer.AddItem(currentdata.keysInventory[i], currentdata.valuesInventory[i]);
-                    }
-                    health.SetSavedHeath(currentdata.hp);
-                    if(currentdata.currentGun != null)
-                        playerFireSystem.SetSavedParameters(currentdata.currentGun, currentdata.currentAmmoInGun);
-                    transform.position = currentdata.position;
+                    InventoryPlayer.AddItem(currentdata.keysInventory[i], currentdata.valuesInventory[i]);
                 }
+                health.SetSavedHeath(currentdata.hp);
+                if(currentdata.currentGun != null)
+                    playerFireSystem.SetSavedParameters(currentdata.currentGun, currentdata.currentAmmoInGun);
+                transform.position = currentdata.position;
             }
         }
 
         public void ClearData()
         {
-            InventoryPlayer.ClearInventory();
             PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
             Debug.Log("Data is deleted");
         }
 

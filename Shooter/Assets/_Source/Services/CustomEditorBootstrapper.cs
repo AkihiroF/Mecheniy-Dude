@@ -7,7 +7,6 @@ using UnityEditor;
 
 namespace _Source.Services
 {
-#if (UNITY_EDITOR)
     [CustomEditor(typeof(Bootstrapper))]
     public class CustomEditorBootstrapper : Editor
     {
@@ -46,5 +45,4 @@ namespace _Source.Services
             serializedObject.ApplyModifiedProperties();
         }
     }
-    #endif
 }
