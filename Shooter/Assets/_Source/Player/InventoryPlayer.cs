@@ -12,6 +12,8 @@ namespace _Source.Player
             Inventory = new Dictionary<int, int>();
         }
 
+        public static void ClearInventory() => Inventory = new Dictionary<int, int>();
+
         #region UseObject
 
         public static void AddItem(object typeObject, int count = 1)
@@ -66,6 +68,8 @@ namespace _Source.Player
 
         public static void AddItem(int hashObject, int count = 1)
         {
+            if(count == 0)
+                return;
             try
             {
                 Inventory[hashObject] += count;
