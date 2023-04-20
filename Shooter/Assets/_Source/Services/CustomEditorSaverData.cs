@@ -3,6 +3,7 @@ using UnityEditor;
 
 namespace _Source.Services
 {
+#if (UNITY_EDITOR)
     [CustomEditor(typeof(SaverData))]
     public class CustomEditorSaverData : Editor
     {
@@ -24,4 +25,5 @@ namespace _Source.Services
             serializedObject.ApplyModifiedProperties();
         }
     }
+    #endif
 }

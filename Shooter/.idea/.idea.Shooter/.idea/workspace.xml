@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Saving.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Saving.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/SaverData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/SaverData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorAmmo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorAmmo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,7 @@
       <workItem from="1681565663467" duration="8213000" />
       <workItem from="1681727361354" duration="4321000" />
       <workItem from="1682010326550" duration="275000" />
-      <workItem from="1682014520429" duration="2485000" />
+      <workItem from="1682014520429" duration="3424000" />
     </task>
     <servers />
   </component>

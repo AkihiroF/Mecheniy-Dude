@@ -40,7 +40,7 @@ namespace _Source.Player
             _mesh.triangles = _calculator.GetTriangles(); 
             _mesh.bounds = new Bounds(_origin, Vector3.one * 1000f); 
         }
-
+#if (UNITY_EDITOR)
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.white;
@@ -53,6 +53,7 @@ namespace _Source.Player
             Gizmos.DrawLine(position, position + angle01 * radiusView);
             Gizmos.DrawLine(position, position + angle02 * radiusView);
         }
+        #endif
 
         private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
         {
