@@ -1,4 +1,4 @@
-using _Source.Saving_System;
+using _Source.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,21 +11,26 @@ namespace _Source.Services
 
         public void LoadNewGame()
         {
+            InventoryPlayer.ClearInventory();
             PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
             SceneManager.LoadScene(idGame);
         }
         public void LoadGame()
         {
+            InventoryPlayer.ClearInventory();
             SceneManager.LoadScene(idGame);
         }
 
         public void LoadMainMenu()
         {
+            InventoryPlayer.ClearInventory();
             SceneManager.LoadScene(idMainMenu);
         }
 
         public void QuitGame()
         {
+            InventoryPlayer.ClearInventory();
             Application.Quit();
         }
     }

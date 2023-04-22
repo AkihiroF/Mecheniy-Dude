@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace _Source.Services
 {
+#if (UNITY_EDITOR)
     [CustomEditor(typeof(PlayerSaverComponent))]
     public class CustomEditorPlayerSaverComponent : Editor
     {
@@ -36,7 +37,6 @@ namespace _Source.Services
             }
             
         }
-
-
     }
+    #endif
 }

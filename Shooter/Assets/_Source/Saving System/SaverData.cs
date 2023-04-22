@@ -12,7 +12,6 @@ namespace _Source.Saving_System
         {
             var data = saverComponent.GetPlayerData();
             string dataJson = JsonUtility.ToJson(data);
-            Debug.Log(dataJson);
             PlayerPrefs.SetString(NameData, dataJson);
             PlayerPrefs.Save();
         }
