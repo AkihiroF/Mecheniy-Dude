@@ -1894,11 +1894,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1868348577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 82431189620519564, guid: db4d33150e88b4bd9b8fe4422f5fa8cd, type: 3}
-  m_PrefabInstance: {fileID: 82431188152181465}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931675414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,7 +2167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonuse:
-  - {fileID: 1868348577}
+  - {fileID: 82431189620519564, guid: db4d33150e88b4bd9b8fe4422f5fa8cd, type: 3}
   spawnPoints:
   - {fileID: 1383860028}
   - {fileID: 579693203}
@@ -2186,7 +2181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135029760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.517832, y: 1.048933, z: 13.411875}
+  m_LocalPosition: {x: 18.517832, y: 1.048933, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -31,7 +31,6 @@ namespace _Source.Holy_Shit
             }
             else
             {
-                //Debug.Log(_agent.hasPath);
                 if(!_agent.hasPath)
                 {
                     _index++;
