@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Clip
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 5857692446343652089, guid: 18aded759b5664c2e91c744eb10eee84, type: 3}
-  countBulletInClip: 10
+  countBulletInClip: 8
   speedBullet: 1000
-  damage: 12
+  damage: 10
