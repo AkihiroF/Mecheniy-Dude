@@ -84,7 +84,7 @@ namespace _Source.UI
 
         private void Subscribe()
         {
-            PlayerFireSystem.OnFire += PrintInfoAmmo;
+            PlayerFireSystem.OnPrintInfoAboutFire += PrintInfoAmmo;
             PlayerFireSystem.OnStartReloadWeapon += PrintReloading;
             PlayerFireSystem.OnFinishReloadWeapon += HideReloading;
             PlayerHealth.OnHealing += CheckKit;
@@ -95,7 +95,7 @@ namespace _Source.UI
 
         private void UnSubscribe()
         {
-            PlayerFireSystem.OnFire -= PrintInfoAmmo;
+            PlayerFireSystem.OnPrintInfoAboutFire -= PrintInfoAmmo;
             PlayerFireSystem.OnStartReloadWeapon -= PrintReloading;
             PlayerFireSystem.OnFinishReloadWeapon -= HideReloading;
             PlayerHealth.OnHealing -= CheckKit;

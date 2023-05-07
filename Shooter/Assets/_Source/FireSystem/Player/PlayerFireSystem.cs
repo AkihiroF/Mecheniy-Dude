@@ -11,14 +11,14 @@ namespace _Source.FireSystem.Player
         [SerializeField] private Transform pointPositionGun;
         [SerializeField] private PlayerGunSo firstGun;
 
-        public static event Action<string> OnFire;
-        public static event Action OnSwitchWeapon;
+        public static event Action<string> OnPrintInfoAboutFire;
+        public static event Action<int> OnSwitchWeapon;
         public static event Action OnStartReloadWeapon;
         public static event Action OnFinishReloadWeapon;
 
         private PlayerGunSo _currentGunSo;
         private GameObject _gunObj;
-        private PlayerGunController _currentGun;
+        private ABaseGunController _currentGun;
         private ClipSo _currentClip;
         private int _currentCountAmmo;
 
@@ -31,7 +31,7 @@ namespace _Source.FireSystem.Player
                 _currentGunSo = firstGun;
             }
             _gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
-            _currentGun = _gunObj.GetComponent<PlayerGunController>();
+            _currentGun = _gunObj.GetComponent<ABaseGunController>();
             _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             _currentClip = _currentGunSo.ClipInfo;
             SetParamInGun();
@@ -80,9 +80,9 @@ namespace _Source.FireSystem.Player
 
         public void PrintAmmo()
         {
-            if (OnFire != null)
+            if (OnPrintInfoAboutFire != null)
             {
-                OnFire.Invoke($"{_currentCountAmmo} / {InventoryPlayer.GetCountItem(_currentClip) / _currentClip.CountBullet}");
+                OnPrintInfoAboutFire.Invoke($"{_currentCountAmmo} / {InventoryPlayer.GetCountItem(_currentClip) / _currentClip.CountBullet}");
             }
         }
 
