@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/PistolBullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/PistolBullet.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/PistolController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/PistolController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/KnifeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/KnifeController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Bullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/TestGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/TestGun.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/FieldOfView.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/FieldOfView.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Valera_Moving.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/Valera_Moving.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/BulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/BulletController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/ABaseGunController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerGunController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/ABaseGunController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Holy_Shit/RandomSpawnObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Holy_Shit/RandomSpawnObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,28 +43,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "featureSwitchingWeapon",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;featureSwitchingWeapon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
-      "/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache",
-      "/Users/akihirof/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/akihirof/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
@@ -145,6 +140,7 @@
       <workItem from="1682010326550" duration="275000" />
       <workItem from="1682014520429" duration="3424000" />
       <workItem from="1683470653239" duration="6451000" />
+      <workItem from="1683886579966" duration="5447000" />
     </task>
     <servers />
   </component>

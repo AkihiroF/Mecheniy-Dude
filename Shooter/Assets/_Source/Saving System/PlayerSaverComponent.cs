@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using _Source.Player;
@@ -24,6 +25,12 @@ namespace _Source.Saving_System
                     {
                         InventoryPlayer.AddItem(currentdata.keysInventory[i], currentdata.valuesInventory[i]);
                     }
+
+                    foreach (var gun in currentdata.guns)
+                    {
+                        var type = gun.GunObjectObject.GetComponent<ABaseGunController>().GetType();
+                        InventoryPlayer.AddWeapon(type,gun);
+                    }
                     health.SetSavedHeath(currentdata.hp);
                     if(currentdata.currentGun != null)
                         playerFireSystem.SetSavedParameters(currentdata.currentGun, currentdata.currentAmmoInGun);
@@ -43,6 +50,7 @@ namespace _Source.Saving_System
         public PlayerData GetPlayerData()
         {
             var inv = InventoryPlayer.Inventory;
+            var guns = InventoryPlayer.GunSos;
             var keys = new List<int>();
             var values = new List<int>();
             foreach (var key in inv.Keys)
@@ -58,7 +66,8 @@ namespace _Source.Saving_System
                 keysInventory = keys,
                 valuesInventory = values,
                 position = transform.position,
-                currentAmmoInGun = playerFireSystem.CurrentCountAmmoInGun
+                currentAmmoInGun = playerFireSystem.CurrentCountAmmoInGun,
+                guns = guns.Values.ToList()
             };
         }
     }

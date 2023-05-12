@@ -13,7 +13,9 @@ namespace _Source.InputSystem
         private readonly PlayerInteractiveComponent _playerInteractive;
         private  Game _game;
 
-        public InputHandler(PlayerFireSystem playerFireSystem, PlayerHealth playerHealth, PlayerInteractiveComponent playerInteractive)
+        public InputHandler(PlayerFireSystem playerFireSystem,
+            PlayerHealth playerHealth,
+            PlayerInteractiveComponent playerInteractive)
         {
             _fireSystem = playerFireSystem;
             _playerHealth = playerHealth;
@@ -41,5 +43,25 @@ namespace _Source.InputSystem
 
         public void InputPaused(InputAction.CallbackContext obj) 
             => _game.PausedGame();
+
+        public void InputChooseKnife(InputAction.CallbackContext obj)
+        {
+            _fireSystem.SwitchWeapon(1);
+        }
+
+        public void InputChoosePistol(InputAction.CallbackContext obj)
+        {
+            _fireSystem.SwitchWeapon(2);
+        }
+
+        public void InputChooseShortGun(InputAction.CallbackContext obj)
+        {
+            _fireSystem.SwitchWeapon(3);
+        }
+
+        public void InputChooseRifle(InputAction.CallbackContext obj)
+        {
+            _fireSystem.SwitchWeapon(4);
+        }
     }
 }

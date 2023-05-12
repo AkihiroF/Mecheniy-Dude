@@ -64,15 +64,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SwithWeapon"",
-                    ""type"": ""Button"",
-                    ""id"": ""31e7c515-e2f9-4f2c-a1ee-356f5f231bec"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Healing"",
                     ""type"": ""Button"",
                     ""id"": ""ff0f2d2a-c4a8-40e0-af52-1a0f0f66576f"",
@@ -91,9 +82,36 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Paused"",
+                    ""name"": ""ChooseKnife"",
                     ""type"": ""Button"",
-                    ""id"": ""1891c99c-b5c1-4770-9203-669dc80d659d"",
+                    ""id"": ""b86af93c-9625-404e-aff4-2176ea71539f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChoosePistol"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ffcbaff-bec5-4322-84cd-966d66c62584"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChooseShortGun"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd1666a2-d0ff-4878-a9fe-009d4b4168dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChooseRifle"",
+                    ""type"": ""Button"",
+                    ""id"": ""5ac176db-d06d-4066-93c7-0cb62362cb32"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -191,28 +209,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""32b117b3-8b58-4fbf-8c8c-a9215cbca6e1"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwithWeapon"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""28d1fabe-d654-4d01-8c30-6cbca4518b29"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwithWeapon"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ddcdbb95-c3c8-41f1-9408-61d758980731"",
                     ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
@@ -235,7 +231,68 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""38b258e3-1dc3-474f-8804-2d21753831f6"",
+                    ""id"": ""8b38f54f-202c-4721-98a5-090e3b0f0d5c"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseKnife"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""004733e4-2963-4e9f-94a1-68b4c0865ff0"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChoosePistol"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6cb12b5-8575-4552-b250-40f31e5a87a7"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseRifle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31279711-a3f3-4237-9336-5297391538bc"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseShortGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Interface"",
+            ""id"": ""8644aaf3-6d20-497d-ade7-7a94164b1e42"",
+            ""actions"": [
+                {
+                    ""name"": ""Paused"",
+                    ""type"": ""Button"",
+                    ""id"": ""61e31267-ad8d-411d-8274-5d87f6f16265"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""db94ca98-649b-4d77-8832-c1b90ea38dc7"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -267,10 +324,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
-        m_Player_SwithWeapon = m_Player.FindAction("SwithWeapon", throwIfNotFound: true);
         m_Player_Healing = m_Player.FindAction("Healing", throwIfNotFound: true);
         m_Player_Interactive = m_Player.FindAction("Interactive", throwIfNotFound: true);
-        m_Player_Paused = m_Player.FindAction("Paused", throwIfNotFound: true);
+        m_Player_ChooseKnife = m_Player.FindAction("ChooseKnife", throwIfNotFound: true);
+        m_Player_ChoosePistol = m_Player.FindAction("ChoosePistol", throwIfNotFound: true);
+        m_Player_ChooseShortGun = m_Player.FindAction("ChooseShortGun", throwIfNotFound: true);
+        m_Player_ChooseRifle = m_Player.FindAction("ChooseRifle", throwIfNotFound: true);
+        // Interface
+        m_Interface = asset.FindActionMap("Interface", throwIfNotFound: true);
+        m_Interface_Paused = m_Interface.FindAction("Paused", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -334,10 +396,12 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Reload;
-    private readonly InputAction m_Player_SwithWeapon;
     private readonly InputAction m_Player_Healing;
     private readonly InputAction m_Player_Interactive;
-    private readonly InputAction m_Player_Paused;
+    private readonly InputAction m_Player_ChooseKnife;
+    private readonly InputAction m_Player_ChoosePistol;
+    private readonly InputAction m_Player_ChooseShortGun;
+    private readonly InputAction m_Player_ChooseRifle;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -346,10 +410,12 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
-        public InputAction @SwithWeapon => m_Wrapper.m_Player_SwithWeapon;
         public InputAction @Healing => m_Wrapper.m_Player_Healing;
         public InputAction @Interactive => m_Wrapper.m_Player_Interactive;
-        public InputAction @Paused => m_Wrapper.m_Player_Paused;
+        public InputAction @ChooseKnife => m_Wrapper.m_Player_ChooseKnife;
+        public InputAction @ChoosePistol => m_Wrapper.m_Player_ChoosePistol;
+        public InputAction @ChooseShortGun => m_Wrapper.m_Player_ChooseShortGun;
+        public InputAction @ChooseRifle => m_Wrapper.m_Player_ChooseRifle;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -371,18 +437,24 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @SwithWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwithWeapon;
-                @SwithWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwithWeapon;
-                @SwithWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwithWeapon;
                 @Healing.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHealing;
                 @Healing.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHealing;
                 @Healing.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHealing;
                 @Interactive.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
                 @Interactive.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
                 @Interactive.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
-                @Paused.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPaused;
-                @Paused.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPaused;
-                @Paused.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPaused;
+                @ChooseKnife.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseKnife;
+                @ChooseKnife.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseKnife;
+                @ChooseKnife.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseKnife;
+                @ChoosePistol.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChoosePistol;
+                @ChoosePistol.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChoosePistol;
+                @ChoosePistol.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChoosePistol;
+                @ChooseShortGun.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseShortGun;
+                @ChooseShortGun.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseShortGun;
+                @ChooseShortGun.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseShortGun;
+                @ChooseRifle.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseRifle;
+                @ChooseRifle.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseRifle;
+                @ChooseRifle.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseRifle;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -399,22 +471,61 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
-                @SwithWeapon.started += instance.OnSwithWeapon;
-                @SwithWeapon.performed += instance.OnSwithWeapon;
-                @SwithWeapon.canceled += instance.OnSwithWeapon;
                 @Healing.started += instance.OnHealing;
                 @Healing.performed += instance.OnHealing;
                 @Healing.canceled += instance.OnHealing;
                 @Interactive.started += instance.OnInteractive;
                 @Interactive.performed += instance.OnInteractive;
                 @Interactive.canceled += instance.OnInteractive;
+                @ChooseKnife.started += instance.OnChooseKnife;
+                @ChooseKnife.performed += instance.OnChooseKnife;
+                @ChooseKnife.canceled += instance.OnChooseKnife;
+                @ChoosePistol.started += instance.OnChoosePistol;
+                @ChoosePistol.performed += instance.OnChoosePistol;
+                @ChoosePistol.canceled += instance.OnChoosePistol;
+                @ChooseShortGun.started += instance.OnChooseShortGun;
+                @ChooseShortGun.performed += instance.OnChooseShortGun;
+                @ChooseShortGun.canceled += instance.OnChooseShortGun;
+                @ChooseRifle.started += instance.OnChooseRifle;
+                @ChooseRifle.performed += instance.OnChooseRifle;
+                @ChooseRifle.canceled += instance.OnChooseRifle;
+            }
+        }
+    }
+    public PlayerActions @Player => new PlayerActions(this);
+
+    // Interface
+    private readonly InputActionMap m_Interface;
+    private IInterfaceActions m_InterfaceActionsCallbackInterface;
+    private readonly InputAction m_Interface_Paused;
+    public struct InterfaceActions
+    {
+        private @Input m_Wrapper;
+        public InterfaceActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Paused => m_Wrapper.m_Interface_Paused;
+        public InputActionMap Get() { return m_Wrapper.m_Interface; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InterfaceActions set) { return set.Get(); }
+        public void SetCallbacks(IInterfaceActions instance)
+        {
+            if (m_Wrapper.m_InterfaceActionsCallbackInterface != null)
+            {
+                @Paused.started -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnPaused;
+                @Paused.performed -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnPaused;
+                @Paused.canceled -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnPaused;
+            }
+            m_Wrapper.m_InterfaceActionsCallbackInterface = instance;
+            if (instance != null)
+            {
                 @Paused.started += instance.OnPaused;
                 @Paused.performed += instance.OnPaused;
                 @Paused.canceled += instance.OnPaused;
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public InterfaceActions @Interface => new InterfaceActions(this);
     private int m_PlayerShemeSchemeIndex = -1;
     public InputControlScheme PlayerShemeScheme
     {
@@ -430,9 +541,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
-        void OnSwithWeapon(InputAction.CallbackContext context);
         void OnHealing(InputAction.CallbackContext context);
         void OnInteractive(InputAction.CallbackContext context);
+        void OnChooseKnife(InputAction.CallbackContext context);
+        void OnChoosePistol(InputAction.CallbackContext context);
+        void OnChooseShortGun(InputAction.CallbackContext context);
+        void OnChooseRifle(InputAction.CallbackContext context);
+    }
+    public interface IInterfaceActions
+    {
         void OnPaused(InputAction.CallbackContext context);
     }
 }

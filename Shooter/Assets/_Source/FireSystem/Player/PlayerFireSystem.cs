@@ -1,6 +1,7 @@
 using System;
 using _Source.Core;
 using _Source.FireSystem.SOs;
+using _Source.FireSystem.Weapons;
 using _Source.Player;
 using UnityEngine;
 
@@ -12,7 +13,6 @@ namespace _Source.FireSystem.Player
         [SerializeField] private PlayerGunSo firstGun;
 
         public static event Action<string> OnPrintInfoAboutFire;
-        public static event Action<int> OnSwitchWeapon;
         public static event Action OnStartReloadWeapon;
         public static event Action OnFinishReloadWeapon;
 
@@ -30,11 +30,20 @@ namespace _Source.FireSystem.Player
             {
                 _currentGunSo = firstGun;
             }
+            CreateWeapon();
+        }
+
+        private void CreateWeapon()
+        {
             _gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
             _currentGun = _gunObj.GetComponent<ABaseGunController>();
             _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             _currentClip = _currentGunSo.ClipInfo;
             SetParamInGun();
+            if (InventoryPlayer.GetWeapon(_currentGun.GetType()) == null)
+            {
+                InventoryPlayer.AddWeapon(_currentGun.GetType(), _currentGunSo);
+            }
         }
 
         private void UnSubscribe()
@@ -91,6 +100,44 @@ namespace _Source.FireSystem.Player
             _currentGun.Fire();
         }
 
+        public void SwitchWeapon(int id)
+        {
+            PlayerGunSo weapon;
+            switch (id)
+            {
+                case 1:
+                    weapon = InventoryPlayer.GetWeapon(typeof(KnifeController));
+                    if (weapon is not null)
+                    {
+                        if(_currentGunSo == weapon)
+                            return;
+                        SwitchingOnNewWeapon(weapon);
+                    }
+                    break;
+                case 2:
+                    weapon = InventoryPlayer.GetWeapon(typeof(PistolController));
+                    if (weapon is not null)
+                    {
+                        if(_currentGunSo == weapon)
+                            return;
+                        SwitchingOnNewWeapon(weapon);
+                    }
+                    break;
+                default:
+                    Debug.Log("Idi nahui");
+                    break;
+            }
+        }
+
+        private void SwitchingOnNewWeapon(PlayerGunSo weapon)
+        {
+            _currentGun.OnFireFromWeapon -= UpdateCurrentCountAmmoInGun;
+            Destroy(_currentGun.gameObject);
+            _currentGunSo = weapon;
+            CreateWeapon();
+            _currentCountAmmo = _currentClip.CountBullet;
+            PrintAmmo();
+        }
 
         public void ReloadWeapon()
         {

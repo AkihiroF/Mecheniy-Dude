@@ -28,8 +28,12 @@ namespace _Source.Core
             input.Reload.performed += _inputHandler.InputReload;
             input.Healing.performed += _inputHandler.InputHealing;
             input.Interactive.performed += _inputHandler.InputInteractive;
+            input.ChooseKnife.performed += _inputHandler.InputChooseKnife;
+            input.ChoosePistol.performed += _inputHandler.InputChoosePistol;
+            input.ChooseShortGun.performed += _inputHandler.InputChooseShortGun;
+            input.ChooseRifle.performed += _inputHandler.InputChooseRifle;
 
-            input.Paused.performed += _inputHandler.InputPaused;
+            _input.Interface.Paused.performed += _inputHandler.InputPaused;
         }
 
         private void UnBind()
@@ -39,17 +43,17 @@ namespace _Source.Core
             input.Reload.performed -= _inputHandler.InputReload;
             input.Healing.performed -= _inputHandler.InputHealing;
             
-            input.Paused.performed -= _inputHandler.InputPaused;
+            _input.Interface.Paused.performed -= _inputHandler.InputPaused;
         }
-        private void EnableInput() 
+        private void EnablePlayerInput() 
             => _input.Player.Enable();
 
-        private void DisableInput()
+        private void DisablePlayerInput()
             => _input.Player.Disable();
 
         public void StartGame()
         {
-            EnableInput();
+            EnablePlayerInput();
             Bind();
             Time.timeScale = 1;
         }
@@ -62,7 +66,7 @@ namespace _Source.Core
 
         public void PausedGame()
         {
-            DisableInput();
+            DisablePlayerInput();
             UnBind();
             Time.timeScale = 0;
             if (OnPaused != null) OnPaused.Invoke();
