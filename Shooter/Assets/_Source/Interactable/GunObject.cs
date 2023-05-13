@@ -12,6 +12,7 @@ namespace _Source.Interactable
         {
             var type = gun.GunObjectObject.GetComponent<ABaseGunController>().GetType();
             InventoryPlayer.AddWeapon(type,gun);
+            InventoryPlayer.AddItem(gun.ClipInfo, gun.ClipInfo.CountBullet);
             Destroy(this.gameObject);
         }
     }

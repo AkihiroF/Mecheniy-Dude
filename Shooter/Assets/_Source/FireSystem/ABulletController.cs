@@ -1,5 +1,4 @@
 using _Source.FireSystem.Player;
-using _Source.HealthSystem;
 using UnityEngine;
 
 namespace _Source.FireSystem
@@ -10,17 +9,17 @@ namespace _Source.FireSystem
         protected float SpeedMoving;
         protected float Damage;
         protected Rigidbody2D Rb;
-        protected ABaseGunController Controller;
+        protected IPoolBullets PoolBullets;
 
-        public virtual void SetParameters(ABaseGunController controller, float speed, float damage)
+        public virtual void SetParameters(IPoolBullets controller, float speed, float damage)
         {
-            Controller = controller;
+            PoolBullets = controller;
             SpeedMoving = speed;
             Rb = GetComponent<Rigidbody2D>();
             Damage = damage;
         }
 
-        public abstract void FireBullet();
+        public abstract bool FireBullet(float angle = 0);
         protected abstract void OnTriggerEnter2D(Collider2D col);
     }
 }

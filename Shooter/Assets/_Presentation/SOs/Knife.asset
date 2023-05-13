@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunObject: {fileID: 3829370423548426595, guid: 3b97be82c5187465f97c84f219a53576, type: 3}
   ammo: {fileID: 11400000, guid: aa261904aad5b419e9115b963047f4f3, type: 2}
+  iconGun: {fileID: 21300000, guid: 5b8e2428387a0475f9bf0a4583bf1c36, type: 3}

@@ -1,6 +1,7 @@
-using System;
-using _Source.HealthSystem;
 using _Source.InputSystem;
+using _Source.Services;
+using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.HealthEvents;
 using DG.Tweening;
 using UnityEngine;
 
@@ -8,13 +9,11 @@ namespace _Source.Core
 {
     public class Game
     {
-        public static event Action OnRestart;
-        public static event Action OnPaused;
         public Game(Input input, InputHandler inputHandler)
         {
             _input = input;
             _inputHandler = inputHandler;
-            PlayerHealth.OnDead += PausedGame;
+            Signals.Get<OnDead>().AddListener(PausedGame);
             _inputHandler.SetGame(this);
         }
 
@@ -56,11 +55,12 @@ namespace _Source.Core
             EnablePlayerInput();
             Bind();
             Time.timeScale = 1;
+            _input.Interface.Enable();
         }
 
         public void RestartGame()
         {
-            if (OnRestart != null) OnRestart.Invoke();
+            Signals.Get<OnRestart>().Dispatch();
             DOTween.Clear();
         }
 
@@ -69,7 +69,7 @@ namespace _Source.Core
             DisablePlayerInput();
             UnBind();
             Time.timeScale = 0;
-            if (OnPaused != null) OnPaused.Invoke();
+            Signals.Get<OnPaused>().Dispatch();
         }
     }
 }

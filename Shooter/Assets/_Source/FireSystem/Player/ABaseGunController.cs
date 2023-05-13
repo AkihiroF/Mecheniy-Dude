@@ -3,27 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using _Source.FireSystem.SOs;
 using _Source.Player;
+using _Source.Services;
+using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
 
 namespace _Source.FireSystem.Player
 {
-    public abstract class ABaseGunController : MonoBehaviour
+    public abstract class ABaseGunController : MonoBehaviour, IPoolBullets
     {
         [SerializeField] private Transform pointExitBullet;
         [SerializeField] private float timeReload;
         [SerializeField] private float speedAttack;
 
-        public event Action<int> OnFireFromWeapon; 
-        
-        protected ClipSo AmmoInfo;
-        protected int CountAmmoInClip;
+        public event Action<int> OnFireFromWeapon;
+
+        private ClipSo ammoInfo;
+        private int countAmmoInClip;
         protected int CurrentCountAmmoInGun;
         protected float SpeedBullet;
         protected float Damage;
         protected GameObject BulletObject;
         protected List<ABulletController> BulletPool;
 
-        protected bool IsMainReloading;
+        private bool isMainReloading;
         private bool _isReloading;
 
 
@@ -34,10 +36,10 @@ namespace _Source.FireSystem.Player
 
         public void SetParameters(ClipSo info,int countAmmo = 0)
         {
-            CountAmmoInClip = info.CountBullet;
+            countAmmoInClip = info.CountBullet;
             if (countAmmo == 0)
             {
-                CurrentCountAmmoInGun = CountAmmoInClip;
+                CurrentCountAmmoInGun = InventoryPlayer.UseItem(info, countAmmoInClip);
             }
             else
             {
@@ -46,10 +48,10 @@ namespace _Source.FireSystem.Player
             BulletObject = info.BulletObjectPrefab;
             SpeedBullet = info.SpeedBullet;
             Damage = info.Damage;
-            AmmoInfo = info;
+            ammoInfo = info;
             BulletPool = new List<ABulletController>();
 
-            IsMainReloading = false;
+            isMainReloading = false;
             
             InvokeFireFromWeapon();
         }
@@ -63,7 +65,7 @@ namespace _Source.FireSystem.Player
         }
         public void Fire()
         {
-            if(IsMainReloading)
+            if(isMainReloading)
                 return;
             if(_isReloading)
                 return;
@@ -90,13 +92,13 @@ namespace _Source.FireSystem.Player
 
         public void StartReloadWeapon()
         {
-            if(CurrentCountAmmoInGun == CountAmmoInClip)
+            if(CurrentCountAmmoInGun == countAmmoInClip)
                 return;
-            IsMainReloading = true;
-            var currentCountAmmoInInventory = InventoryPlayer.UseItem(AmmoInfo, CountAmmoInClip - CurrentCountAmmoInGun);
+            isMainReloading = true;
+            var currentCountAmmoInInventory = InventoryPlayer.UseItem(ammoInfo, countAmmoInClip - CurrentCountAmmoInGun);
             if (currentCountAmmoInInventory > 0)
             {
-                PlayerFireSystem.StartAutomaticReloading();
+                Signals.Get<OnStartReloadWeapon>().Dispatch();
                 StartCoroutine(ReloadWeapon(currentCountAmmoInInventory));
             }
             else
@@ -107,8 +109,8 @@ namespace _Source.FireSystem.Player
         {
             yield return new WaitForSeconds(timeReload);
             CurrentCountAmmoInGun += countAmmo;
-            PlayerFireSystem.FinishReloading();
-            IsMainReloading = false;
+            Signals.Get<OnFinishReloadWeapon>().Dispatch();
+            isMainReloading = false;
             InvokeFireFromWeapon();
         }
 
@@ -117,6 +119,14 @@ namespace _Source.FireSystem.Player
             _isReloading = true;
             yield return new WaitForSeconds(speedAttack);
             _isReloading = false;
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var bullet in BulletPool)
+            {
+                Destroy(bullet.gameObject);
+            }
         }
     }
 }

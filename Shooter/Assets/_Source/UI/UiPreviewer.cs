@@ -2,6 +2,9 @@ using _Source.Core;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using _Source.Services;
+using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.HealthEvents;
+using _Source.SignalsEvents.WeaponsEvents;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +16,7 @@ namespace _Source.UI
         [SerializeField] private SceneLoader sceneLoader;
         [Space]
         [SerializeField] private TextMeshProUGUI textWeapon;
+        [SerializeField] private Image iconWeapon;
         [SerializeField] private GameObject panelReloading;
         [Space]
         [SerializeField] private GameObject medicalPanel;
@@ -84,24 +88,30 @@ namespace _Source.UI
 
         private void Subscribe()
         {
-            PlayerFireSystem.OnPrintInfoAboutFire += PrintInfoAmmo;
-            PlayerFireSystem.OnStartReloadWeapon += PrintReloading;
-            PlayerFireSystem.OnFinishReloadWeapon += HideReloading;
-            PlayerHealth.OnHealing += CheckKit;
-            PlayerHealth.OnDead += PrintDead;
-            Game.OnRestart += UnSubscribe;
-            Game.OnPaused += EnablePaused;
+            Signals.Get<OnPrintInfoAboutFire>().AddListener(PrintInfoAmmo);
+            Signals.Get<OnStartReloadWeapon>().AddListener(PrintReloading);
+            Signals.Get<OnFinishReloadWeapon>().AddListener(HideReloading);
+            Signals.Get<OnUpdateIconWeapon>().AddListener(UpdateIconWeapon);
+            
+            Signals.Get<OnHealing>().AddListener(CheckKit);
+            Signals.Get<OnDead>().AddListener(PrintDead);
+            
+            Signals.Get<OnPaused>().AddListener(EnablePaused);
+            Signals.Get<OnRestart>().AddListener(UnSubscribe);
         }
 
         private void UnSubscribe()
         {
-            PlayerFireSystem.OnPrintInfoAboutFire -= PrintInfoAmmo;
-            PlayerFireSystem.OnStartReloadWeapon -= PrintReloading;
-            PlayerFireSystem.OnFinishReloadWeapon -= HideReloading;
-            PlayerHealth.OnHealing -= CheckKit;
-            PlayerHealth.OnDead -= PrintDead;
-            Game.OnRestart -= UnSubscribe;
-            Game.OnPaused -= EnablePaused;
+            Signals.Get<OnPrintInfoAboutFire>().RemoveListener(PrintInfoAmmo);
+            Signals.Get<OnStartReloadWeapon>().RemoveListener(PrintReloading);
+            Signals.Get<OnFinishReloadWeapon>().RemoveListener(HideReloading);
+            Signals.Get<OnUpdateIconWeapon>().RemoveListener(UpdateIconWeapon);
+            
+            Signals.Get<OnHealing>().RemoveListener(CheckKit);
+            Signals.Get<OnDead>().RemoveListener(PrintDead);
+            
+            Signals.Get<OnPaused>().RemoveListener(EnablePaused);
+            Signals.Get<OnRestart>().RemoveListener(UnSubscribe);
         }
 
         #region Weapon
@@ -117,6 +127,10 @@ namespace _Source.UI
                 private void HideReloading()
                 {
                     panelReloading.SetActive(false);
+                }
+                private void UpdateIconWeapon(Sprite obj)
+                {
+                    iconWeapon.sprite = obj;
                 }
 
         #endregion

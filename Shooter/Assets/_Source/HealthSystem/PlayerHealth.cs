@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using _Source.Interactable.SOs;
 using _Source.Player;
+using _Source.Services;
+using _Source.SignalsEvents.HealthEvents;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,8 +11,6 @@ namespace _Source.HealthSystem
 {
     public class PlayerHealth : ABaseHealth
     {
-        public static event Action<int> OnHealing;
-        public static event Action OnDead;
         [SerializeField] private SpriteRenderer body;
         [Tooltip("Gradation from minimum to maximum HP")][SerializeField] private List<Color> gradationsColors;
         [SerializeField] private MedicalKitSo medicalKit;
@@ -40,7 +40,7 @@ namespace _Source.HealthSystem
         {
             if (CurrentHp - damage <= 0)
             {
-                if (OnDead != null) OnDead.Invoke();
+                Signals.Get<OnDead>().Dispatch();
             }
             else
             {
@@ -77,7 +77,7 @@ namespace _Source.HealthSystem
 
         public void UpdateStateUI()
         {
-            if (OnHealing != null) OnHealing.Invoke(InventoryPlayer.GetCountItem(medicalKit));
+            Signals.Get<OnHealing>().Dispatch(InventoryPlayer.GetCountItem(medicalKit));
         }
     }
 }

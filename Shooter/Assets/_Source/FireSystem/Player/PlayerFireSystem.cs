@@ -1,8 +1,10 @@
-using System;
 using _Source.Core;
 using _Source.FireSystem.SOs;
 using _Source.FireSystem.Weapons;
 using _Source.Player;
+using _Source.Services;
+using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
 
 namespace _Source.FireSystem.Player
@@ -12,10 +14,6 @@ namespace _Source.FireSystem.Player
         [SerializeField] private Transform pointPositionGun;
         [SerializeField] private PlayerGunSo firstGun;
 
-        public static event Action<string> OnPrintInfoAboutFire;
-        public static event Action OnStartReloadWeapon;
-        public static event Action OnFinishReloadWeapon;
-
         private PlayerGunSo _currentGunSo;
         private GameObject _gunObj;
         private ABaseGunController _currentGun;
@@ -24,8 +22,8 @@ namespace _Source.FireSystem.Player
 
         private void Start()
         {
-            Game.OnRestart += UnSubscribe;
-            OnFinishReloadWeapon += PrintAmmo;
+            Signals.Get<OnRestart>().AddListener(UnSubscribe);
+            Signals.Get<OnFinishReloadWeapon>().AddListener(PrintAmmo);
             if (_currentGunSo == null)
             {
                 _currentGunSo = firstGun;
@@ -39,18 +37,20 @@ namespace _Source.FireSystem.Player
             _currentGun = _gunObj.GetComponent<ABaseGunController>();
             _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             _currentClip = _currentGunSo.ClipInfo;
-            SetParamInGun();
             if (InventoryPlayer.GetWeapon(_currentGun.GetType()) == null)
             {
                 InventoryPlayer.AddWeapon(_currentGun.GetType(), _currentGunSo);
+                InventoryPlayer.AddItem(_currentClip, _currentClip.CountBullet);
             }
+            Signals.Get<OnUpdateIconWeapon>().Dispatch(_currentGunSo.IconGun);
+            SetParamInGun();
         }
 
         private void UnSubscribe()
         {
             _currentGun.OnFireFromWeapon -= UpdateCurrentCountAmmoInGun;
-            OnFinishReloadWeapon -= PrintAmmo;
-            Game.OnRestart -= UnSubscribe;
+            Signals.Get<OnFinishReloadWeapon>().RemoveListener(PrintAmmo);
+            Signals.Get<OnRestart>().RemoveListener(UnSubscribe);
         }
 
         public void SetSavedParameters(PlayerGunSo savedGun, int currentAmmo)
@@ -89,10 +89,8 @@ namespace _Source.FireSystem.Player
 
         public void PrintAmmo()
         {
-            if (OnPrintInfoAboutFire != null)
-            {
-                OnPrintInfoAboutFire.Invoke($"{_currentCountAmmo} / {InventoryPlayer.GetCountItem(_currentClip) / _currentClip.CountBullet}");
-            }
+            Signals.Get<OnPrintInfoAboutFire>().Dispatch(
+                ($"{_currentCountAmmo} / {InventoryPlayer.GetCountItem(_currentClip) / _currentClip.CountBullet}"));
         }
 
         public void Fire()
@@ -107,50 +105,41 @@ namespace _Source.FireSystem.Player
             {
                 case 1:
                     weapon = InventoryPlayer.GetWeapon(typeof(KnifeController));
-                    if (weapon is not null)
-                    {
-                        if(_currentGunSo == weapon)
-                            return;
-                        SwitchingOnNewWeapon(weapon);
-                    }
                     break;
                 case 2:
                     weapon = InventoryPlayer.GetWeapon(typeof(PistolController));
-                    if (weapon is not null)
-                    {
-                        if(_currentGunSo == weapon)
-                            return;
-                        SwitchingOnNewWeapon(weapon);
-                    }
+                    break;
+                case 3:
+                    weapon = InventoryPlayer.GetWeapon(typeof(ShortGunController));
                     break;
                 default:
+                    weapon = null;
                     Debug.Log("Idi nahui");
                     break;
+            }
+            if (weapon is not null)
+            {
+                if(_currentGunSo == weapon)
+                    return;
+                SwitchingOnNewWeapon(weapon);
             }
         }
 
         private void SwitchingOnNewWeapon(PlayerGunSo weapon)
         {
+            Signals.Get<OnFinishReloadWeapon>().Dispatch();
             _currentGun.OnFireFromWeapon -= UpdateCurrentCountAmmoInGun;
             Destroy(_currentGun.gameObject);
             _currentGunSo = weapon;
+            InventoryPlayer.AddItem(_currentClip,_currentCountAmmo);
+            _currentCountAmmo = 0;
             CreateWeapon();
-            _currentCountAmmo = _currentClip.CountBullet;
-            PrintAmmo();
         }
 
         public void ReloadWeapon()
         {
             _currentGun.StartReloadWeapon();
         }
-
-        public static void StartAutomaticReloading()
-        {
-            if (OnStartReloadWeapon != null) OnStartReloadWeapon.Invoke();
-        }
-        public static void FinishReloading()
-        {
-            if (OnFinishReloadWeapon != null) OnFinishReloadWeapon.Invoke();
-        }
+        
     }
 }

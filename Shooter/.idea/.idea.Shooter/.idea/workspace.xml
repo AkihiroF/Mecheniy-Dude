@@ -5,20 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/KnifeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/KnifeController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/ShortGunBullet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/ShortGunBullet.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/IPoolBullets.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/IPoolBullets.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/ShortGunController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/ShortGunController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/Signals.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Services/Signals.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/CoreEvents.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/CoreEvents/OnPaused.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/CoreEvents/OnPaused.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/CoreEvents/OnRestart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/CoreEvents/OnRestart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/HealthEvents.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/HealthEvents/OnDead.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/HealthEvents/OnDead.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/HealthEvents/OnHealing.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/HealthEvents/OnHealing.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnFinishReloadWeapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnFinishReloadWeapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnPrintInfoAboutFire.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnPrintInfoAboutFire.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnStartReloadWeapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnStartReloadWeapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnUpdateIconWeapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/WeaponsEvents/OnUpdateIconWeapon.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/SOs/Gun.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/SOs/Gun.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/SOs/Knife.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/SOs/Knife.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/PistolBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/PistolBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/ABaseGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/ABaseGunController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Holy_Shit/RandomSpawnObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Holy_Shit/RandomSpawnObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/InventoryPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/SOs/PlayerGunSo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/SOs/PlayerGunSo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +170,7 @@
       <workItem from="1682014520429" duration="3424000" />
       <workItem from="1683470653239" duration="6451000" />
       <workItem from="1683886579966" duration="5447000" />
+      <workItem from="1683987488365" duration="15084000" />
     </task>
     <servers />
   </component>
