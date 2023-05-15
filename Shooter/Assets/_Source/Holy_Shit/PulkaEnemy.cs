@@ -6,19 +6,24 @@ public class PulkaEnemy : MonoBehaviour
 {
 
     public float speed;
+    [SerializeField] Rigidbody2D rb;
 
-    private Transform player;
-    private Vector2 target;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        target = new Vector2 (player.position.x, player.position.y);
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        rb.AddForce(transform.up * speed * Time.deltaTime, ForceMode2D.Impulse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 1098015684743821320}
   - component: {fileID: 6717186334944046570}
   - component: {fileID: -1690906755409367867}
-  m_Layer: 0
+  - component: {fileID: -8986360762765033618}
+  - component: {fileID: 1235850694722287113}
+  - component: {fileID: 7873821109491034392}
+  m_Layer: 7
   m_Name: Pulka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,4 +100,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1653ffee130990340816bb4cf9258721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 10
+  rb: {fileID: 7873821109491034392}
+--- !u!114 &-8986360762765033618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967898342575645768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0131104bcd4949fb9efb4328e383f660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedAttack: 0
+  damage: 10
+  layerAttack:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!58 &1235850694722287113
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967898342575645768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &7873821109491034392
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967898342575645768}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -13,9 +13,7 @@ namespace _Source.Holy_Shit
         {
             _player = GameObject.FindGameObjectWithTag("Player");
 
-            _agent = GetComponent<NavMeshAgent>();
-            _agent.updateRotation = false;
-            _agent.updateUpAxis = false;
+
         }
 
         private void Update()
@@ -25,6 +23,13 @@ namespace _Source.Holy_Shit
                 _agent.SetDestination(_player.transform.position);
             }
            
+        }
+
+        private void Awake()
+        {
+            _agent = GetComponent<NavMeshAgent>();
+            _agent.updateRotation = false;
+            _agent.updateUpAxis = false;
         }
 
 

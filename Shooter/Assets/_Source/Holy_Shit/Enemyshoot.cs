@@ -1,52 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemyshoot : MonoBehaviour
 {
-    public float speed;
-    public float stoopingDist;
-    public float retreatDist;
 
     private float timeBTwShots;
     public float startTimeBtwShots;
 
     public GameObject projecttile;
-    private Transform player;
+
+    private GameObject _player;
+    private NavMeshAgent _agent;
+
+    [SerializeField] private Transform Player;
+
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = GameObject.FindGameObjectWithTag("Player");
+
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
 
         timeBTwShots = startTimeBtwShots;
     }
 
-    void Update()
+    private void Update()
     {
-        if(Vector2.Distance(transform.position, player.position) > stoopingDist)
+        var direction = Player.position - transform.position;
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+
+        if (Vector2.Distance(transform.position, _player.transform.position) <= 10)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
-        else if (Vector2.Distance(transform.position, player.position) > stoopingDist && Vector2.Distance(transform.position, player.position) > retreatDist)
-        {
-            transform.position = this.transform.position;
-        }
-        else if (Vector2.Distance(transform.position, player.position) > retreatDist)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-        }
 
 
-        if(timeBTwShots <= 0)
-        {
-            Instantiate(projecttile, transform.position, Quaternion.identity);
-            timeBTwShots = startTimeBtwShots;
-        }
-        else
-        {
-            timeBTwShots -= Time.deltaTime;
-        }
+            _agent.SetDestination(_player.transform.position);
 
-
+                if (timeBTwShots <= 0)
+                {
+                    Instantiate(projecttile, transform.position, transform.rotation);
+                    timeBTwShots = startTimeBtwShots;
+                }
+                else
+                {
+                    timeBTwShots -= Time.deltaTime;
+                }
+        }
     }
+ 
 }
