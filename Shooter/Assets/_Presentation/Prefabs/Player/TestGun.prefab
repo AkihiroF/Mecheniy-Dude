@@ -164,3 +164,4 @@ MonoBehaviour:
   pointExitBullet: {fileID: 3384774012651557149}
   timeReload: 2
   speedAttack: 0.4
+  isAutomatic: 1

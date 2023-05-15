@@ -311,5 +311,10 @@ namespace _Source.Services
         {
 	        return first.Concat(second).ToList();
         }
+        public static Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
+        {
+	        angleInDegrees += eulerY;
+	        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace _Source.FireSystem.Bullets
             poolBlasts = new List<ABulletController>();
             for (int i = 0; i < countBlasts; i++)
             {
-                var blast = Instantiate(blastObject).GetComponent<ABulletController>();
+                var blast = Instantiate(blastObject,transform.parent).GetComponent<ABulletController>();
                 blast.gameObject.SetActive(false);
                 blast.SetParameters(this, speed,damage);
                 poolBlasts.Add(blast);
@@ -46,7 +46,10 @@ namespace _Source.FireSystem.Bullets
             for (int i = 0; i < countBlasts; i++)
             {
                 var blast = poolBlasts[i];
-                blast.transform.position = transform.position;
+                var transform1 = blast.transform;
+                var transform2 = transform;
+                transform1.position = transform2.position;
+                transform1.rotation = transform2.rotation;
                 blast.FireBullet(currentAngle);
                 currentAngle += angleFire;
             }

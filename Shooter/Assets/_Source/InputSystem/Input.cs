@@ -55,6 +55,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""FireAutomatic"",
+                    ""type"": ""Button"",
+                    ""id"": ""038fc5c1-eebe-4fc7-b87a-3c1d44b89593"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Reload"",
                     ""type"": ""Button"",
                     ""id"": ""caa7960e-8190-4513-9847-bd7b64bb066c"",
@@ -272,6 +281,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""ChooseShortGun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88ea7f26-6f82-415e-8946-ce58e96b5896"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerSheme"",
+                    ""action"": ""FireAutomatic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -323,6 +343,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_Moving = m_Player.FindAction("Moving", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_FireAutomatic = m_Player.FindAction("FireAutomatic", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_Healing = m_Player.FindAction("Healing", throwIfNotFound: true);
         m_Player_Interactive = m_Player.FindAction("Interactive", throwIfNotFound: true);
@@ -395,6 +416,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Moving;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_FireAutomatic;
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_Healing;
     private readonly InputAction m_Player_Interactive;
@@ -409,6 +431,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @Moving => m_Wrapper.m_Player_Moving;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @FireAutomatic => m_Wrapper.m_Player_FireAutomatic;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputAction @Healing => m_Wrapper.m_Player_Healing;
         public InputAction @Interactive => m_Wrapper.m_Player_Interactive;
@@ -434,6 +457,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @FireAutomatic.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireAutomatic;
+                @FireAutomatic.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireAutomatic;
+                @FireAutomatic.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireAutomatic;
                 @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
@@ -468,6 +494,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @FireAutomatic.started += instance.OnFireAutomatic;
+                @FireAutomatic.performed += instance.OnFireAutomatic;
+                @FireAutomatic.canceled += instance.OnFireAutomatic;
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
@@ -540,6 +569,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnMoving(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnFireAutomatic(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnHealing(InputAction.CallbackContext context);
         void OnInteractive(InputAction.CallbackContext context);

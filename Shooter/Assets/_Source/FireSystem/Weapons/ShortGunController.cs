@@ -23,7 +23,7 @@ namespace _Source.FireSystem.Weapons
                         CreateNewBullet();
                     }
                 }
-
+                SetPositionBullet(bullet.transform);
                 bullet.FireBullet();
                 currentIndex = 0;
                 BulletPool.Remove(bullet);

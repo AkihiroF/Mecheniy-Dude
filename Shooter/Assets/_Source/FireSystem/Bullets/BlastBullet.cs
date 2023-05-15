@@ -1,14 +1,16 @@
 using _Source.HealthSystem;
+using _Source.Services;
 using UnityEngine;
 
 namespace _Source.FireSystem.Bullets
 {
-    public class PistolBullet : ABulletController
+    public class BlastBullet : ABulletController
     {
         public override bool FireBullet(float angle = 0)
         {
             this.gameObject.SetActive(true);
-            Rb.AddForce(transform.up* SpeedMoving);
+            var direction = UtilsClass.DirectionFromAngle(-transform.eulerAngles.z, angle);
+            Rb.AddForce(direction* SpeedMoving);
             return true;
         }
 

@@ -1,4 +1,3 @@
-using _Source.Services;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -9,11 +8,13 @@ namespace _Source.Player
         [SerializeField] private LayerMask layersView;
         [SerializeField] private float angleView;
         [SerializeField] private float radiusView;
+        [SerializeField] private float radiusAroundView;
         [SerializeField] private int countIteration;
         private Vector3 _origin;
         private Mesh _mesh;
 
         private FieldOfView _calculator;
+
 
         private void Start()
         {
@@ -23,7 +24,6 @@ namespace _Source.Player
             Renderer myRenderer = GetComponent<Renderer>();
             myRenderer.sortingLayerName = "FieldOfView";
             myRenderer.sortingOrder = 10;
-
             _calculator = new FieldOfView(layersView, angleView, radiusView, countIteration, transform);
         }
 
@@ -46,6 +46,8 @@ namespace _Source.Player
             Gizmos.color = Color.white;
             var position = transform.position;
             UnityEditor.Handles.DrawWireDisc(position, Vector3.forward, radiusView);
+            Gizmos.color = Color.red;
+            UnityEditor.Handles.DrawWireDisc(position,Vector3.forward, radiusAroundView);
             var eulerAngles = transform.eulerAngles;
             Vector3 angle01 = DirectionFromAngle( -eulerAngles.z,-angleView / 2);
             Vector3 angle02 = DirectionFromAngle(-eulerAngles.z,angleView / 2);

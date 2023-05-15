@@ -43,6 +43,7 @@ namespace _Source.FireSystem.Player
                 InventoryPlayer.AddItem(_currentClip, _currentClip.CountBullet);
             }
             Signals.Get<OnUpdateIconWeapon>().Dispatch(_currentGunSo.IconGun);
+            Signals.Get<OnSwitchFireMode>().Dispatch(_currentGun.isAutomatic);
             SetParamInGun();
         }
 

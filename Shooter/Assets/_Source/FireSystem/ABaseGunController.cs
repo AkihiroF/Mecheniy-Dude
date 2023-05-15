@@ -15,6 +15,8 @@ namespace _Source.FireSystem.Player
         [SerializeField] private float timeReload;
         [SerializeField] private float speedAttack;
 
+        public bool isAutomatic;
+
         public event Action<int> OnFireFromWeapon;
 
         private ClipSo ammoInfo;
@@ -27,6 +29,8 @@ namespace _Source.FireSystem.Player
 
         private bool isMainReloading;
         private bool _isReloading;
+
+        private bool isFire;
 
 
         public void ReturnBulletInPool(ABulletController aBullet)
@@ -65,6 +69,10 @@ namespace _Source.FireSystem.Player
         }
         public void Fire()
         {
+            if (isAutomatic)
+            {
+                isFire = !isFire;
+            }
             if(isMainReloading)
                 return;
             if(_isReloading)
@@ -119,13 +127,18 @@ namespace _Source.FireSystem.Player
             _isReloading = true;
             yield return new WaitForSeconds(speedAttack);
             _isReloading = false;
+            if (isAutomatic & isFire)
+            {
+                DoFire();
+            }
         }
 
         private void OnDestroy()
         {
             foreach (var bullet in BulletPool)
             {
-                Destroy(bullet.gameObject);
+                if(bullet != null)
+                    Destroy(bullet.gameObject);
             }
         }
     }
