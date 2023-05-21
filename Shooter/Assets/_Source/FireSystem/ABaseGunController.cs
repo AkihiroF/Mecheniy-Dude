@@ -7,7 +7,7 @@ using _Source.Services;
 using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
 
-namespace _Source.FireSystem.Player
+namespace _Source.FireSystem
 {
     public abstract class ABaseGunController : MonoBehaviour, IPoolBullets
     {
@@ -18,19 +18,20 @@ namespace _Source.FireSystem.Player
         public bool isAutomatic;
 
         public event Action<int> OnFireFromWeapon;
+        public event Action OnDeleteBullets;
 
-        private ClipSo ammoInfo;
-        private int countAmmoInClip;
+        private ClipSo _ammoInfo;
+        private int _countAmmoInClip;
         protected int CurrentCountAmmoInGun;
         protected float SpeedBullet;
         protected float Damage;
         protected GameObject BulletObject;
         protected List<ABulletController> BulletPool;
 
-        private bool isMainReloading;
+        private bool _isMainReloading;
         private bool _isReloading;
 
-        private bool isFire;
+        private bool _isFire;
 
 
         public void ReturnBulletInPool(ABulletController aBullet)
@@ -40,10 +41,10 @@ namespace _Source.FireSystem.Player
 
         public void SetParameters(ClipSo info,int countAmmo = 0)
         {
-            countAmmoInClip = info.CountBullet;
+            _countAmmoInClip = info.CountBullet;
             if (countAmmo == 0)
             {
-                CurrentCountAmmoInGun = InventoryPlayer.UseItem(info, countAmmoInClip);
+                CurrentCountAmmoInGun = InventoryPlayer.UseItem(info, _countAmmoInClip);
             }
             else
             {
@@ -52,10 +53,10 @@ namespace _Source.FireSystem.Player
             BulletObject = info.BulletObjectPrefab;
             SpeedBullet = info.SpeedBullet;
             Damage = info.Damage;
-            ammoInfo = info;
+            _ammoInfo = info;
             BulletPool = new List<ABulletController>();
 
-            isMainReloading = false;
+            _isMainReloading = false;
             
             InvokeFireFromWeapon();
         }
@@ -71,9 +72,9 @@ namespace _Source.FireSystem.Player
         {
             if (isAutomatic)
             {
-                isFire = !isFire;
+                _isFire = !_isFire;
             }
-            if(isMainReloading)
+            if(_isMainReloading)
                 return;
             if(_isReloading)
                 return;
@@ -100,10 +101,10 @@ namespace _Source.FireSystem.Player
 
         public void StartReloadWeapon()
         {
-            if(CurrentCountAmmoInGun == countAmmoInClip)
+            if(CurrentCountAmmoInGun == _countAmmoInClip)
                 return;
-            isMainReloading = true;
-            var currentCountAmmoInInventory = InventoryPlayer.UseItem(ammoInfo, countAmmoInClip - CurrentCountAmmoInGun);
+            _isMainReloading = true;
+            var currentCountAmmoInInventory = InventoryPlayer.UseItem(_ammoInfo, _countAmmoInClip - CurrentCountAmmoInGun);
             if (currentCountAmmoInInventory > 0)
             {
                 Signals.Get<OnStartReloadWeapon>().Dispatch();
@@ -118,7 +119,7 @@ namespace _Source.FireSystem.Player
             yield return new WaitForSeconds(timeReload);
             CurrentCountAmmoInGun += countAmmo;
             Signals.Get<OnFinishReloadWeapon>().Dispatch();
-            isMainReloading = false;
+            _isMainReloading = false;
             InvokeFireFromWeapon();
         }
 
@@ -127,7 +128,7 @@ namespace _Source.FireSystem.Player
             _isReloading = true;
             yield return new WaitForSeconds(speedAttack);
             _isReloading = false;
-            if (isAutomatic & isFire)
+            if (isAutomatic & _isFire)
             {
                 DoFire();
             }
@@ -135,11 +136,7 @@ namespace _Source.FireSystem.Player
 
         private void OnDestroy()
         {
-            foreach (var bullet in BulletPool)
-            {
-                if(bullet != null)
-                    Destroy(bullet.gameObject);
-            }
+            if (OnDeleteBullets != null) OnDeleteBullets.Invoke();
         }
     }
 }

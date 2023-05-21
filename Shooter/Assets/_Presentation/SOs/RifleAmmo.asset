@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5853f03e9a784b249b5765fcd986d4d3, type: 3}
-  m_Name: KnifeAmmo
+  m_Name: RifleAmmo
   m_EditorClassIdentifier: 
-  bulletObject: {fileID: 6944743562695147550, guid: 4f4789bd444f546e5b87b2e6461e7dcd, type: 3}
-  countBulletInClip: 1
-  speedBullet: 10
-  damage: 100
+  bulletObject: {fileID: 5857692446343652089, guid: 18aded759b5664c2e91c744eb10eee84, type: 3}
+  countBulletInClip: 30
+  speedBullet: 1000
+  damage: 20

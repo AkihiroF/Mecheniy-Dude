@@ -38,6 +38,8 @@ namespace _Source.Core
             input.ChooseShortGun.performed += _inputHandler.InputChooseShortGun;
             input.ChooseRifle.performed += _inputHandler.InputChooseRifle;
 
+            input.SwitchingWeapon.performed += _inputHandler.TestDelta;
+
             _input.Interface.Paused.performed += _inputHandler.InputPaused;
             
         }

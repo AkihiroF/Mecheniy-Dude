@@ -1354,6 +1354,10 @@ PrefabInstance:
       propertyPath: angleView
       value: 84.89
       objectReference: {fileID: 0}
+    - target: {fileID: 7947829325322627821, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
+      propertyPath: firstGun
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bda3443ee38045b2a97c24fb40a3876, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
 --- !u!114 &1007520151 stripped
@@ -1365,6 +1369,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af8c0f21e2f640b38c2f2143a0997500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1214601554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1523471101560947469, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
+  m_PrefabInstance: {fileID: 2050198475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1250764879
@@ -2686,6 +2701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1523471101127388885, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
+      propertyPath: iconWeapon
+      value: 
+      objectReference: {fileID: 1214601554}
     - target: {fileID: 1523471102705028306, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
       propertyPath: m_Name
       value: UI

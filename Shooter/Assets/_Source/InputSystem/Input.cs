@@ -125,6 +125,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchingWeapon"",
+                    ""type"": ""Value"",
+                    ""id"": ""3ff9d61d-df5e-44a5-a07b-079628193d41"",
+                    ""expectedControlType"": ""Double"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -292,6 +301,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""FireAutomatic"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f734569-558e-4476-a13b-39c64d06d874"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerSheme"",
+                    ""action"": ""SwitchingWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -351,6 +371,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_ChoosePistol = m_Player.FindAction("ChoosePistol", throwIfNotFound: true);
         m_Player_ChooseShortGun = m_Player.FindAction("ChooseShortGun", throwIfNotFound: true);
         m_Player_ChooseRifle = m_Player.FindAction("ChooseRifle", throwIfNotFound: true);
+        m_Player_SwitchingWeapon = m_Player.FindAction("SwitchingWeapon", throwIfNotFound: true);
         // Interface
         m_Interface = asset.FindActionMap("Interface", throwIfNotFound: true);
         m_Interface_Paused = m_Interface.FindAction("Paused", throwIfNotFound: true);
@@ -424,6 +445,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ChoosePistol;
     private readonly InputAction m_Player_ChooseShortGun;
     private readonly InputAction m_Player_ChooseRifle;
+    private readonly InputAction m_Player_SwitchingWeapon;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -439,6 +461,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @ChoosePistol => m_Wrapper.m_Player_ChoosePistol;
         public InputAction @ChooseShortGun => m_Wrapper.m_Player_ChooseShortGun;
         public InputAction @ChooseRifle => m_Wrapper.m_Player_ChooseRifle;
+        public InputAction @SwitchingWeapon => m_Wrapper.m_Player_SwitchingWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -481,6 +504,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @ChooseRifle.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseRifle;
                 @ChooseRifle.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseRifle;
                 @ChooseRifle.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseRifle;
+                @SwitchingWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchingWeapon;
+                @SwitchingWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchingWeapon;
+                @SwitchingWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchingWeapon;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -518,6 +544,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @ChooseRifle.started += instance.OnChooseRifle;
                 @ChooseRifle.performed += instance.OnChooseRifle;
                 @ChooseRifle.canceled += instance.OnChooseRifle;
+                @SwitchingWeapon.started += instance.OnSwitchingWeapon;
+                @SwitchingWeapon.performed += instance.OnSwitchingWeapon;
+                @SwitchingWeapon.canceled += instance.OnSwitchingWeapon;
             }
         }
     }
@@ -577,6 +606,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnChoosePistol(InputAction.CallbackContext context);
         void OnChooseShortGun(InputAction.CallbackContext context);
         void OnChooseRifle(InputAction.CallbackContext context);
+        void OnSwitchingWeapon(InputAction.CallbackContext context);
     }
     public interface IInterfaceActions
     {

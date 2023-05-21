@@ -5,11 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/KnifeBullet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/KnifeBullet.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/RifleController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/RifleController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/WeaponsTypes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/WeaponsTypes.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Knife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/SOs/KnifeAmmo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/SOs/KnifeAmmo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/UtilsClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/UtilsClass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/ShortGunBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Bullets/ShortGunBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/IPoolBullets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/IPoolBullets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/KnifeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/KnifeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/GunObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Saving System/PlayerSaverComponent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +153,9 @@
       <workItem from="1683886579966" duration="5447000" />
       <workItem from="1683987488365" duration="15084000" />
       <workItem from="1684154696750" duration="1810000" />
+      <workItem from="1684156517166" duration="7745000" />
+      <workItem from="1684496003078" duration="261000" />
+      <workItem from="1684665229265" duration="10528000" />
     </task>
     <servers />
   </component>

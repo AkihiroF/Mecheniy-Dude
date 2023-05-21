@@ -1,6 +1,6 @@
-using _Source.Core;
 using _Source.FireSystem.SOs;
 using _Source.FireSystem.Weapons;
+using _Source.InputSystem;
 using _Source.Player;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
@@ -99,19 +99,22 @@ namespace _Source.FireSystem.Player
             _currentGun.Fire();
         }
 
-        public void SwitchWeapon(int id)
+        public void SwitchWeapon( WeaponsTypes id)
         {
             PlayerGunSo weapon;
             switch (id)
             {
-                case 1:
+                case WeaponsTypes.Knife:
                     weapon = InventoryPlayer.GetWeapon(typeof(KnifeController));
                     break;
-                case 2:
+                case WeaponsTypes.Pistol:
                     weapon = InventoryPlayer.GetWeapon(typeof(PistolController));
                     break;
-                case 3:
+                case WeaponsTypes.ShortGun:
                     weapon = InventoryPlayer.GetWeapon(typeof(ShortGunController));
+                    break;
+                case WeaponsTypes.Rifle:
+                    weapon = InventoryPlayer.GetWeapon(typeof(RifleController));
                     break;
                 default:
                     weapon = null;

@@ -2,6 +2,7 @@ using _Source.Core;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using _Source.Interactable;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace _Source.InputSystem
@@ -46,22 +47,27 @@ namespace _Source.InputSystem
 
         public void InputChooseKnife(InputAction.CallbackContext obj)
         {
-            _fireSystem.SwitchWeapon(1);
+            _fireSystem.SwitchWeapon(WeaponsTypes.Knife);
         }
 
         public void InputChoosePistol(InputAction.CallbackContext obj)
         {
-            _fireSystem.SwitchWeapon(2);
+            _fireSystem.SwitchWeapon(WeaponsTypes.Pistol);
         }
 
         public void InputChooseShortGun(InputAction.CallbackContext obj)
         {
-            _fireSystem.SwitchWeapon(3);
+            _fireSystem.SwitchWeapon(WeaponsTypes.ShortGun);
         }
 
         public void InputChooseRifle(InputAction.CallbackContext obj)
         {
-            _fireSystem.SwitchWeapon(4);
+            _fireSystem.SwitchWeapon(WeaponsTypes.Rifle);
+        }
+
+        public void TestDelta(InputAction.CallbackContext obj)
+        {
+            Debug.Log(obj);
         }
     }
 }
