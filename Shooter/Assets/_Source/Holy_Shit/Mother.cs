@@ -9,6 +9,7 @@ public class Mother : MonoBehaviour
     private NavMeshAgent _agent;
 
     [SerializeField] GameObject _enemyPrefab;
+    [SerializeField] private int amountEnemy;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class Mother : MonoBehaviour
 
     private void OnDestroy()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < amountEnemy; i++)
         {
             Instantiate(_enemyPrefab, transform.position, new Quaternion(0,0,0,0));
         }
