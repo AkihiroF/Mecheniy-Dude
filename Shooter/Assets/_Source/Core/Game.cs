@@ -14,13 +14,29 @@ namespace _Source.Core
         {
             _input = input;
             _inputHandler = inputHandler;
-            Signals.Get<OnDead>().AddListener(PausedGame);
-            Signals.Get<OnSwitchFireMode>().AddListener(SwitchFireMode);
-            _inputHandler.SetGame(this);
+            Subscribe();
         }
 
         private Input _input;
         private InputHandler _inputHandler;
+
+        private void Subscribe()
+        {
+            Signals.Get<OnDead>().AddListener(PausedGame);
+            Signals.Get<OnSwitchFireMode>().AddListener(SwitchFireMode);
+            Signals.Get<OnPaused>().AddListener(PausedGame);
+            Signals.Get<OnResume>().AddListener(StartGame);
+            Signals.Get<OnRestart>().AddListener(RestartGame);
+        }
+
+        private void UnSubscribe()
+        {
+            Signals.Get<OnDead>().RemoveListener(PausedGame);
+            Signals.Get<OnSwitchFireMode>().RemoveListener(SwitchFireMode);
+            Signals.Get<OnPaused>().RemoveListener(PausedGame);
+            Signals.Get<OnResume>().RemoveListener(StartGame);
+            Signals.Get<OnRestart>().RemoveListener(RestartGame);
+        }
 
         private void Bind()
         {
@@ -88,18 +104,17 @@ namespace _Source.Core
             _input.Interface.Enable();
         }
 
-        public void RestartGame()
+        private void RestartGame()
         {
-            Signals.Get<OnRestart>().Dispatch();
             DOTween.Clear();
+            UnSubscribe();
         }
 
-        public void PausedGame()
+        private void PausedGame()
         {
             DisablePlayerInput();
             UnBind();
             Time.timeScale = 0;
-            Signals.Get<OnPaused>().Dispatch();
         }
     }
 }

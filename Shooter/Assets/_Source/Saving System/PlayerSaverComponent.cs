@@ -10,14 +10,15 @@ namespace _Source.Saving_System
 {
     public class PlayerSaverComponent : MonoBehaviour
     {
+        public const string NameData = "PlayerData";
         [SerializeField] private PlayerHealth health;
         [SerializeField] private PlayerFireSystem playerFireSystem;
 
         private void Awake()
         {
-            if (PlayerPrefs.HasKey(SaverData.NameData))
+            if (PlayerPrefs.HasKey(NameData))
             {
-                var nameSave = SaverData.NameData;
+                var nameSave = NameData;
                 var data = PlayerPrefs.GetString(nameSave);
                 if (data.Length != 0)
                 {
@@ -48,7 +49,7 @@ namespace _Source.Saving_System
             Debug.Log("Data is deleted");
         }
 
-        public PlayerData GetPlayerData()
+        private PlayerData GetPlayerData()
         {
             var inv = InventoryPlayer.Inventory;
             var guns = InventoryPlayer.GunSos;
@@ -70,6 +71,14 @@ namespace _Source.Saving_System
                 currentAmmoInGun = playerFireSystem.CurrentCountAmmoInGun,
                 guns = guns.Values.ToList()
             };
+        }
+
+        private void SavePlayerData()
+        {
+            var data = GetPlayerData();
+            string dataJson = JsonUtility.ToJson(data);
+            PlayerPrefs.SetString(NameData, dataJson);
+            PlayerPrefs.Save();
         }
     }
 }
