@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Source.FireSystem;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using _Source.Player;
+using _Source.Services;
+using _Source.SignalsEvents.CoreEvents;
 using UnityEngine;
 
 namespace _Source.Saving_System
@@ -16,6 +19,7 @@ namespace _Source.Saving_System
 
         private void Awake()
         {
+            Signals.Get<OnSaving>().AddListener(SavePlayerData);
             if (PlayerPrefs.HasKey(NameData))
             {
                 var nameSave = NameData;
@@ -79,6 +83,11 @@ namespace _Source.Saving_System
             string dataJson = JsonUtility.ToJson(data);
             PlayerPrefs.SetString(NameData, dataJson);
             PlayerPrefs.Save();
+        }
+
+        private void OnDestroy()
+        {
+            Signals.Get<OnSaving>().RemoveListener(SavePlayerData);
         }
     }
 }

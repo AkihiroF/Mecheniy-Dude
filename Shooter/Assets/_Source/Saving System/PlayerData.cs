@@ -15,5 +15,9 @@ namespace _Source.Saving_System
          public float hp;
          public int currentAmmoInGun;
          public List<PlayerGunSo> guns;
+         public int countPointUpdate;
+         public int lvlSpeedMoving;
+         public int lvlSpeedReloading;
+         public int lvlRadiusView;
     }
 }
