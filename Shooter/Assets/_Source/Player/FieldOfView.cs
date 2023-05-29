@@ -9,7 +9,7 @@ namespace _Source.Player
             LayerMask layersView,
             float angleView,
             float radiusView,
-            //int countIteration,
+            int countIteration,
             Transform bodyPlayer,
             float radiusAroundView,
             int countIterationAround
@@ -18,14 +18,15 @@ namespace _Source.Player
             this._layersView = layersView;
             this._angleView = angleView;
             this._radiusView = radiusView;
-            //this._countIteration = countIteration;
+            this._countIteration = countIteration;
             this._radiusAroundView = radiusAroundView;
             this._countIterationAround = countIterationAround;
 
             _body = bodyPlayer;
 
             //_countVertices = countIteration + 1 + 1;
-            _countVerticesAround = countIterationAround + 1 + 1;
+            _currentCountIteration = countIterationAround + countIteration;
+            _countVertices = _currentCountIteration + 1 + 1;
         }
 
         private readonly LayerMask _layersView;
@@ -33,7 +34,8 @@ namespace _Source.Player
         private float _radiusView;
         private float _radiusAroundView;
         private readonly int _countIterationAround;
-        //private readonly int _countIteration;
+        private readonly int _countIteration;
+        private readonly int _currentCountIteration;
         private Vector3 _origin;
         private Mesh _mesh;
         private float _startingAngle;
@@ -41,7 +43,7 @@ namespace _Source.Player
         private readonly Transform _body;
 
         private readonly int _countVertices;
-        private int _countVerticesAround;
+        //private int _countVerticesAround;
 
 
         public void SetOrigin(Vector3 origin) 
@@ -106,10 +108,10 @@ namespace _Source.Player
 //         }
         private int[] GetAroundTriangles()
         {
-            var triangles = new int[_countIterationAround * 3];
+            var triangles = new int[_currentCountIteration * 3];
             int vertexIndex = 1; 
             int triangleIndex = 0; 
-            for (int i = 0; i <= _countIterationAround; i++)
+            for (int i = 0; i <= _currentCountIteration; i++)
             {
                 if (i > 0) 
                 { 
@@ -128,43 +130,74 @@ namespace _Source.Player
         private Vector3[] GetAroundVertices()
         {
             float angle = _startingAngle; 
-            float angleIncrease = 360 / _countIterationAround; 
-            var vertices = new Vector3[_countVerticesAround];
-            RaycastHit2D firstRayCast = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), _radiusAroundView, _layersView); 
-            if (firstRayCast.collider == null) 
-            { 
-// No hit 
-                vertices[0] = _body.InverseTransformPoint(_origin + UtilsClass.GetVectorFromAngle(angle) * _radiusAroundView); 
-            } 
-            else 
-            { 
-// Hit object 
-                vertices[0] = _body.InverseTransformPoint(firstRayCast.point); 
-            } 
-            Debug.DrawLine(_origin,vertices[0], Color.green);
-            int vertexIndex = 1; 
-            for (int i = 0; i <= _countIterationAround; i++) 
-            { 
+            float angleIncreaseField = _angleView / _countIteration; 
+            var vertices = new Vector3[_countVertices];
+            AddFirstVertices(ref vertices, angle);
+            int vertexIndex = 2; 
+            for (int i = 1; i < _countIteration; i++) 
+            {
                 Vector3 vertex;
-                var currentDistance = Mathf.Abs(_startingAngle) - angle <= _angleView ? _radiusView : _radiusAroundView;
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), currentDistance, _layersView); 
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), _radiusView, _layersView); 
                 if (raycastHit2D.collider == null) 
                 { 
 // No hit 
-                    vertex = _body.InverseTransformPoint(_origin + UtilsClass.GetVectorFromAngle(angle) * currentDistance); 
+                    vertex = _body.InverseTransformPoint(_origin + UtilsClass.GetVectorFromAngle(angle) * _radiusView); 
                 } 
                 else 
                 { 
 // Hit object 
-                    vertex = _body.InverseTransformPoint(raycastHit2D.point); 
+                    vertex = _body.InverseTransformPoint(new Vector3(raycastHit2D.point.x,raycastHit2D.point.y, _body.position.z)); 
                 } 
                 vertices[vertexIndex] = vertex;
 
                 vertexIndex++; 
-                angle -= angleIncrease; 
+                angle -= angleIncreaseField; 
+            }
+
+            var angleIncreaseAround = (360 - _angleView) / _countIterationAround;
+            for (int i = 0; i <= _countIterationAround; i++)
+            {
+                Vector3 vertex;
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), _radiusAroundView, _layersView); 
+                if (raycastHit2D.collider == null) 
+                { 
+// No hit 
+                    vertex = _body.InverseTransformPoint(_origin + UtilsClass.GetVectorFromAngle(angle) * _radiusAroundView); 
+                } 
+                else 
+                { 
+// Hit object 
+                    vertex = _body.InverseTransformPoint(new Vector3(raycastHit2D.point.x,raycastHit2D.point.y, _body.position.z)); 
+                } 
+                vertices[vertexIndex] = vertex;
+
+                vertexIndex++; 
+                angle -= angleIncreaseAround; 
             }
 
             return vertices;
+        }
+
+        private void AddFirstVertices(ref Vector3[] vertices, float angle)
+        {
+            RaycastHit2D firstRayCast = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), _radiusAroundView, _layersView); 
+            if (firstRayCast.collider == null) 
+            {
+                vertices[0] = _body.InverseTransformPoint(_origin + UtilsClass.GetVectorFromAngle(angle) * _radiusAroundView); 
+            } 
+            else 
+            {
+                vertices[0] = _body.InverseTransformPoint(new Vector3(firstRayCast.point.x,firstRayCast.point.y, _body.position.z)); 
+            }
+            firstRayCast = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), _radiusView, _layersView); 
+            if (firstRayCast.collider == null) 
+            {
+                vertices[1] = _body.InverseTransformPoint(_origin + UtilsClass.GetVectorFromAngle(angle) * _radiusView); 
+            } 
+            else 
+            {
+                vertices[1] = _body.InverseTransformPoint(new Vector3(firstRayCast.point.x,firstRayCast.point.y, _body.position.z)); 
+            }
         }
 
         public void CreateCircleMesh(ref Mesh mesh)
@@ -184,6 +217,6 @@ namespace _Source.Player
         // }
 
         //private Vector2[] GetUV() => new Vector2[_countVertices];
-        private Vector2[] GetAroundUV() => new Vector2[_countVerticesAround];
+        private Vector2[] GetAroundUV() => new Vector2[_countVertices];
     }
 }

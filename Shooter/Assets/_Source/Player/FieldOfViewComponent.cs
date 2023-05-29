@@ -14,6 +14,7 @@ namespace _Source.Player
         [Space]
         [SerializeField] private float radiusAroundView;
         [SerializeField] private int countIteration;
+        [SerializeField] private int countIterationAround;
         
         private Mesh _exitMesh;
 
@@ -32,10 +33,10 @@ namespace _Source.Player
                 layersView,
                 angleView,
                 radiusView,
-                //countIteration,
+                countIteration,
                 transform,
                 radiusAroundView,
-                countIteration);
+                countIterationAround);
         }
 
         private void Update() 

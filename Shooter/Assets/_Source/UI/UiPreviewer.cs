@@ -209,7 +209,6 @@ namespace _Source.UI
         private void EnableTerminal()
         {
             terminalPanel.SetActive(true);
-            Signals.Get<OnPaused>().Dispatch();
         }
 
         private void DisableTerminal()
