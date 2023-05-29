@@ -33,18 +33,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reload",
+                    "name": "FireAutomatic",
                     "type": "Button",
-                    "id": "caa7960e-8190-4513-9847-bd7b64bb066c",
+                    "id": "038fc5c1-eebe-4fc7-b87a-3c1d44b89593",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwithWeapon",
+                    "name": "Reload",
                     "type": "Button",
-                    "id": "31e7c515-e2f9-4f2c-a1ee-356f5f231bec",
+                    "id": "caa7960e-8190-4513-9847-bd7b64bb066c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -69,13 +69,49 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Paused",
+                    "name": "ChooseKnife",
                     "type": "Button",
-                    "id": "1891c99c-b5c1-4770-9203-669dc80d659d",
+                    "id": "b86af93c-9625-404e-aff4-2176ea71539f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ChoosePistol",
+                    "type": "Button",
+                    "id": "9ffcbaff-bec5-4322-84cd-966d66c62584",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChooseShortGun",
+                    "type": "Button",
+                    "id": "dd1666a2-d0ff-4878-a9fe-009d4b4168dc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChooseRifle",
+                    "type": "Button",
+                    "id": "5ac176db-d06d-4066-93c7-0cb62362cb32",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchingWeapon",
+                    "type": "Value",
+                    "id": "3ff9d61d-df5e-44a5-a07b-079628193d41",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -169,28 +205,6 @@
                 },
                 {
                     "name": "",
-                    "id": "32b117b3-8b58-4fbf-8c8c-a9215cbca6e1",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwithWeapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "28d1fabe-d654-4d01-8c30-6cbca4518b29",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwithWeapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ddcdbb95-c3c8-41f1-9408-61d758980731",
                     "path": "<Keyboard>/g",
                     "interactions": "",
@@ -213,7 +227,90 @@
                 },
                 {
                     "name": "",
-                    "id": "38b258e3-1dc3-474f-8804-2d21753831f6",
+                    "id": "8b38f54f-202c-4721-98a5-090e3b0f0d5c",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChooseKnife",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "004733e4-2963-4e9f-94a1-68b4c0865ff0",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChoosePistol",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6cb12b5-8575-4552-b250-40f31e5a87a7",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChooseRifle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31279711-a3f3-4237-9336-5297391538bc",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChooseShortGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88ea7f26-6f82-415e-8946-ce58e96b5896",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PlayerSheme",
+                    "action": "FireAutomatic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f734569-558e-4476-a13b-39c64d06d874",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PlayerSheme",
+                    "action": "SwitchingWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Interface",
+            "id": "8644aaf3-6d20-497d-ade7-7a94164b1e42",
+            "actions": [
+                {
+                    "name": "Paused",
+                    "type": "Button",
+                    "id": "61e31267-ad8d-411d-8274-5d87f6f16265",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "db94ca98-649b-4d77-8832-c1b90ea38dc7",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",

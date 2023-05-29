@@ -14,5 +14,6 @@ namespace _Source.Saving_System
         public PlayerGunSo currentGun;
          public float hp;
          public int currentAmmoInGun;
+         public List<PlayerGunSo> guns;
     }
 }

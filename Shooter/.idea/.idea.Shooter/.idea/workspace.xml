@@ -6,17 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorAmmo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorAmmo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorPlayerSaverComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Services/CustomEditorSaverData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -33,31 +34,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "featureLighting",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/akihirof/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache",
+      "/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache",
+      "/Users/akihirof/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -120,6 +130,14 @@
       <workItem from="1681727361354" duration="4321000" />
       <workItem from="1682010326550" duration="275000" />
       <workItem from="1682014520429" duration="3424000" />
+      <workItem from="1683470653239" duration="6451000" />
+      <workItem from="1683886579966" duration="5447000" />
+      <workItem from="1683987488365" duration="15084000" />
+      <workItem from="1684154696750" duration="1810000" />
+      <workItem from="1684156517166" duration="7745000" />
+      <workItem from="1684496003078" duration="261000" />
+      <workItem from="1684665229265" duration="10528000" />
+      <workItem from="1685180426973" duration="14633000" />
     </task>
     <servers />
   </component>

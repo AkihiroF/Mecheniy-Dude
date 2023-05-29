@@ -18,7 +18,7 @@ namespace _Source.UI
         private void Awake()
         {
             BindButtons();
-            _isLoad = PlayerPrefs.GetString(SaverData.NameData).Length == 0;
+            _isLoad = PlayerPrefs.GetString(PlayerSaverComponent.NameData).Length == 0;
             if (_isLoad)
             {
                 loadGameButton.enabled = false;
