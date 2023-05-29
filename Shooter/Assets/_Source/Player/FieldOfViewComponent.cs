@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Vector3 = UnityEngine.Vector3;
 
 namespace _Source.Player
@@ -9,48 +10,32 @@ namespace _Source.Player
         [SerializeField] private LayerMask layersView;
         [SerializeField] private float angleView;
         [SerializeField] private float radiusView;
-        [SerializeField] private int countIteration;
+        //[SerializeField] private int countIteration;
         [Space]
-        [SerializeField] private MeshFilter aroundMeshFilter;
-        [SerializeField] private MeshFilter fieldMeshFilter;
         [SerializeField] private float radiusAroundView;
-        [SerializeField] private int countIterationAround;
+        [SerializeField] private int countIteration;
         
-        private Vector3 _origin;
-        private Mesh _meshFieldOfView;
-        private Mesh _meshAroundCircle;
         private Mesh _exitMesh;
-        private CombineInstance[] _combine = new CombineInstance[2];
-        private MeshFilter _meshFilter;
 
         private FieldOfView _calculator;
 
 
         private void Start()
         {
-            _meshFieldOfView = new Mesh();
-            _meshAroundCircle = new Mesh();
-            _exitMesh = new Mesh();
-            _meshFilter = GetComponent<MeshFilter>();
-            _meshFilter.mesh = _meshAroundCircle;
-            aroundMeshFilter.mesh = _meshAroundCircle;
-            fieldMeshFilter.mesh = _meshFieldOfView;
-            _origin = Vector3.zero;
+            _exitMesh = new Mesh(); 
+            GetComponent<MeshFilter>().mesh = _exitMesh;
             Renderer myRenderer = GetComponent<Renderer>();
             myRenderer.sortingLayerName = "FieldOfView";
             myRenderer.sortingOrder = 10;
-            
-            _combine[0].mesh = _meshFieldOfView;
-            _combine[1].mesh = _meshAroundCircle;
-            
+
             _calculator = new FieldOfView(
                 layersView,
                 angleView,
                 radiusView,
-                countIteration,
+                //countIteration,
                 transform,
                 radiusAroundView,
-                countIterationAround);
+                countIteration);
         }
 
         private void Update() 
@@ -62,7 +47,7 @@ namespace _Source.Player
         private void LateUpdate()
         {
             //_calculator.CreateFieldOfView(ref _meshFieldOfView);
-            _calculator.CreateCircleMesh(ref _meshAroundCircle);
+            _calculator.CreateCircleMesh(ref _exitMesh);
              // //_combine[0].mesh = _meshFieldOfView;
              // _combine[0].transform = aroundMeshFilter.transform.localToWorldMatrix;
              //
