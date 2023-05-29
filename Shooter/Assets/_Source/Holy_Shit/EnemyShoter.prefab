@@ -99,11 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac00d49fd5fff944bba9b4694dc9ecda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  stoopingDist: 6
-  retreatDist: 3
-  startTimeBtwShots: 2
+  startTimeBtwShots: 0
   projecttile: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!58 &5784379608747622674
 CircleCollider2D:
   m_ObjectHideFlags: 0
