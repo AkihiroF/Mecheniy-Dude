@@ -38,8 +38,8 @@ namespace _Source.Player
         {
             Vector3 dir = _input.Player.Moving.ReadValue<Vector2>();
             var thisTransform = transform;
-            var currentDirection = thisTransform.up * dir.y + thisTransform.right * dir.x;
-            _rb.velocity = currentDirection * speedMoving;
+            //var currentDirection = thisTransform.up * dir.y + thisTransform.right * dir.x;
+            _rb.velocity = dir * speedMoving;
         }
     }
 }
