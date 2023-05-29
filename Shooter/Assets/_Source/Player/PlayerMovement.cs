@@ -5,6 +5,7 @@ namespace _Source.Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float speedMoving;
+        [SerializeField] private Transform pointAim;
         private Rigidbody2D _rb;
         private Vector2 _directionMoving;
         private Input _input;
@@ -20,16 +21,26 @@ namespace _Source.Player
 
         private void FixedUpdate()
         {
+            AimPosition();
             PlayerRotate();
             PlayerMove();
         }
-        
+
+        private Vector3 AimPosition()
+        {
+            Vector3 mousePosition = _input.Player.Rotate.ReadValue<Vector2>();
+            var worldPos = _camera.ScreenToWorldPoint(mousePosition);
+            var currentPos = new Vector3(worldPos.x, worldPos.y, transform.position.z);
+            pointAim.position = currentPos;
+            return mousePosition;
+        }
+
 
         private void PlayerRotate()
         {
-            Vector3 mousePosition = _input.Player.Rotate.ReadValue<Vector2>();
             var ss = _camera.WorldToScreenPoint(transform.position);
-            var direction = mousePosition - ss;
+            var aa = AimPosition();
+            var direction = aa - ss;
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf. Rad2Deg;
             transform. rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
