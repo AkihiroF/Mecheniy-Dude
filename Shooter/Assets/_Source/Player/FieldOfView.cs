@@ -141,11 +141,12 @@ namespace _Source.Player
 // Hit object 
                 vertices[0] = _body.InverseTransformPoint(firstRayCast.point); 
             } 
+            Debug.DrawLine(_origin,vertices[0], Color.green);
             int vertexIndex = 1; 
             for (int i = 0; i <= _countIterationAround; i++) 
             { 
                 Vector3 vertex;
-                var currentDistance = Mathf.Abs(_startingAngle) - angle < _angleView ? _radiusView : _radiusAroundView;
+                var currentDistance = Mathf.Abs(_startingAngle) - angle <= _angleView ? _radiusView : _radiusAroundView;
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(_origin, UtilsClass.GetVectorFromAngle(angle), currentDistance, _layersView); 
                 if (raycastHit2D.collider == null) 
                 { 

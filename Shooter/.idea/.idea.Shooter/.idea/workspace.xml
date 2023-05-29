@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Lighting/LightComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Lighting/LightComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Lighting/LightMathf.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/Lighting/LightMathf.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +135,7 @@
       <workItem from="1684496003078" duration="261000" />
       <workItem from="1684665229265" duration="10528000" />
       <workItem from="1685180426973" duration="14633000" />
-      <workItem from="1685365125369" duration="2764000" />
+      <workItem from="1685365125369" duration="4149000" />
     </task>
     <servers />
   </component>
