@@ -893,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229720809797949043, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
       propertyPath: countIteration
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7229720809797949043, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
       propertyPath: radiusAroundView
@@ -2300,6 +2300,10 @@ PrefabInstance:
     - target: {fileID: 2954184886547108244, guid: d7ff67d95ce6a4e2c824c52ba39708d8, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954184886547108247, guid: d7ff67d95ce6a4e2c824c52ba39708d8, type: 3}
+      propertyPath: isStatic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954184886547108248, guid: d7ff67d95ce6a4e2c824c52ba39708d8, type: 3}
       propertyPath: m_RootOrder

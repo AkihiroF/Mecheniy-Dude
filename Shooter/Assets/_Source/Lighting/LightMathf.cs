@@ -5,7 +5,7 @@ namespace _Source.Lighting
 {
     public static class LightMathf
     {
-        public static Mesh UpdateAroundMesh(ref Mesh mesh, int countIteration, Vector3 origin,
+        public static void UpdateAroundMesh(ref Mesh mesh, int countIteration, Vector3 origin,
             Transform body, float distance, LayerMask layersView)
         {
             var countVerticesAround = countIteration + 1 + 1;
@@ -13,7 +13,6 @@ namespace _Source.Lighting
             mesh.uv = GetAroundUV(countVerticesAround);
             mesh.triangles = GetTriangles(countIteration);
             mesh.bounds = new Bounds(origin, Vector3.one * 1000f);
-            return mesh;
         }
         private static int[] GetTriangles(int countIterationAround)
         {

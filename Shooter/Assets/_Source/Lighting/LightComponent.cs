@@ -10,6 +10,7 @@ namespace _Source.Lighting
         [SerializeField] private LayerMask layersView;
         [SerializeField] private float radiusView;
         [SerializeField] private int countIteration;
+        [SerializeField] private bool isStatic;
 
         private Mesh _exitMesh;
         private Vector3 _origin;
@@ -23,6 +24,11 @@ namespace _Source.Lighting
             myRenderer.sortingLayerName = "FieldOfView";
             myRenderer.sortingOrder = 10;
             _origin = transform.position;
+            if (isStatic)
+            {
+                LightMathf.UpdateAroundMesh(ref _exitMesh, countIteration, _origin, transform, radiusView, layersView);
+                this.enabled = false;
+            }
         }
 
         private void LateUpdate()

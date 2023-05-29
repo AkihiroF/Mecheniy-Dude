@@ -10,7 +10,6 @@ namespace _Source.Player
         [SerializeField] private LayerMask layersView;
         [SerializeField] private float angleView;
         [SerializeField] private float radiusView;
-        //[SerializeField] private int countIteration;
         [Space]
         [SerializeField] private float radiusAroundView;
         [SerializeField] private int countIteration;
@@ -47,33 +46,8 @@ namespace _Source.Player
 
         private void LateUpdate()
         {
-            //_calculator.CreateFieldOfView(ref _meshFieldOfView);
-            _calculator.CreateCircleMesh(ref _exitMesh);
-             // //_combine[0].mesh = _meshFieldOfView;
-             // _combine[0].transform = aroundMeshFilter.transform.localToWorldMatrix;
-             //
-             // //_combine[1].mesh = _meshAroundCircle;
-             // _combine[1].transform = fieldMeshFilter.transform.localToWorldMatrix;
-             //
-             // _exitMesh.CombineMeshes(_combine);
-             // _exitMesh.bounds = new Bounds(Vector3.down, Vector3.one); 
-
-             // _exitMesh.vertices = _meshFieldOfView.vertices;
-             // _exitMesh.uv = _meshFieldOfView.uv;
-             // _exitMesh.triangles = _meshFieldOfView.triangles;
-             //
-             // int vertexOffset = _exitMesh.vertices.Length;
-             // Vector3[] vertices = _meshAroundCircle.vertices;
-             // for (int j = 0; j < vertices.Length; j++)
-             // {
-             //     vertices[j] += new Vector3(0, vertexOffset, 0);
-             // }
-             //
-             // _exitMesh.vertices = _exitMesh.vertices.Concat(vertices).ToArray();
-             // _exitMesh.triangles = _exitMesh.triangles.Concat(_meshAroundCircle.triangles.Select(t => t + vertexOffset)).ToArray();
-             // _exitMesh.uv = _exitMesh.uv.Concat(_meshAroundCircle.uv).ToArray();
-
-             //_exitMesh.Optimize();
+            _calculator.UpdateMesh(ref _exitMesh);
+            _exitMesh.Optimize();
             
         }
 #if (UNITY_EDITOR)
