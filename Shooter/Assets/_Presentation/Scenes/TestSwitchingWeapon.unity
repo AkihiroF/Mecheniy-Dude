@@ -548,7 +548,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4297376294483307961, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4326334850478315593, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
       propertyPath: m_RootOrder
@@ -612,7 +612,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229720809797949043, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
       propertyPath: radiusAroundView
-      value: 0.99
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229720809797949043, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
+      propertyPath: countIterationAround
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7633326815049077692, guid: d51ac39cdb037c44484ceea40f180e13, type: 3}
       propertyPath: m_Mesh
