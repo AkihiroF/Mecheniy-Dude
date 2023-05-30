@@ -53,6 +53,7 @@ MonoBehaviour:
   radiusView: 7.5
   radiusAroundView: 0
   countIteration: 50
+  countIterationAround: 0
 --- !u!33 &7633326815049077692
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -310,6 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMoving: 7
+  pointAim: {fileID: 5967990644718296631}
 --- !u!114 &4326334850478315588
 MonoBehaviour:
   m_ObjectHideFlags: 0
