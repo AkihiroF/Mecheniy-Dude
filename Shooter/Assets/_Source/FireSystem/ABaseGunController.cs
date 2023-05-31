@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using _Source.FireSystem.SOs;
 using _Source.Player;
 using _Source.Services;
+using _Source.SignalsEvents.UpgradesEvents;
 using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
 
@@ -39,7 +40,7 @@ namespace _Source.FireSystem
             BulletPool.Add(aBullet);
         }
 
-        public void SetParameters(ClipSo info,int countAmmo = 0)
+        public void SetParameters(ClipSo info,int countAmmo = 0, float upgradeSpeed = 0)
         {
             _countAmmoInClip = info.CountBullet;
             if (countAmmo == 0)
@@ -55,11 +56,12 @@ namespace _Source.FireSystem
             Damage = info.Damage;
             _ammoInfo = info;
             BulletPool = new List<ABulletController>();
-
+            UpgradeSpeedReloading(upgradeSpeed);
             _isMainReloading = false;
-            
+            Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeSpeedReloading);
             InvokeFireFromWeapon();
         }
+        private void UpgradeSpeedReloading(float percent) => timeReload -= timeReload * percent / 100;
 
         protected abstract void InitialiseBullet();
 
@@ -136,6 +138,7 @@ namespace _Source.FireSystem
 
         private void OnDestroy()
         {
+            Signals.Get<OnUpgradeSpeedReloading>().RemoveListener(UpgradeSpeedReloading);
             if (OnDeleteBullets != null) OnDeleteBullets.Invoke();
         }
     }

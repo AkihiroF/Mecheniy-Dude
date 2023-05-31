@@ -1,3 +1,6 @@
+using System;
+using _Source.Services;
+using _Source.SignalsEvents.UpgradesEvents;
 using UnityEngine;
 
 namespace _Source.Player
@@ -15,6 +18,12 @@ namespace _Source.Player
         {
             _rb = GetComponent<Rigidbody2D>();
             _camera = Camera.main;
+            Signals.Get<OnUpgradeSpeedMoving>().AddListener(SetUpgrade);
+        }
+
+        private void SetUpgrade(float percent)
+        {
+            speedMoving += speedMoving * percent /100;
         }
 
         public void SetInput(Input input) => _input = input;
@@ -51,6 +60,11 @@ namespace _Source.Player
             var thisTransform = transform;
             //var currentDirection = thisTransform.up * dir.y + thisTransform.right * dir.x;
             _rb.velocity = dir * speedMoving;
+        }
+
+        private void OnDestroy()
+        {
+            Signals.Get<OnUpgradeSpeedMoving>().RemoveListener(SetUpgrade);
         }
     }
 }

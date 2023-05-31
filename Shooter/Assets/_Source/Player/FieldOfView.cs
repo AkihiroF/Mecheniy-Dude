@@ -41,7 +41,8 @@ namespace _Source.Player
         private readonly Transform _body;
 
         private readonly int _countVertices;
-
+        
+        public void UpgradeAngle(float angleView) => _angleView = angleView;
 
         public void SetOrigin(Vector3 origin) 
         { 

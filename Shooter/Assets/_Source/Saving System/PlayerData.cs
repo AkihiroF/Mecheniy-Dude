@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _Source.FireSystem.SOs;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Source.Saving_System
 {
@@ -18,6 +19,6 @@ namespace _Source.Saving_System
          public int countPointUpdate;
          public int lvlSpeedMoving;
          public int lvlSpeedReloading;
-         public int lvlRadiusView;
+         public int lvlAngleView;
     }
 }

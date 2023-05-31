@@ -1,4 +1,7 @@
+using System;
 using System.Linq;
+using _Source.Services;
+using _Source.SignalsEvents.UpgradesEvents;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Vector3 = UnityEngine.Vector3;
@@ -19,6 +22,11 @@ namespace _Source.Player
 
         private FieldOfView _calculator;
 
+        private void Awake()
+        {
+            Signals.Get<OnUpgradeAngleVision>().AddListener(UpgradeAngle);
+        }
+
 
         private void Start()
         {
@@ -38,6 +46,12 @@ namespace _Source.Player
                 countIterationAround);
         }
 
+        private void UpgradeAngle(float percent)
+        {
+            angleView += angleView * percent / 100;
+            _calculator.UpgradeAngle(angleView);
+        }
+
         private void Update() 
         { 
             _calculator.SetOrigin(transform.position); 
@@ -49,6 +63,11 @@ namespace _Source.Player
             _calculator.UpdateMesh(ref _exitMesh);
             _exitMesh.Optimize();
             
+        }
+
+        private void OnDestroy()
+        {
+            Signals.Get<OnUpgradeAngleVision>().RemoveListener(UpgradeAngle);
         }
 #if (UNITY_EDITOR)
         private void OnDrawGizmos()

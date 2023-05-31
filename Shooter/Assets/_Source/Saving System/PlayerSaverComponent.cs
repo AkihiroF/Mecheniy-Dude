@@ -8,6 +8,7 @@ using _Source.Player;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Source.Saving_System
 {
@@ -16,6 +17,7 @@ namespace _Source.Saving_System
         public const string NameData = "PlayerData";
         [SerializeField] private PlayerHealth health;
         [SerializeField] private PlayerFireSystem playerFireSystem;
+        [SerializeField] private SystemUpdating systemUpdating;
 
         private void Awake()
         {
@@ -41,6 +43,8 @@ namespace _Source.Saving_System
                     if(currentdata.currentGun != null)
                         playerFireSystem.SetSavedParameters(currentdata.currentGun, currentdata.currentAmmoInGun);
                     transform.position = currentdata.position;
+                    systemUpdating.SetSavedData(currentdata.lvlSpeedMoving,
+                        currentdata.lvlSpeedReloading,currentdata.lvlAngleView, currentdata.countPointUpdate);
                 }
             }
         }
@@ -73,7 +77,11 @@ namespace _Source.Saving_System
                 valuesInventory = values,
                 position = transform.position,
                 currentAmmoInGun = playerFireSystem.CurrentCountAmmoInGun,
-                guns = guns.Values.ToList()
+                guns = guns.Values.ToList(),
+                countPointUpdate = systemUpdating.Score,
+                lvlAngleView = systemUpdating.LvlAngleVision,
+                lvlSpeedReloading = systemUpdating.LvlSpeedReloading,
+                lvlSpeedMoving = systemUpdating.LvlSpeedMoving
             };
         }
 

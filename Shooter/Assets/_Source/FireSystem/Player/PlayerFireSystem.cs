@@ -4,6 +4,7 @@ using _Source.InputSystem;
 using _Source.Player;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.UpgradesEvents;
 using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
 
@@ -19,16 +20,26 @@ namespace _Source.FireSystem.Player
         private ABaseGunController _currentGun;
         private ClipSo _currentClip;
         private int _currentCountAmmo;
+        private float _percentUpgrade;
+        public PlayerGunSo GetCurrentGun => _currentGunSo;
+
+        public int CurrentCountAmmoInGun => _currentCountAmmo;
 
         private void Start()
         {
             Signals.Get<OnRestart>().AddListener(UnSubscribe);
             Signals.Get<OnFinishReloadWeapon>().AddListener(PrintAmmo);
+            Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeReloading);
             if (_currentGunSo == null)
             {
                 _currentGunSo = firstGun;
             }
             CreateWeapon();
+        }
+
+        private void UpgradeReloading(float percent)
+        {
+            _percentUpgrade += percent;
         }
 
         private void CreateWeapon()
@@ -60,25 +71,9 @@ namespace _Source.FireSystem.Player
             _currentCountAmmo = currentAmmo;
         }
 
-        public PlayerGunSo GetCurrentGun
-        {
-            get
-            {
-                return _currentGunSo;
-            }
-        }
-
-        public int CurrentCountAmmoInGun
-        {
-            get
-            {
-                return _currentCountAmmo;
-            }
-        }
-
         private void SetParamInGun()
         {
-            _currentGun.SetParameters(_currentClip,_currentCountAmmo);
+            _currentGun.SetParameters(_currentClip,_currentCountAmmo,_percentUpgrade);
         }
 
         private void UpdateCurrentCountAmmoInGun(int count)
