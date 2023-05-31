@@ -50,6 +50,10 @@ namespace _Source.Player
         {
             UpdateUI();
             Signals.Get<OnAddScoreUpgrade>().AddListener(AddScore);
+            Bind();
+            ApplySavedSpeedMoving();
+            ApplySavedSpeedReloading();
+            ApplySavedAngleVision();
         }
 
         private void AddScore(int score)
@@ -60,24 +64,51 @@ namespace _Source.Player
 
         private void Bind()
         {
-            
+            upgradeSpeedMovingButton.onClick.AddListener(() => UpgradeSpeedMoving());
+            upgradeSpeedReloadingButton.onClick.AddListener(() => UpgradeSpeedReloading());
+            upgradeAngleVisionButton.onClick.AddListener(()=> UpgradeAngleVision());
+        }
+
+        private void UpgradeSpeedMoving()
+        {
+            var upgrade = lvlUpgradeSpeedMoving[_currentLvlSpeedMoving];
+            Signals.Get<OnUpgradeSpeedMoving>().Dispatch(upgrade.percentUpgrade);
+            _currentScore -= upgrade.price;
+            _currentLvlSpeedMoving++;
+            UpdateUI();
+        }
+        private void UpgradeSpeedReloading()
+        {
+            var upgrade = lvlUpgradeSpeedReloading[_currentLvlSpeedReloading];
+            Signals.Get<OnUpgradeSpeedReloading>().Dispatch(upgrade.percentUpgrade);
+            _currentScore -= upgrade.price;
+            _currentLvlSpeedReloading++;
+            UpdateUI();
+        }
+        private void UpgradeAngleVision()
+        {
+            var upgrade = lvlUpgradeAngleVision[_currentLvlAngleVision];
+            Signals.Get<OnUpgradeAngleVision>().Dispatch(upgrade.percentUpgrade);
+            _currentScore -= upgrade.price;
+            _currentLvlAngleVision++;
+            UpdateUI();
         }
 
         private void UpdateUI()
         {
             textTotalScore.text = $"{_currentScore}";
-            if (_currentLvlSpeedMoving <= lvlUpgradeSpeedMoving.Count)
+            if (_currentLvlSpeedMoving <= lvlUpgradeSpeedMoving.Count-1)
             {
                 var speedMovingPrice = lvlUpgradeSpeedMoving[_currentLvlSpeedMoving].price;
                 upgradeSpeedMovingButton.interactable =
                     _currentScore - speedMovingPrice >= 0;
                 textPriceSpeedMoving.text = $"{speedMovingPrice}";
-                textLvlSpeedMoving.text = $"{_currentLvlSpeedMoving}";
             }
             else
                 upgradeSpeedMovingButton.interactable = false;
+            textLvlSpeedMoving.text = $"{_currentLvlSpeedMoving}";
             
-            if (_currentLvlSpeedReloading <= lvlUpgradeSpeedReloading.Count)
+            if (_currentLvlSpeedReloading <= lvlUpgradeSpeedReloading.Count-1)
             {
                 var speedReloadingPrice = lvlUpgradeSpeedReloading[_currentLvlSpeedReloading].price;
                 upgradeSpeedReloadingButton.interactable =
@@ -87,16 +118,18 @@ namespace _Source.Player
             }
             else
                 upgradeSpeedReloadingButton.interactable = false;
-            if (_currentLvlAngleVision <= lvlUpgradeAngleVision.Count)
+            textLvlSpeedReloading.text = $"{_currentLvlSpeedReloading}";
+            
+            if (_currentLvlAngleVision <= lvlUpgradeAngleVision.Count-1)
             {
                 var anglePrice = lvlUpgradeAngleVision[_currentLvlAngleVision].price;
                 upgradeAngleVisionButton.interactable =
                     _currentScore - anglePrice >= 0;
                 textPriceAngleVision.text = $"{anglePrice}";
-                textLvlAngleVision.text = $"{_currentLvlAngleVision}";
             }
             else
                 upgradeAngleVisionButton.interactable = false;
+            textLvlAngleVision.text = $"{_currentLvlAngleVision}";
 
         }
 
@@ -108,9 +141,6 @@ namespace _Source.Player
             _currentScore = score;
             _currentLvlSpeedMoving = lvlSpeedMoving;
             _currentLvlSpeedReloading = lvlSpeedReloading;
-            ApplySavedSpeedMoving();
-            ApplySavedSpeedReloading();
-            ApplySavedAngleVision();
         }
 
         private void ApplySavedSpeedMoving()

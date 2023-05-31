@@ -30,6 +30,7 @@ namespace _Source.FireSystem
         private void DeleteBullet()
         {
             PoolBullets.OnDeleteBullets -= DeleteBullet;
+            this.gameObject.SetActive(true);
             Destroy(this.gameObject);
         }
     }
