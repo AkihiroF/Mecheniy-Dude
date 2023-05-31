@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6455999946824139014}
   - component: {fileID: 6455999946824139015}
   - component: {fileID: 6455999946824139016}
-  - component: {fileID: 6455999946824139017}
   - component: {fileID: 6455999946824139018}
   - component: {fileID: 6455999946824139011}
+  - component: {fileID: 644648534647126236}
   m_Layer: 7
   m_Name: EnemyMouther
   m_TagString: Untagged
@@ -145,19 +145,6 @@ MonoBehaviour:
   layerAttack:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &6455999946824139017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6455999946824139019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49dff5438710495990c3c3b36eec1268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 100
 --- !u!114 &6455999946824139018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,8 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c27fdec2e322a742810774824a71f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 1977488174451460502, guid: 6eb34c93ef41e4060ad3408728130fbf, type: 3}
-  amountEnemy: 3
 --- !u!58 &6455999946824139011
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -188,3 +173,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &644648534647126236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455999946824139019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcdcf58a72d1874b938519f40a96012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
+  countScore: 0
+  _enemyPrefab: {fileID: 1977488174451460502, guid: 6eb34c93ef41e4060ad3408728130fbf, type: 3}
+  amountEnemy: 2

@@ -14,11 +14,15 @@ namespace _Source.Player
         private Input _input;
         private Camera _camera;
 
+        private void Awake()
+        {
+            Signals.Get<OnUpgradeSpeedMoving>().AddListener(SetUpgrade);
+        }
+
         private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             _camera = Camera.main;
-            Signals.Get<OnUpgradeSpeedMoving>().AddListener(SetUpgrade);
         }
 
         private void SetUpgrade(float percent)

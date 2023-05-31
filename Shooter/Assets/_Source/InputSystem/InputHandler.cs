@@ -1,4 +1,3 @@
-using _Source.Core;
 using _Source.FireSystem.Player;
 using _Source.HealthSystem;
 using _Source.Interactable;
@@ -26,7 +25,9 @@ namespace _Source.InputSystem
         }
 
         public void InputFire(InputAction.CallbackContext obj) 
-            => _fireSystem.Fire();
+        {
+            _fireSystem.Fire();
+        }
 
         public void InputReload(InputAction.CallbackContext obj) 
             => _fireSystem.ReloadWeapon();
@@ -65,11 +66,6 @@ namespace _Source.InputSystem
         public void InputChooseRifle(InputAction.CallbackContext obj)
         {
             _fireSystem.SwitchWeapon(WeaponsTypes.Rifle);
-        }
-
-        public void TestDelta(InputAction.CallbackContext obj)
-        {
-            Debug.Log(obj);
         }
     }
 }

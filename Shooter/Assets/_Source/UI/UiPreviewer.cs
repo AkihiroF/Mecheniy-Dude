@@ -3,6 +3,7 @@ using _Source.SignalsEvents.CoreEvents;
 using _Source.SignalsEvents.HealthEvents;
 using _Source.SignalsEvents.UIEvents;
 using _Source.SignalsEvents.WeaponsEvents;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,9 +50,12 @@ namespace _Source.UI
         [SerializeField] private GameObject upgradePanel;
         [SerializeField] private Button toUpgradeButton;
         [SerializeField] private Button closeUpgradeButton;
+
+        [Space] 
+        [SerializeField] private TextMeshProUGUI textToNextLvl;
         
         
-        private void Awake()
+        private void OnEnable()
         {
             Subscribe();
             BindButton();
@@ -60,6 +64,7 @@ namespace _Source.UI
             DisableTerminal();
             DisableUpgrade();
             deadPanel.SetActive(false);
+            SwitchStateNextLvl(false);
         }
         private void BindButton()
         {
@@ -125,6 +130,8 @@ namespace _Source.UI
             Signals.Get<OnRestart>().AddListener(UnSubscribe);
             
             Signals.Get<OnEnableTerminal>().AddListener(EnableTerminal);
+            
+            Signals.Get<OnShowToNextLvl>().AddListener(SwitchStateNextLvl);
         }
 
         private void UnSubscribe()
@@ -141,6 +148,20 @@ namespace _Source.UI
             Signals.Get<OnRestart>().RemoveListener(UnSubscribe);
             
             Signals.Get<OnEnableTerminal>().RemoveListener(EnableTerminal);
+            
+            Signals.Get<OnShowToNextLvl>().RemoveListener(SwitchStateNextLvl);
+        }
+
+        private void SwitchStateNextLvl(bool isActive)
+        {
+            if (isActive)
+            {
+                textToNextLvl.DOFade(1, 1);
+            }
+            else
+            {
+                textToNextLvl.DOFade(0, 0);
+            }
         }
 
         #region Weapon

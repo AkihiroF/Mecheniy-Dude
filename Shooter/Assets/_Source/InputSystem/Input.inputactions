@@ -38,7 +38,7 @@
                     "id": "038fc5c1-eebe-4fc7-b87a-3c1d44b89593",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press(pressPoint=0.01,behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -103,15 +103,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchingWeapon",
-                    "type": "Value",
-                    "id": "3ff9d61d-df5e-44a5-a07b-079628193d41",
-                    "expectedControlType": "Double",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -277,17 +268,6 @@
                     "processors": "",
                     "groups": "PlayerSheme",
                     "action": "FireAutomatic",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2f734569-558e-4476-a13b-39c64d06d874",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PlayerSheme",
-                    "action": "SwitchingWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

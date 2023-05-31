@@ -25,17 +25,6 @@ namespace _Source.Player
         private void Awake()
         {
             Signals.Get<OnUpgradeAngleVision>().AddListener(UpgradeAngle);
-        }
-
-
-        private void Start()
-        {
-            _exitMesh = new Mesh(); 
-            GetComponent<MeshFilter>().mesh = _exitMesh;
-            Renderer myRenderer = GetComponent<Renderer>();
-            myRenderer.sortingLayerName = "FieldOfView";
-            myRenderer.sortingOrder = 10;
-
             _calculator = new FieldOfView(
                 layersView,
                 angleView,
@@ -44,6 +33,15 @@ namespace _Source.Player
                 transform,
                 radiusAroundView,
                 countIterationAround);
+        }
+
+        private void Start()
+        {
+            _exitMesh = new Mesh(); 
+            GetComponent<MeshFilter>().mesh = _exitMesh;
+            Renderer myRenderer = GetComponent<Renderer>();
+            myRenderer.sortingLayerName = "FieldOfView";
+            myRenderer.sortingOrder = 10;
         }
 
         private void UpgradeAngle(float percent)

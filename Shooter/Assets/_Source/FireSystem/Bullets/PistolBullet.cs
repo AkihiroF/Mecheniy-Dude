@@ -18,8 +18,7 @@ namespace _Source.FireSystem.Bullets
             
             if ((contactLayer.value & (1 << obj.layer)) > 0)
                 obj.GetComponent<ABaseHealth>().GetDamage(Damage);
-            this.gameObject.SetActive(false);
-            PoolBullets.ReturnBulletInPool(this);
+            base.OnTriggerEnter2D(col);
         }
     }
 }

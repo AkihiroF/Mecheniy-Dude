@@ -30,6 +30,6 @@ public class Massenger : MonoBehaviour
     public void SMS()
     {
         panelGameObject.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 }

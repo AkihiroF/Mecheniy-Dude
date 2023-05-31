@@ -55,12 +55,6 @@ namespace _Source.FireSystem.Bullets
             _poolBlasts.Clear();
         }
 
-        protected override void OnTriggerEnter2D(Collider2D col)
-        {
-            this.gameObject.SetActive(false);
-            PoolBullets.ReturnBulletInPool(this);
-        }
-
         public event Action OnDeleteBullets;
 
         private void OnDestroy()
