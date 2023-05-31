@@ -19,6 +19,7 @@ namespace _Source.Core
 
         private Input _input;
         private InputHandler _inputHandler;
+        private bool _isAutomatic;
 
         private void Subscribe()
         {
@@ -54,8 +55,6 @@ namespace _Source.Core
             input.ChooseShortGun.performed += _inputHandler.InputChooseShortGun;
             input.ChooseRifle.performed += _inputHandler.InputChooseRifle;
 
-            input.SwitchingWeapon.performed += _inputHandler.TestDelta;
-
             _input.Interface.Paused.performed += _inputHandler.InputPaused;
             
         }
@@ -85,7 +84,13 @@ namespace _Source.Core
 
         private void SwitchFireMode(bool isAutomatic)
         {
-            if (isAutomatic)
+            _isAutomatic = isAutomatic;
+            SetFireMode();
+        }
+
+        private void SetFireMode()
+        {
+            if (_isAutomatic)
             {
                 _input.Player.Fire.Disable();
                 _input.Player.FireAutomatic.Enable();
@@ -100,6 +105,7 @@ namespace _Source.Core
         {
             EnablePlayerInput();
             Bind();
+            SetFireMode();
             Time.timeScale = 1;
             _input.Interface.Enable();
         }
@@ -112,8 +118,8 @@ namespace _Source.Core
 
         private void PausedGame()
         {
-            DisablePlayerInput();
             UnBind();
+            DisablePlayerInput();
             Time.timeScale = 0;
         }
     }

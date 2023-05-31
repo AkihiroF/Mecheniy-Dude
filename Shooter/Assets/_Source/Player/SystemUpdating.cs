@@ -46,7 +46,7 @@ namespace _Source.Player
         public int LvlAngleVision => _currentLvlAngleVision;
         
 
-        private void Start()
+        private void OnEnable()
         {
             UpdateUI();
             Signals.Get<OnAddScoreUpgrade>().AddListener(AddScore);
@@ -114,7 +114,6 @@ namespace _Source.Player
                 upgradeSpeedReloadingButton.interactable =
                     _currentScore - speedReloadingPrice >= 0;
                 textPriceSpeedReloading.text = $"{speedReloadingPrice}";
-                textLvlSpeedReloading.text = $"{_currentLvlSpeedReloading}";
             }
             else
                 upgradeSpeedReloadingButton.interactable = false;

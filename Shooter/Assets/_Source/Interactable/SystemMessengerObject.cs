@@ -55,6 +55,7 @@ namespace _Source.Interactable
 
         private void CloseMessenger()
         {
+            massages[massages.Count-1].panelWithText.SetActive(false);
             mainPanel.SetActive(false);
             Signals.Get<OnResume>().Dispatch();
         }
@@ -62,6 +63,14 @@ namespace _Source.Interactable
         private void EnableFirstMessage()
         {
             massages[0].panelWithText.SetActive(true);
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var massage in massages)
+            {
+                massage.toNextMessageButton.onClick.RemoveAllListeners();
+            }
         }
     }
 
