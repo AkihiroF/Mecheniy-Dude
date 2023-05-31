@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -883,13 +883,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      xI2XraTwIG_25: 1878807368
+      xI2XraTwIG_35: 1211484502
       xI2XraTwIG_31: 557104968
       xI2XraTwIG_26: 1018130118
       xI2XraTwIG_3: -100194307
       xI2XraTwIG_32: 872785682
       xI2XraTwIG_34: 1106314109
-      xI2XraTwIG_35: 1211484502
       xI2XraTwIG_13: -1494034220
       xI2XraTwIG_2: 748412083
       xI2XraTwIG_20: 37913392
@@ -901,6 +900,7 @@ TextureImporter:
       xI2XraTwIG_22: 2008991585
       xI2XraTwIG_7: 2086289794
       xI2XraTwIG_19: -1117395572
+      xI2XraTwIG_25: 1878807368
       xI2XraTwIG_24: 831664490
       xI2XraTwIG_9: -1211806985
       xI2XraTwIG_12: 1073821917

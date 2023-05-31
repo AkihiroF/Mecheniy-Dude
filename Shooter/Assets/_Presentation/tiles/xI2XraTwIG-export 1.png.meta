@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -51,7 +51,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -883,7 +883,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      xI2XraTwIG-export 1_27: -29760940
+      xI2XraTwIG-export 1_23: 1508328283
       xI2XraTwIG-export 1_5: -209689305
       xI2XraTwIG-export 1_24: 736040578
       xI2XraTwIG-export 1_19: -1391208438
@@ -918,7 +918,7 @@ TextureImporter:
       xI2XraTwIG-export 1_33: 1464612512
       xI2XraTwIG-export 1_28: 611398827
       xI2XraTwIG-export 1_11: -737835941
-      xI2XraTwIG-export 1_23: 1508328283
+      xI2XraTwIG-export 1_27: -29760940
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
