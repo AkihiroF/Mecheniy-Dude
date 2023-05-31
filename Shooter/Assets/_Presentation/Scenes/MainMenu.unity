@@ -1562,9 +1562,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idMainMenu: 0
   idGame: 1
-  idFirstLvl: 0
-  idSecondLvl: 0
-  idThirdLvl: 0
+  idFirstLvl: 1
+  idSecondLvl: 2
+  idThirdLvl: 3
 --- !u!4 &1555664011
 Transform:
   m_ObjectHideFlags: 0
