@@ -51,7 +51,7 @@ namespace _Source.UI
         [SerializeField] private Button closeUpgradeButton;
         
         
-        private void Start()
+        private void OnEnable()
         {
             Subscribe();
             BindButton();
