@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/SystemMessengerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/SystemMessengerObject.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/TestSwitchingWeapon.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/FieldOfViewComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Player/SystemUpdating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Player/SystemUpdating.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,7 @@
       <workItem from="1684496003078" duration="261000" />
       <workItem from="1684665229265" duration="10528000" />
       <workItem from="1685180426973" duration="14633000" />
-      <workItem from="1685365125369" duration="29393000" />
+      <workItem from="1685365125369" duration="31920000" />
     </task>
     <servers />
   </component>
