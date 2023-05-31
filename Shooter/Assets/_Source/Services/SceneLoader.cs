@@ -8,6 +8,9 @@ namespace _Source.Services
     {
         [SerializeField] private int idMainMenu;
         [SerializeField] private int idGame;
+        [SerializeField] private int idFirstLvl;
+        [SerializeField] private int idSecondLvl;
+        [SerializeField] private int idThirdLvl;
 
         public void LoadNewGame()
         {
@@ -28,10 +31,20 @@ namespace _Source.Services
             SceneManager.LoadScene(idMainMenu);
         }
 
-        public void QuitGame()
+        public void LoadFirsLvl()
         {
             InventoryPlayer.ClearInventory();
-            Application.Quit();
+            SceneManager.LoadScene(idFirstLvl);
+        }
+        public void LoadSecondLvl()
+        {
+            InventoryPlayer.ClearInventory();
+            SceneManager.LoadScene(idSecondLvl);
+        }
+        public void LoadThirdLvl()
+        {
+            InventoryPlayer.ClearInventory();
+            SceneManager.LoadScene(idThirdLvl);
         }
     }
 }

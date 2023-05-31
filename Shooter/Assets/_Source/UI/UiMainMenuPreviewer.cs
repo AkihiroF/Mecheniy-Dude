@@ -10,8 +10,12 @@ namespace _Source.UI
         [SerializeField] private SceneLoader sceneLoader;
         [SerializeField] private Button loadGameButton;
         [SerializeField] private Button startNewGameButton;
+        
+        [SerializeField] private Button loadFirstLvl;
+        [SerializeField] private Button loadSecondLvl;
+        [SerializeField] private Button loadThirdLvl;
+        
         [SerializeField] private Button settingsButton;
-        [SerializeField] private Button quitButton;
 
         private bool _isLoad;
 
@@ -29,7 +33,9 @@ namespace _Source.UI
         {
             loadGameButton.onClick.AddListener(() => sceneLoader.LoadGame());
             startNewGameButton.onClick.AddListener(() => sceneLoader.LoadNewGame());
-            quitButton.onClick.AddListener(() => sceneLoader.QuitGame());
+            loadFirstLvl.onClick.AddListener(() => sceneLoader.LoadFirsLvl());
+            loadSecondLvl.onClick.AddListener(() => sceneLoader.LoadSecondLvl());
+            loadThirdLvl.onClick.AddListener(() => sceneLoader.LoadThirdLvl());
         }
         
         
