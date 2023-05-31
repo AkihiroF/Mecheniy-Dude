@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevel 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Knife.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Knife.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/KnifeBullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/KnifeBullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/PistolPickup.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/PistolPickup.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/RiflePickup.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/RiflePickup.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/ShotgunPickup.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/ShotgunPickup.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestRifle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestRifle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestShortGun.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestShortGun.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/bulletShortGun.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/bulletShortGun.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Player/PlayerFireSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +154,7 @@
       <workItem from="1684496003078" duration="261000" />
       <workItem from="1684665229265" duration="10528000" />
       <workItem from="1685180426973" duration="14633000" />
-      <workItem from="1685365125369" duration="42996000" />
+      <workItem from="1685365125369" duration="44790000" />
     </task>
     <servers />
   </component>

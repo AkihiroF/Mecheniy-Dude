@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8999820378478476801}
   - component: {fileID: 8999820378478476800}
   - component: {fileID: 8999820378478476802}
-  - component: {fileID: 8999820378478476807}
   m_Layer: 10
   m_Name: TestAmmo
   m_TagString: Untagged
@@ -125,26 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a11903819f04413a93825dbdf0d8798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeAmmo: {fileID: 11400000, guid: fde250431043d4880b424ae53db168c3, type: 2}
+  typeAmmo: {fileID: 11400000, guid: 02ee254eefb1b45ebab0c81a5188361e, type: 2}
   countBullet: 10
---- !u!50 &8999820378478476807
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8999820378478476925}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
