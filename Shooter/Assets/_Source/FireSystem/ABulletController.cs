@@ -39,7 +39,7 @@ namespace _Source.FireSystem
             }
         }
 
-        protected void DeleteBullet()
+        private void DeleteBullet()
         {
             PoolBullets.OnDeleteBullets -= DeleteBullet;
             if (this.enabled ==false)

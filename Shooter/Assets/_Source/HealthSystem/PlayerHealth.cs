@@ -53,7 +53,8 @@ namespace _Source.HealthSystem
         {
             var porog = maxHp / gradationsColors.Count;
             var color = (int)Math.Round(CurrentHp / porog);
-            body.DOColor(gradationsColors[color - 1], 1);
+            if(color - 1 >= 0)
+                body.DOColor(gradationsColors[color - 1], 1);
         }
 
         public override void ReturnHealth(float health)

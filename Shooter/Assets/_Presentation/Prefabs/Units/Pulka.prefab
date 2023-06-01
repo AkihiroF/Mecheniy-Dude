@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1690906755409367867}
   - component: {fileID: 1235850694722287113}
   - component: {fileID: 7873821109491034392}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Pulka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
