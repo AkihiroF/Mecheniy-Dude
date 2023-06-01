@@ -55,7 +55,7 @@ namespace _Source.Lighting
                 else 
                 { 
 // Hit object 
-                    vertex = body.InverseTransformPoint(raycastHit2D.point); 
+                    vertex = body.InverseTransformPoint(new Vector3(raycastHit2D.point.x,raycastHit2D.point.y, body.position.z)); 
                 } 
                 vertices[vertexIndex] = vertex;
 

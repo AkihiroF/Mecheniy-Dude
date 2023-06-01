@@ -24,6 +24,7 @@ namespace _Source.Services
             if (_target.TypeAmmo != null)
             {
                 _maxCountBullet = _target.TypeAmmo.CountBullet;
+                
                 EditorGUILayout.IntSlider(_countBullet, 1, _maxCountBullet);
             }
             serializedObject.ApplyModifiedProperties();

@@ -11,7 +11,7 @@ namespace _Source.FireSystem
         protected float Damage;
         protected Rigidbody2D Rb;
         protected IPoolBullets PoolBullets;
-        protected bool IsDelete = false;
+        private bool _isDelete = false;
 
         public virtual void SetParameters(IPoolBullets controller, float speed, float damage)
         {
@@ -31,7 +31,7 @@ namespace _Source.FireSystem
 
         protected virtual void OnTriggerEnter2D(Collider2D col)
         {
-            if(IsDelete)
+            if(_isDelete)
                 Destroy(this.gameObject);
             else
             {
@@ -48,7 +48,7 @@ namespace _Source.FireSystem
                 Destroy(this.gameObject);
                 return;
             }
-            IsDelete = true;
+            _isDelete = true;
         }
     }
 }

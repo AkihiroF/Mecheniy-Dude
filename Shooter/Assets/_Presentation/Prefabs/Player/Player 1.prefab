@@ -50,10 +50,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 513
   angleView: 90.91
-  radiusView: 7.5
+  radiusView: 35.44
   radiusAroundView: 1.5
-  countIteration: 50
-  countIterationAround: 0
+  countIteration: 180
+  countIterationAround: 40
 --- !u!33 &7633326815049077692
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &4326334850478315599
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   - {r: 1, g: 0.9933062, b: 0, a: 1}
   - {r: 0.54858863, g: 1, b: 0, a: 1}
   - {r: 0.113875985, g: 1, b: 0, a: 1}
-  medicalKit: {fileID: 11400000, guid: 83665072e5d8f46b6bb47af025b24cf7, type: 2}
+  medicalKit: {fileID: 11400000, guid: 616cb093a50fa4b4aaae80babde172e7, type: 2}
 --- !u!114 &6285476433837717958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,8 +291,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4418895970529175975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.016, y: -0.077, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 0.29, z: 0}
+  m_LocalScale: {x: 6.5178704, y: 6.51787, z: 6.5178704}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4326334850478315593}
@@ -568,4 +568,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointPositionGun: {fileID: 4326334849786636278}
-  firstGun: {fileID: 11400000, guid: 34b7550916c1648e6afc52f841bff892, type: 2}
+  firstGun: {fileID: 11400000, guid: 49a7ec07f4f60468a8ca57a5284c7646, type: 2}
