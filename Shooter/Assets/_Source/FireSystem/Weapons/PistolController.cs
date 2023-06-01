@@ -1,5 +1,3 @@
-using _Source.FireSystem.Player;
-
 namespace _Source.FireSystem.Weapons
 {
     public class PistolController : ABaseGunController

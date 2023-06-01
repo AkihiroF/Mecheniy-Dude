@@ -13,6 +13,7 @@ namespace _Source.FireSystem
     public abstract class ABaseGunController : MonoBehaviour, IPoolBullets
     {
         [SerializeField] private Transform pointExitBullet;
+        [SerializeField] private Animator animator;
         [SerializeField] private float timeReload;
         [SerializeField] private float speedAttack;
 
@@ -128,6 +129,7 @@ namespace _Source.FireSystem
         protected IEnumerator WaitFire()
         {
             _isReloading = true;
+            animator.SetTrigger("Fire");
             yield return new WaitForSeconds(speedAttack);
             _isReloading = false;
             if (isAutomatic & _isFire)

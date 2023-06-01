@@ -523,10 +523,6 @@ MonoBehaviour:
     toNextMessageButton: {fileID: 7004103180365955631}
   - panelWithText: {fileID: 7004103179623135944}
     toNextMessageButton: {fileID: 7004103179554947483}
-  - panelWithText: {fileID: 0}
-    toNextMessageButton: {fileID: 0}
-  - panelWithText: {fileID: 0}
-    toNextMessageButton: {fileID: 0}
 --- !u!61 &7004103179746142647
 BoxCollider2D:
   m_ObjectHideFlags: 0
