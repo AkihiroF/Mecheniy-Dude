@@ -64,7 +64,6 @@ namespace _Source.UI
             DisableTerminal();
             DisableUpgrade();
             deadPanel.SetActive(false);
-            SwitchStateNextLvl(false);
         }
         private void BindButton()
         {
@@ -152,10 +151,11 @@ namespace _Source.UI
             Signals.Get<OnShowToNextLvl>().RemoveListener(SwitchStateNextLvl);
         }
 
-        private void SwitchStateNextLvl(bool isActive)
+        private void SwitchStateNextLvl(string info,bool isActive)
         {
             if (isActive)
             {
+                textToNextLvl.text = info;
                 textToNextLvl.DOFade(1, 1);
             }
             else

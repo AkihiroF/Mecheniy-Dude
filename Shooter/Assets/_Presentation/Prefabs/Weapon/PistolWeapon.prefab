@@ -146,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7332722071133688052}
   - component: {fileID: 5869792019117270613}
+  - component: {fileID: 6965865617835135826}
   m_Layer: 0
   m_Name: PistolWeapon
   m_TagString: Untagged
@@ -182,8 +183,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c5f3e2ffe348f6b12cdfe46b38d786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioController: {fileID: 6965865617835135826}
   pointExitBullet: {fileID: 2947203280205452723}
   animator: {fileID: 5101976647198736225}
   timeReload: 3
   speedAttack: 0.4
   isAutomatic: 0
+--- !u!114 &6965865617835135826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944577238639374424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7999b73dfcaf4905b33867250aec4e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFire: {fileID: 0}
+  audioReloading: {fileID: 0}

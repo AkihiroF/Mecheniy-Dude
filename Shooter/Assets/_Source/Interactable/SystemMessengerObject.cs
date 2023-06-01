@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.UIEvents;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,21 @@ namespace _Source.Interactable
     {
         [SerializeField] private GameObject mainPanel;
         [SerializeField] private List<PanelMessenger> massages;
+        [SerializeField] private LayerMask playerLayer;
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if ((playerLayer.value & (1 << other.gameObject.layer)) > 0)
+            {
+                Signals.Get<OnShowToNextLvl>().Dispatch("Нажмите 'Е' чтобы прочитать сообщение",true);
+            }
+        } 
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if ((playerLayer.value & (1 << other.gameObject.layer)) > 0)
+            {
+                Signals.Get<OnShowToNextLvl>().Dispatch("",false);
+            }
+        }
 
         private void Awake()
         {

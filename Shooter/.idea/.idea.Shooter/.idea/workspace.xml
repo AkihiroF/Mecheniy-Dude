@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/AudioWeaponController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/AudioWeaponController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/TestLight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Units/Pulka.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Units/Pulka.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/GamePlay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/HealthSystem/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/HealthSystem/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/InputSystem/Input.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/SystemMessengerObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/SystemMessengerObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/TeleportObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/TeleportObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/TerminalObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/TerminalObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/UIEvents/OnShowToNextLvl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/UIEvents/OnShowToNextLvl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

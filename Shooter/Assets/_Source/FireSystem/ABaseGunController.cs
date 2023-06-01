@@ -10,8 +10,10 @@ using UnityEngine;
 
 namespace _Source.FireSystem
 {
+    [RequireComponent(typeof(AudioWeaponController))]
     public abstract class ABaseGunController : MonoBehaviour, IPoolBullets
     {
+        [SerializeField] private AudioWeaponController audioController;
         [SerializeField] private Transform pointExitBullet;
         [SerializeField] private Animator animator;
         [SerializeField] private float timeReload;
@@ -119,6 +121,7 @@ namespace _Source.FireSystem
 
         private IEnumerator ReloadWeapon(int countAmmo)
         {
+            audioController.PlayAudioReloading();
             yield return new WaitForSeconds(timeReload);
             CurrentCountAmmoInGun += countAmmo;
             Signals.Get<OnFinishReloadWeapon>().Dispatch();
@@ -128,6 +131,7 @@ namespace _Source.FireSystem
 
         protected IEnumerator WaitFire()
         {
+            audioController.PlayAudioFire();
             _isReloading = true;
             animator.SetTrigger("Fire");
             yield return new WaitForSeconds(speedAttack);

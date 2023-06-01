@@ -146,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8844325569951903900}
   - component: {fileID: 8321971125668045482}
+  - component: {fileID: 4646411125244740991}
   m_Layer: 0
   m_Name: KnifeWeapon
   m_TagString: Untagged
@@ -183,13 +184,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762d3ba74f924d9d84f6713859a6329d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioController: {fileID: 4646411125244740991}
   pointExitBullet: {fileID: 3258381301522706308}
   animator: {fileID: 4565495243264243484}
   timeReload: 0
   speedAttack: 0.5
   isAutomatic: 0
   endPosition: {fileID: 6862377862610949146}
-  duration: 3.35
+  duration: 2.9
+--- !u!114 &4646411125244740991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949209655290218764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7999b73dfcaf4905b33867250aec4e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFire: {fileID: 0}
+  audioReloading: {fileID: 0}
 --- !u!1 &6657837521005407800
 GameObject:
   m_ObjectHideFlags: 0

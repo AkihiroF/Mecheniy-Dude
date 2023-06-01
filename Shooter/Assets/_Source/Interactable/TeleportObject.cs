@@ -22,7 +22,7 @@ namespace _Source.Interactable
         {
             if ((playerLayer.value & (1 << other.gameObject.layer)) > 0)
             {
-                Signals.Get<OnShowToNextLvl>().Dispatch(true);
+                Signals.Get<OnShowToNextLvl>().Dispatch("Нажмите 'Е', чтобы идти дальше",true);
                 _player = other.transform;
             }
         } 
@@ -30,7 +30,7 @@ namespace _Source.Interactable
         {
             if ((playerLayer.value & (1 << other.gameObject.layer)) > 0)
             {
-                Signals.Get<OnShowToNextLvl>().Dispatch(false);
+                Signals.Get<OnShowToNextLvl>().Dispatch("",false);
                 _player = null;
             }
         }
