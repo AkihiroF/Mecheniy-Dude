@@ -51,7 +51,7 @@ MonoBehaviour:
     m_Bits: 513
   angleView: 90.91
   radiusView: 7.5
-  radiusAroundView: 0
+  radiusAroundView: 1.5
   countIteration: 50
   countIterationAround: 0
 --- !u!33 &7633326815049077692

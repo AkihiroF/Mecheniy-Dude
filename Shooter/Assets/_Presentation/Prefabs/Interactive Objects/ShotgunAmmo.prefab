@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &82431189620519564
+--- !u!1 &8999820378478476925
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 82431189620519555}
-  - component: {fileID: 82431189620519552}
-  - component: {fileID: 82431189620519553}
-  - component: {fileID: 82431189620519567}
+  - component: {fileID: 8999820378478476806}
+  - component: {fileID: 8999820378478476801}
+  - component: {fileID: 8999820378478476800}
+  - component: {fileID: 8999820378478476802}
   m_Layer: 10
-  m_Name: TestKit
+  m_Name: ShotgunAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &82431189620519555
+--- !u!4 &8999820378478476806
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82431189620519564}
+  m_GameObject: {fileID: 8999820378478476925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.2, y: -2.51, z: 0}
+  m_LocalPosition: {x: 22.05, y: -0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &82431189620519552
+--- !u!212 &8999820378478476801
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82431189620519564}
+  m_GameObject: {fileID: 8999820378478476925}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -2074889641
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4cf3ecd0c83c41f4e9e209672c0b733d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2135676601826ca4cb7d526f695e4462, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,42 +86,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &82431189620519553
+--- !u!61 &8999820378478476800
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82431189620519564}
+  m_GameObject: {fileID: 8999820378478476925}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.038949966}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12, y: 12}
+    oldSize: {x: 5.4, y: 4.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.957848, y: 10.68549}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &82431189620519567
+--- !u!114 &8999820378478476802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82431189620519564}
+  m_GameObject: {fileID: 8999820378478476925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44fe3c620f22482da731fa9bf76f3e17, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a11903819f04413a93825dbdf0d8798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  medicalKit: {fileID: 11400000, guid: 616cb093a50fa4b4aaae80babde172e7, type: 2}
+  typeAmmo: {fileID: 11400000, guid: 8ca133dd74435494d8c9c69a59badeed, type: 2}
+  countBullet: 10
