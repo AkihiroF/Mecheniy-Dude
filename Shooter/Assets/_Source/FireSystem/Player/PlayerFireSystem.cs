@@ -85,9 +85,12 @@ namespace _Source.FireSystem.Player
 
         public void PrintAmmo()
         {
-            var currentPath = InventoryPlayer.GetCountItem(_currentClip) / _currentClip.CountBullet;
-            if (currentPath == -1)
-                currentPath = 0;
+            if (_currentGun.GetType() == typeof(KnifeController))
+            {
+                Signals.Get<OnPrintInfoAboutFire>().Dispatch("");
+                return;
+            }
+            var currentPath = InventoryPlayer.GetCountItem(_currentClip);
             Signals.Get<OnPrintInfoAboutFire>().Dispatch(
                 ($"{_currentCountAmmo} / {currentPath}"));
         }
