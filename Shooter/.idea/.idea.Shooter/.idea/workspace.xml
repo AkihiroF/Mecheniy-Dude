@@ -6,18 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Interactive Objects/TestMessenger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Interactive Objects/TestMessenger.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/LevelTwo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/LevelTwo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Player/Player 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/KnifeWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/KnifeWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/PistolWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/PistolWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/RifleWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/RifleWeapon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/ShortGunWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Weapon/ShortGunWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body 1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body 2.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body 2.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body 3.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body 3.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Body.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Knife.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Knife.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Pistol.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Pistol.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Rifle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Rifle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Animations/Shortgun.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Animations/Shortgun.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Ammo/BlastBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Ammo/BlastBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Units/EnemyShoter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Units/EnemyShoter.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/GamePlay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevell 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/PrototypeLevell 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/PistolController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/Weapons/PistolController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABulletController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

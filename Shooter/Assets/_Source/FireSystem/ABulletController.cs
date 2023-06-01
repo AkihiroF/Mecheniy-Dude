@@ -3,7 +3,6 @@ using UnityEngine;
 namespace _Source.FireSystem
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(CircleCollider2D))]
     public abstract class ABulletController : MonoBehaviour
     {
         [SerializeField] protected LayerMask contactLayer;
