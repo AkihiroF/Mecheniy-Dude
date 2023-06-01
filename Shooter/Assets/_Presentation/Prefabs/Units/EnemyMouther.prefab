@@ -188,4 +188,4 @@ MonoBehaviour:
   maxHp: 100
   countScore: 0
   _enemyPrefab: {fileID: 1977488174451460502, guid: 6eb34c93ef41e4060ad3408728130fbf, type: 3}
-  amountEnemy: 2
+  amountEnemy: 30

@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeAmmo: {fileID: 11400000, guid: 8ca133dd74435494d8c9c69a59badeed, type: 2}
-  countBullet: 10
+  countBullet: 5

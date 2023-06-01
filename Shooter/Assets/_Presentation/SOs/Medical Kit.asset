@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec96971f61f24c51a6ab12de04a10b40, type: 3}
   m_Name: Medical Kit
   m_EditorClassIdentifier: 
-  addingHp: 20
+  addingHp: 40
