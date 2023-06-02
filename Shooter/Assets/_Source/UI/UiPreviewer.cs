@@ -153,6 +153,8 @@ namespace _Source.UI
 
         private void SwitchStateNextLvl(string info,bool isActive)
         {
+            textToNextLvl.DOComplete();
+
             if (isActive)
             {
                 textToNextLvl.text = info;

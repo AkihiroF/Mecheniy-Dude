@@ -20,6 +20,9 @@ namespace _Source.Holy_Shit
         {
             if (Vector2.Distance(transform.position , _player.transform.position) <= 10)
             {
+                var direction = _player.transform.position - transform.position;
+                var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
                 _agent.SetDestination(_player.transform.position);
             }
            

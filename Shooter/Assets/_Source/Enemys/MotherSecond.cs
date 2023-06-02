@@ -25,6 +25,7 @@ public class MotherSecond : ABaseHealth
 
     private void Dead()
     {
+
         Signals.Get<OnAddScoreUpgrade>().Dispatch(countScore);
         for (int i = 0; i < amountEnemy; i++)
         {

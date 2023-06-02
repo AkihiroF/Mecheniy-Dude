@@ -19,12 +19,13 @@ namespace _Source.Interactable
             {
                 Signals.Get<OnShowToNextLvl>().Dispatch("Нажмите 'Е' чтобы открыть терминал",true);
             }
-        } 
+        }
+
         private void OnTriggerExit2D(Collider2D other)
         {
             if ((playerLayer.value & (1 << other.gameObject.layer)) > 0)
             {
-                Signals.Get<OnShowToNextLvl>().Dispatch("",false);
+                Signals.Get<OnShowToNextLvl>().Dispatch(" ",false);
             }
         }
     }
