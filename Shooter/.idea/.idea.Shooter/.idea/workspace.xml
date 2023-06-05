@@ -1,31 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="" />
+    <list default="true" id="c215a008-b1b8-4f95-adbc-13b1fa9ddb69" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/AudioWeaponController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/AudioWeaponController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Prefabs/Core/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presentation/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presentation/Scenes/GamePlay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/FireSystem/ABaseGunController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/SystemMessengerObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/SystemMessengerObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/TeleportObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/TeleportObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Interactable/TerminalObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Interactable/TerminalObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/UIEvents/OnShowToNextLvl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/SignalsEvents/UIEvents/OnShowToNextLvl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UI/UiPreviewer.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/MaterialReferenceManager.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2L2s9cbJHaimr6n2eAiIvvSjzph" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/akihirof/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/akihirof/.local/share/Symbols/src&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.13f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -64,6 +117,34 @@
       <option name="presentableId" value="Default" />
       <updated>1675080362040</updated>
       <workItem from="1675080365440" duration="37000" />
+      <workItem from="1675096247217" duration="6193000" />
+      <workItem from="1675160470664" duration="7802000" />
+      <workItem from="1675255014999" duration="18450000" />
+      <workItem from="1675422893206" duration="4473000" />
+      <workItem from="1678640992418" duration="96000" />
+      <workItem from="1679049987244" duration="8447000" />
+      <workItem from="1679222533446" duration="6359000" />
+      <workItem from="1679396010984" duration="5106000" />
+      <workItem from="1679745060716" duration="23623000" />
+      <workItem from="1679827712888" duration="1920000" />
+      <workItem from="1680431318622" duration="5187000" />
+      <workItem from="1680789870004" duration="3290000" />
+      <workItem from="1680950338968" duration="21511000" />
+      <workItem from="1680975163549" duration="618000" />
+      <workItem from="1681130563286" duration="3208000" />
+      <workItem from="1681565663467" duration="8213000" />
+      <workItem from="1681727361354" duration="4321000" />
+      <workItem from="1682010326550" duration="275000" />
+      <workItem from="1682014520429" duration="3424000" />
+      <workItem from="1683470653239" duration="6451000" />
+      <workItem from="1683886579966" duration="5447000" />
+      <workItem from="1683987488365" duration="15084000" />
+      <workItem from="1684154696750" duration="1810000" />
+      <workItem from="1684156517166" duration="7745000" />
+      <workItem from="1684496003078" duration="261000" />
+      <workItem from="1684665229265" duration="10528000" />
+      <workItem from="1685180426973" duration="14633000" />
+      <workItem from="1685365125369" duration="48395000" />
     </task>
     <servers />
   </component>

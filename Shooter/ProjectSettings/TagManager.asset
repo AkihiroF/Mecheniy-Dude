@@ -3,19 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SMS
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bullet
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - EnemyColision
+  - Obstacles
+  - InteractiveObject
   - 
   - 
   - 
@@ -40,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UnvisibleObject
+    uniqueID: 1175610405
+    locked: 0
+  - name: FieldOfView
+    uniqueID: 1148222735
+    locked: 0
+  - name: Shadow
+    uniqueID: 3245903225
+    locked: 0
+  - name: VisibleObject
+    uniqueID: 2220077655
+    locked: 0
+  - name: UI
+    uniqueID: 264239495
     locked: 0
