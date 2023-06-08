@@ -30,7 +30,7 @@ namespace _Source.FireSystem
         protected float SpeedBullet;
         protected float Damage;
         protected GameObject BulletObject;
-        protected List<ABulletController> BulletPool;
+        protected List<ABulletComponent> BulletPool;
 
         private bool _isMainReloading;
         private bool _isReloading;
@@ -38,7 +38,7 @@ namespace _Source.FireSystem
         private bool _isFire;
 
 
-        public void ReturnBulletInPool(ABulletController aBullet)
+        public void ReturnBulletInPool(ABulletComponent aBullet)
         {
             BulletPool.Add(aBullet);
         }
@@ -58,7 +58,7 @@ namespace _Source.FireSystem
             SpeedBullet = info.SpeedBullet;
             Damage = info.Damage;
             _ammoInfo = info;
-            BulletPool = new List<ABulletController>();
+            BulletPool = new List<ABulletComponent>();
             UpgradeSpeedReloading(upgradeSpeed);
             _isMainReloading = false;
             Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeSpeedReloading);

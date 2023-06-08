@@ -3,6 +3,8 @@ using _Source.HealthSystem;
 using _Source.InputSystem;
 using _Source.Interactable;
 using _Source.Player;
+using _Source.Services;
+using _Source.SignalsEvents.CoreEvents;
 using _Source.UI;
 using UnityEngine;
 
@@ -20,7 +22,8 @@ namespace _Source.Core
             var inputHandler = new InputHandler(playerFireSystem, playerHealth, playerInteractiveComponent);
             playerMovement.SetInput(input);
             var game = new Game(input, inputHandler);
-            game.StartGame();
+            Signals.Get<OnResume>().Dispatch();
+            //game.StartGame();
         }
     }
 }

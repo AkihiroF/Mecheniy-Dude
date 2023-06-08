@@ -6,6 +6,7 @@ using _Source.SignalsEvents.CoreEvents;
 using _Source.SignalsEvents.UIEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace _Source.InputSystem
 {
@@ -15,6 +16,7 @@ namespace _Source.InputSystem
         private readonly PlayerHealth _playerHealth;
         private readonly PlayerInteractiveComponent _playerInteractive;
 
+        [Inject]
         public InputHandler(PlayerFireSystem playerFireSystem,
             PlayerHealth playerHealth,
             PlayerInteractiveComponent playerInteractive)

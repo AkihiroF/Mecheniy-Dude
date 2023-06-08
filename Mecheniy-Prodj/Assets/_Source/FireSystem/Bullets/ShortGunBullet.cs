@@ -4,23 +4,23 @@ using UnityEngine;
 
 namespace _Source.FireSystem.Bullets
 {
-    public class ShortGunBullet : ABulletController, IPoolBullets
+    public class ShortGunBullet : ABulletComponent, IPoolBullets
     {
-        [SerializeField] private ABulletController blastObject;
+        [SerializeField] private ABulletComponent blastObject;
         [SerializeField] private int countBlasts;
         [SerializeField] private float degreeOfScattering;
 
-        private List<ABulletController> _poolBlasts;
+        private List<ABulletComponent> _poolBlasts;
         private float _angleFire;
 
         public override void SetParameters(IPoolBullets controller, float speed, float damage)
         {
             base.SetParameters(controller, speed, damage);
             _angleFire = degreeOfScattering / countBlasts;
-            _poolBlasts = new List<ABulletController>();
+            _poolBlasts = new List<ABulletComponent>();
             for (int i = 0; i < countBlasts; i++)
             {
-                var blast = Instantiate(blastObject,transform.parent).GetComponent<ABulletController>();
+                var blast = Instantiate(blastObject,transform.parent).GetComponent<ABulletComponent>();
                 blast.gameObject.SetActive(false);
                 blast.SetParameters(this, speed,damage);
                 _poolBlasts.Add(blast);
@@ -62,7 +62,7 @@ namespace _Source.FireSystem.Bullets
             if (OnDeleteBullets != null) OnDeleteBullets.Invoke();
         }
 
-        public void ReturnBulletInPool(ABulletController aBullet)
+        public void ReturnBulletInPool(ABulletComponent aBullet)
         {
             _poolBlasts.Add(aBullet);
         }

@@ -2,6 +2,7 @@ using System;
 using _Source.Services;
 using _Source.SignalsEvents.UpgradesEvents;
 using UnityEngine;
+using Zenject;
 
 namespace _Source.Player
 {
@@ -30,7 +31,11 @@ namespace _Source.Player
             speedMoving += speedMoving * percent /100;
         }
 
-        public void SetInput(Input input) => _input = input;
+        [Inject]
+        public void SetInput(Input input)
+        {
+            _input = input;
+        }
 
         private void FixedUpdate()
         {

@@ -17,7 +17,7 @@ namespace _Source.FireSystem.Weapons
             else
             {
                 var newBullet = Instantiate(BulletObject, this.transform)
-                    .GetComponent<ABulletController>();
+                    .GetComponent<ABulletComponent>();
                 SetPositionBullet(newBullet.transform);
                 newBullet.SetParameters(this, SpeedBullet, Damage, duration, endPosition);
                 newBullet.FireBullet();

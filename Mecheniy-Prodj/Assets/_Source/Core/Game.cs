@@ -5,16 +5,19 @@ using _Source.SignalsEvents.HealthEvents;
 using _Source.SignalsEvents.WeaponsEvents;
 using DG.Tweening;
 using UnityEngine;
+using Zenject;
 
 namespace _Source.Core
 {
     public class Game
     {
+        [Inject]
         public Game(Input input, InputHandler inputHandler)
         {
             _input = input;
             _inputHandler = inputHandler;
             Subscribe();
+            StartGame();
         }
 
         private Input _input;
@@ -101,8 +104,9 @@ namespace _Source.Core
                 _input.Player.FireAutomatic.Disable();
             }
         }
-        public void StartGame()
+        private void StartGame()
         {
+            Debug.Log("start");
             EnablePlayerInput();
             Bind();
             SetFireMode();

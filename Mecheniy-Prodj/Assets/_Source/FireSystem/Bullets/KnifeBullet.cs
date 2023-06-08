@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Source.FireSystem.Bullets
 {
-    public class KnifeBullet : ABulletController
+    public class KnifeBullet : ABulletComponent
     {
         private bool _isFire;
         private Vector3 _startPosition;

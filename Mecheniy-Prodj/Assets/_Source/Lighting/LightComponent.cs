@@ -1,5 +1,6 @@
-using System;
+using ModestTree;
 using UnityEngine;
+using Zenject;
 
 namespace _Source.Lighting
 {
@@ -14,6 +15,12 @@ namespace _Source.Lighting
 
         private Mesh _exitMesh;
         private Vector3 _origin;
+
+        [Inject]
+        public void Inj(GameObject obj)
+        {
+            Debug.Log(obj.name);
+        }
 
         private void Start()
         {

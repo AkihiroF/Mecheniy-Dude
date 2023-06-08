@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Source.FireSystem.Bullets
 {
-    public class PistolBullet : ABulletController
+    public class PistolBullet : ABulletComponent
     {
         public override bool FireBullet(float angle = 0)
         {
