@@ -1,17 +1,16 @@
-using System;
-using System.Linq;
 using _Source.Services;
 using _Source.SignalsEvents.UpgradesEvents;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Vector3 = UnityEngine.Vector3;
 
-namespace _Source.Player
+namespace _Source.Lighting
 {
+    [RequireComponent(typeof(MeshFilter))]
+    [RequireComponent(typeof(MeshRenderer))]
     public class FieldOfViewComponent : MonoBehaviour
     {
         [SerializeField] private LayerMask layersView;
-        [SerializeField] private float angleView;
+        [SerializeField] protected float angleView;
         [SerializeField] private float radiusView;
         [Space]
         [SerializeField] private float radiusAroundView;
@@ -19,54 +18,30 @@ namespace _Source.Player
         [SerializeField] private int countIterationAround;
         
         private Mesh _exitMesh;
+        protected ParametersField ParametersField;
 
-        private FieldOfView _calculator;
-
-        private void Awake()
+        protected virtual void Awake()
         {
-            Signals.Get<OnUpgradeAngleVision>().AddListener(UpgradeAngle);
-            _calculator = new FieldOfView(
-                layersView,
-                angleView,
-                radiusView,
-                countIteration,
-                transform,
-                radiusAroundView,
-                countIterationAround);
+            _exitMesh = new Mesh();
+            ParametersField = new ParametersField(layersView, angleView, radiusView, radiusAroundView,
+                countIterationAround, countIteration, _exitMesh, this.transform);
         }
 
-        private void Start()
+        protected virtual void Start()
         {
-            _exitMesh = new Mesh(); 
             GetComponent<MeshFilter>().mesh = _exitMesh;
             Renderer myRenderer = GetComponent<Renderer>();
             myRenderer.sortingLayerName = "FieldOfView";
             myRenderer.sortingOrder = 10;
         }
 
-        private void UpgradeAngle(float percent)
+        protected virtual void LateUpdate()
         {
-            angleView += angleView * percent / 100;
-            _calculator.UpgradeAngle(angleView);
-        }
-
-        private void Update() 
-        { 
-            _calculator.SetOrigin(transform.position); 
-            _calculator.SetAimDirection(transform.up);
-        } 
-
-        private void LateUpdate()
-        {
-            _calculator.UpdateMesh(ref _exitMesh);
+            var startingAngle = UtilsClass.GetAngleFromVectorFloat(transform.up) + angleView / 2f;
+            LightMathf.UpdateFieldMesh(ParametersField, startingAngle);
             _exitMesh.Optimize();
-            
         }
-
-        private void OnDestroy()
-        {
-            Signals.Get<OnUpgradeAngleVision>().RemoveListener(UpgradeAngle);
-        }
+        
 #if (UNITY_EDITOR)
         private void OnDrawGizmos()
         {
