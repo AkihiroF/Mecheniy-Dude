@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df96f77adc3484a86da75c64ea3d881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioController: {fileID: 6602613477315940988}
+  audioComponent: {fileID: 6602613477315940988}
   pointExitBullet: {fileID: 5961233468277127091}
   animator: {fileID: 1738380017062436510}
   timeReload: 4
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_Size: {x: 0.67, y: 0.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1738380017062436510

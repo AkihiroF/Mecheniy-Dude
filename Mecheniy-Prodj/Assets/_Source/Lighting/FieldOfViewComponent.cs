@@ -1,5 +1,4 @@
 using _Source.Services;
-using _Source.SignalsEvents.UpgradesEvents;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -37,10 +36,11 @@ namespace _Source.Lighting
 
         protected virtual void LateUpdate()
         {
-            var startingAngle = UtilsClass.GetAngleFromVectorFloat(transform.up) + angleView / 2f;
-            LightMathf.UpdateFieldMesh(ParametersField, startingAngle);
+            LightMathf.UpdateFieldMesh(ParametersField, StartingAngle());
             _exitMesh.Optimize();
         }
+
+        protected float StartingAngle() => UtilsClass.GetAngleFromVectorFloat(transform.up) + angleView / 2f;
         
 #if (UNITY_EDITOR)
         private void OnDrawGizmos()

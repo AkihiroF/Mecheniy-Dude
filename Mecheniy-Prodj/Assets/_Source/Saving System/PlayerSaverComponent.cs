@@ -36,7 +36,7 @@ namespace _Source.Saving_System
 
                     foreach (var gun in currentdata.guns)
                     {
-                        var type = gun.GunObjectObject.GetComponent<ABaseGunController>().GetType();
+                        var type = gun.GunObjectObject.GetComponent<ABaseGunComponent>().GetType();
                         InventoryPlayer.AddWeapon(type,gun);
                     }
                     health.SetSavedHeath(currentdata.hp);

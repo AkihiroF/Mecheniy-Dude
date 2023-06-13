@@ -17,7 +17,7 @@ namespace _Source.FireSystem.Player
 
         private PlayerGunSo _currentGunSo;
         private GameObject _gunObj;
-        private ABaseGunController _currentGun;
+        private ABaseGunComponent _currentGun;
         private ClipSo _currentClip;
         private int _currentCountAmmo;
         private float _percentUpgrade;
@@ -45,7 +45,7 @@ namespace _Source.FireSystem.Player
         private void CreateWeapon()
         {
             _gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
-            _currentGun = _gunObj.GetComponent<ABaseGunController>();
+            _currentGun = _gunObj.GetComponent<ABaseGunComponent>();
             _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             _currentClip = _currentGunSo.ClipInfo;
             if (InventoryPlayer.GetWeapon(_currentGun.GetType()) == null)
@@ -85,7 +85,7 @@ namespace _Source.FireSystem.Player
 
         public void PrintAmmo()
         {
-            if (_currentGun.GetType() == typeof(KnifeController))
+            if (_currentGun.GetType() == typeof(KnifeComponent))
             {
                 Signals.Get<OnPrintInfoAboutFire>().Dispatch("");
                 return;
@@ -106,16 +106,16 @@ namespace _Source.FireSystem.Player
             switch (id)
             {
                 case WeaponsTypes.Knife:
-                    weapon = InventoryPlayer.GetWeapon(typeof(KnifeController));
+                    weapon = InventoryPlayer.GetWeapon(typeof(KnifeComponent));
                     break;
                 case WeaponsTypes.Pistol:
-                    weapon = InventoryPlayer.GetWeapon(typeof(PistolController));
+                    weapon = InventoryPlayer.GetWeapon(typeof(PistolComponent));
                     break;
                 case WeaponsTypes.ShortGun:
-                    weapon = InventoryPlayer.GetWeapon(typeof(ShortGunController));
+                    weapon = InventoryPlayer.GetWeapon(typeof(ShortGunComponent));
                     break;
                 case WeaponsTypes.Rifle:
-                    weapon = InventoryPlayer.GetWeapon(typeof(RifleController));
+                    weapon = InventoryPlayer.GetWeapon(typeof(RifleComponent));
                     break;
                 default:
                     weapon = null;

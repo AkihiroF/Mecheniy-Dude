@@ -1,6 +1,6 @@
 namespace _Source.FireSystem.Weapons
 {
-    public class PistolController : ABaseGunController
+    public class PistolComponent : ABaseGunComponent
     {
         protected override void InitialiseBullet()
         {

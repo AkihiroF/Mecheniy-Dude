@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Source.FireSystem.Weapons
 {
-    public class KnifeController : ABaseGunController
+    public class KnifeComponent : ABaseGunComponent
     {
         [SerializeField] private Transform endPosition;
         [SerializeField] private float duration;

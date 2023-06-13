@@ -1,58 +1,63 @@
-using System;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace _Source.Enemy
+namespace _Source.Enemy.EnemyStateMachine
 {
-    [RequireComponent(typeof(NavMeshAgent))]
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyMovementState : IEnemyState
     {
-        [SerializeField] private float speed;
-        private NavMeshAgent _agent;
+        private readonly NavMeshAgent _agent;
         private List<PointInterest> _directory;
         private int _currentIdPoint;
-        private float _stoppingDistance;
+        private readonly float _stoppingDistance;
         private Vector3 _lastPosition;
 
-        private void Start()
+        public EnemyMovementState(NavMeshAgent agent)
         {
-            _agent = GetComponent<NavMeshAgent>();
-            _agent.speed = speed;
+            _agent = agent;
             _stoppingDistance = _agent.stoppingDistance;
-            _agent.updateUpAxis = false;
-            _agent.updateRotation = false;
+        }
+        public void Enter()
+        {
             StartMoving();
-            InvokeRepeating("CheckDestination", 0,0.3f);
+        }
+
+        public void Enter(Vector3 position)
+        {
+            throw new System.NotImplementedException();
         }
 
         private void StartMoving()
         {
-            _directory = CreatorDirectoryEnemy.CreateNewDirectory(transform.position);
+            _directory = CreatorDirectoryEnemy.CreateNewDirectory(_agent.transform.position);
             _currentIdPoint = 0;
             _agent.SetDestination(_directory[_currentIdPoint].Position);
         }
 
-        private void CheckDestination()
+        public void Execute()
         {
+            var position = _agent.transform.position;
             if (OnDestinationReached())
             {
                 MoveToNextPoint();
-                _lastPosition = transform.position;
+                _lastPosition = position;
             }
-        }
-
-        private void FixedUpdate()
-        {
-            var position = transform.position;
             var direction = position - _lastPosition;
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf. Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            _agent.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             _lastPosition = position;
+            
         }
 
+        public void Execute(Vector3 position)
+        {
+            
+        }
+
+        public bool GetActive()
+        {
+            throw new System.NotImplementedException();
+        }
 
         private void MoveToNextPoint()
         {
@@ -70,6 +75,11 @@ namespace _Source.Enemy
         private bool OnDestinationReached()
         {
             return _agent.remainingDistance <= _stoppingDistance;
+        }
+
+        public void Exit()
+        {
+            _agent.SetDestination(_agent.transform.position);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Source.FireSystem
@@ -41,8 +42,10 @@ namespace _Source.FireSystem
 
         private void DeleteBullet()
         {
+            if(this == null)
+                return;
             PoolBullets.OnDeleteBullets -= DeleteBullet;
-            if (this.enabled ==false)
+            if (this.enabled ==false && this != null)
             {
                 Destroy(this.gameObject);
                 return;

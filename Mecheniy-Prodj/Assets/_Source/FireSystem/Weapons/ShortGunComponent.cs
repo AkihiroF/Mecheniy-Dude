@@ -1,8 +1,7 @@
-using _Source.FireSystem.Player;
 
 namespace _Source.FireSystem.Weapons
 {
-    public class ShortGunController : ABaseGunController
+    public class ShortGunComponent : ABaseGunComponent
     {
         private int currentIndex;
         protected override void InitialiseBullet()

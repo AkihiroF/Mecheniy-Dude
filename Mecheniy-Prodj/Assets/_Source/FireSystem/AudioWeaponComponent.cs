@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Source.FireSystem
 {
-    public class AudioWeaponController : MonoBehaviour
+    public class AudioWeaponComponent : MonoBehaviour
     {
         [SerializeField] private AudioSource audioFire;
         [SerializeField] private AudioSource audioReloading;

@@ -21,6 +21,51 @@ namespace _Source.Lighting
             parametersField.Mesh.triangles = GetTriangles(parametersField.CurrentCountIteration);
             parametersField.Mesh.bounds = new Bounds(parametersField.Body.position, Vector3.one * 1000f);
         }
+
+        public static bool SearchPlayerInField(ParametersField parametersField, float startingAngle,LayerMask layersContact,LayerMask layerPlayer,
+            out Vector3 position)
+        {
+            float angle = startingAngle; 
+            float angleIncreaseField = parametersField.AngleView / parametersField.CountIteration; 
+            for (int i = 0; i < parametersField.CountIteration; i++) 
+            {
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(
+                    parametersField.Body.position,
+                    UtilsClass.GetVectorFromAngle(angle),
+                    parametersField.RadiusView,
+                    layersContact); 
+                
+                if (raycastHit2D.collider != null)
+                {
+                    if ((layerPlayer.value & (1 << raycastHit2D.collider.gameObject.layer)) > 0)
+                    {
+                        position = raycastHit2D.collider.transform.position;
+                        return true; 
+                    }
+                }
+                angle -= angleIncreaseField; 
+            }
+            var angleIncreaseAround = (360 - parametersField.AngleView) / parametersField.CountIterationAround;
+            for (int i = 0; i <= parametersField.CountIterationAround; i++)
+            {
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(
+                    parametersField.Body.position, UtilsClass.GetVectorFromAngle(angle),
+                    parametersField.RadiusAroundView,
+                    layersContact); 
+                if (raycastHit2D.collider != null) 
+                {
+                    if ((layerPlayer.value & (1 << raycastHit2D.collider.gameObject.layer)) > 0)
+                    {
+                        position = raycastHit2D.collider.transform.position;
+                        return true; 
+                    }
+                }
+                angle -= angleIncreaseAround; 
+            }
+
+            position = Vector2.zero;
+            return false;
+        }
         private static int[] GetTriangles(int countIterationAround)
         {
             var triangles = new int[countIterationAround * 3];

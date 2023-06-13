@@ -7,13 +7,14 @@ using _Source.Services;
 using _Source.SignalsEvents.UpgradesEvents;
 using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Source.FireSystem
 {
-    [RequireComponent(typeof(AudioWeaponController))]
-    public abstract class ABaseGunController : MonoBehaviour, IPoolBullets
+    [RequireComponent(typeof(AudioWeaponComponent))]
+    public abstract class ABaseGunComponent : MonoBehaviour, IPoolBullets
     {
-        [SerializeField] private AudioWeaponController audioController;
+        [SerializeField] private AudioWeaponComponent audioComponent;
         [SerializeField] private Transform pointExitBullet;
         [SerializeField] private Animator animator;
         [SerializeField] private float timeReload;
@@ -43,7 +44,7 @@ namespace _Source.FireSystem
             BulletPool.Add(aBullet);
         }
 
-        public void SetParameters(ClipSo info,int countAmmo = 0, float upgradeSpeed = 0)
+        public void SetParameters(ClipSo info,int countAmmo = 0, float upgradeSpeed = 0, bool isEnemy = false)
         {
             _countAmmoInClip = info.CountBullet;
             if (countAmmo == 0)
@@ -61,7 +62,8 @@ namespace _Source.FireSystem
             BulletPool = new List<ABulletComponent>();
             UpgradeSpeedReloading(upgradeSpeed);
             _isMainReloading = false;
-            Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeSpeedReloading);
+            if(isEnemy == false)
+                Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeSpeedReloading);
             InvokeFireFromWeapon();
         }
         private void UpgradeSpeedReloading(float percent) => timeReload -= timeReload * percent / 100;
@@ -84,6 +86,7 @@ namespace _Source.FireSystem
             if(_isReloading)
                 return;
             DoFire();
+            Debug.Log("fire");
         }
 
         protected abstract void DoFire();
@@ -121,7 +124,7 @@ namespace _Source.FireSystem
 
         private IEnumerator ReloadWeapon(int countAmmo)
         {
-            audioController.PlayAudioReloading();
+            audioComponent.PlayAudioReloading();
             yield return new WaitForSeconds(timeReload);
             CurrentCountAmmoInGun += countAmmo;
             Signals.Get<OnFinishReloadWeapon>().Dispatch();
@@ -131,9 +134,9 @@ namespace _Source.FireSystem
 
         protected IEnumerator WaitFire()
         {
-            audioController.PlayAudioFire();
+            audioComponent.PlayAudioFire();
             _isReloading = true;
-            animator.SetTrigger("Fire");
+            if(animator != null)animator.SetTrigger("Fire");
             yield return new WaitForSeconds(speedAttack);
             _isReloading = false;
             if (isAutomatic & _isFire)

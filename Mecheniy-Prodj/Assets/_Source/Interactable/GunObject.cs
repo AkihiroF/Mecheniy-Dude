@@ -11,7 +11,7 @@ namespace _Source.Interactable
         [SerializeField] private PlayerGunSo gun;
         public void Interact()
         {
-            var type = gun.GunObjectObject.GetComponent<ABaseGunController>().GetType();
+            var type = gun.GunObjectObject.GetComponent<ABaseGunComponent>().GetType();
             InventoryPlayer.AddWeapon(type,gun);
             InventoryPlayer.AddItem(gun.ClipInfo, gun.ClipInfo.CountBullet);
             Destroy(this.gameObject);
