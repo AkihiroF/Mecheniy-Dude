@@ -24,9 +24,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3374862298766567087}
-  m_LocalRotation: {x: 0, y: -0, z: -0.5702179, w: 0.8214935}
-  m_LocalPosition: {x: 334.79004, y: -130.95935, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4326334850478315593}
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4297376294483307961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.117, z: 0.053}
+  m_LocalPosition: {x: 0, y: 0.117, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326334849786636277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6694069627409983559}
   - component: {fileID: 7506896639642694568}
-  - component: {fileID: 2578179359084226036}
+  - component: {fileID: 3073835118760480844}
   m_Layer: 10
   m_Name: --PlayerInteractiveComponent--
   m_TagString: Untagged
@@ -507,8 +507,8 @@ MonoBehaviour:
   interactiveLayer:
     serializedVersion: 2
     m_Bits: 1024
---- !u!58 &2578179359084226036
-CircleCollider2D:
+--- !u!60 &3073835118760480844
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -521,8 +521,22 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.77
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.48498562, y: 0.16131958}
+      - {x: -0.34982842, y: -0.3680252}
+      - {x: 0.29345345, y: -0.39651754}
+      - {x: 0.5090999, y: 0.11230077}
 --- !u!1 &7531947373458302660
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,18 +11,12 @@ namespace _Source.HealthSystem
         {
             if (CurrentHp - damage <= 0)
             {
-                Dead();
+                
             }
             else
             {
                 CurrentHp -= damage;
             }
-        }
-
-        private void Dead()
-        {
-            Signals.Get<OnAddScoreUpgrade>().Dispatch(countScore);
-            Destroy(this.gameObject);
         }
 
         public override void ReturnHealth(float health)

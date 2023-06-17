@@ -24,6 +24,12 @@ namespace _Source.UI
         
         [SerializeField] private GameObject medicalPanel;
         [SerializeField] private TextMeshProUGUI textMedical;
+
+        [Space] 
+        
+        [SerializeField] private Slider sliderHp;
+        [SerializeField] private TextMeshProUGUI textHp;
+        
         
         [Space]
         
@@ -124,6 +130,7 @@ namespace _Source.UI
             
             Signals.Get<OnHealing>().AddListener(CheckKit);
             Signals.Get<OnDead>().AddListener(PrintDead);
+            Signals.Get<OnDamagePlayer>().AddListener(ShowHp);
             
             Signals.Get<OnEnablePaused>().AddListener(EnablePaused);
             Signals.Get<OnRestart>().AddListener(UnSubscribe);
@@ -142,6 +149,7 @@ namespace _Source.UI
             
             Signals.Get<OnHealing>().RemoveListener(CheckKit);
             Signals.Get<OnDead>().RemoveListener(PrintDead);
+            Signals.Get<OnDamagePlayer>().RemoveListener(ShowHp);
             
             Signals.Get<OnEnablePaused>().RemoveListener(EnablePaused);
             Signals.Get<OnRestart>().RemoveListener(UnSubscribe);
@@ -200,6 +208,14 @@ namespace _Source.UI
             {
                 medicalPanel.SetActive(false);
             }
+        }
+
+        private void ShowHp(float hp)
+        {
+            var currentValue = sliderHp.value;
+            DOTween.To(() => currentValue, x => currentValue = x, hp, 1f)
+                .OnUpdate(() => sliderHp.value = currentValue);
+            textHp.text = $"{Mathf.FloorToInt(hp)}";
         }
 
         #endregion

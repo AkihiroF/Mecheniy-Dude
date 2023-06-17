@@ -11,8 +11,6 @@ namespace _Source.HealthSystem
 {
     public class PlayerHealth : ABaseHealth
     {
-        [SerializeField] private SpriteRenderer body;
-        [Tooltip("Gradation from minimum to maximum HP")][SerializeField] private List<Color> gradationsColors;
         [SerializeField] private MedicalKitSo medicalKit;
 
         public float GetHp
@@ -51,10 +49,7 @@ namespace _Source.HealthSystem
 
         private void CheckHp()
         {
-            var porog = maxHp / gradationsColors.Count;
-            var color = (int)Math.Round(CurrentHp / porog);
-            if(color - 1 >= 0)
-                body.DOColor(gradationsColors[color - 1], 1);
+            Signals.Get<OnDamagePlayer>().Dispatch(CurrentHp);
         }
 
         public override void ReturnHealth(float health)
