@@ -22,13 +22,11 @@ namespace _Source.Enemy.EnemyStateMachine
             _currentGun.SetParameters(info.ClipInfo,info.ClipInfo.CountBullet, 0,true);
             _currentClip = info.ClipInfo;
             _body = parameters.enemyTransform;
-            _gunObj.SetActive(false);
             _distanceRetreat = parameters.distanceRetreat;
             _agent = parameters.agent;
         }
         public void Enter()
         {
-            _gunObj.SetActive(true);
             var countAmmo = InventoryPlayer.GetCountItem(_currentClip);
             if (countAmmo < 100)
             {

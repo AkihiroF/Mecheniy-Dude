@@ -16,5 +16,7 @@ namespace _Source.HealthSystem
         public abstract void GetDamage(float damage);
 
         public abstract void ReturnHealth(float health);
+
+        public void SavedDead() => this.gameObject.SetActive(false);
     }
 }

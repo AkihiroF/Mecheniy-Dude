@@ -145,6 +145,8 @@ namespace _Source.Player
             }
         }
 
+        public static int GetCountWeapon => GunSos.Count;
+
         #endregion
     }
 }

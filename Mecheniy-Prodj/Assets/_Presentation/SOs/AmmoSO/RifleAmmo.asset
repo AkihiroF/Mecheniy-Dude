@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 599393076552854332, guid: 96c5001b47f464bb9916b8a2788efb20, type: 3}
   countBulletInClip: 30
-  speedBullet: 1000
+  speedBullet: 2000
   damage: 15

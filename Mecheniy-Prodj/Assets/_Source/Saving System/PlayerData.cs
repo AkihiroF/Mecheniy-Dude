@@ -11,7 +11,7 @@ namespace _Source.Saving_System
     {
         public List<int> keysInventory;
         public List<int> valuesInventory;
-        public Vector2 position;
+        public Vector3 position;
         public PlayerGunSo currentGun;
          public float hp;
          public int currentAmmoInGun;

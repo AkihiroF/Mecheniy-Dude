@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7279082304748570176}
   - component: {fileID: 4058214857244591826}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3374862298766567087}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4326334850478315593}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4058214857244591826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2074889641
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54bc3edd361234b499062ae9728c1a91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
     m_Bits: 513
   angleView: 90.91
   radiusView: 35.44
-  radiusAroundView: 1.5
+  radiusAroundView: 3.43
   countIteration: 180
   countIterationAround: 40
 --- !u!33 &7633326815049077692
@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326334849786636277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.25}
+  m_LocalPosition: {x: 0.39, y: 1.05, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -247,7 +247,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326334850478315598}
-  m_LocalRotation: {x: -0, y: -0, z: 0.5702179, w: 0.8214935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.53, y: -2.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -261,7 +261,7 @@ Transform:
   - {fileID: 7279082304748570176}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 69.531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4326334850478315592
 Rigidbody2D:
   serializedVersion: 4
@@ -298,7 +298,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.9
 --- !u!114 &4326334850478315594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,14 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
-  body: {fileID: 0}
-  gradationsColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.42050022, b: 0, a: 1}
-  - {r: 1, g: 0.5992784, b: 0, a: 1}
-  - {r: 1, g: 0.9933062, b: 0, a: 1}
-  - {r: 0.54858863, g: 1, b: 0, a: 1}
-  - {r: 0.113875985, g: 1, b: 0, a: 1}
   medicalKit: {fileID: 11400000, guid: 616cb093a50fa4b4aaae80babde172e7, type: 2}
 --- !u!114 &6285476433837717958
 MonoBehaviour:
@@ -532,11 +524,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.48498562, y: 0.16131958}
-      - {x: -0.34982842, y: -0.3680252}
-      - {x: 0.29345345, y: -0.39651754}
-      - {x: 0.5090999, y: 0.11230077}
+    - - {x: 1.1158981, y: 1.2235808}
+      - {x: 0.57331085, y: 1.8200423}
+      - {x: -0.30467033, y: 1.7519777}
+      - {x: -0.8157673, y: 1.4145589}
+      - {x: -1.1811774, y: -0.053992182}
+      - {x: -0.5861146, y: -1.3402175}
+      - {x: 1.0305026, y: -1.3553221}
+      - {x: 1.2816849, y: -0.31974053}
+      - {x: 1.2766399, y: 0.47562408}
 --- !u!1 &7531947373458302660
 GameObject:
   m_ObjectHideFlags: 0

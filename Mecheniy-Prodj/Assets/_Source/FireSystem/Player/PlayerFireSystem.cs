@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using _Source.FireSystem.SOs;
 using _Source.FireSystem.Weapons;
 using _Source.InputSystem;
@@ -16,23 +18,43 @@ namespace _Source.FireSystem.Player
         [SerializeField] private PlayerGunSo firstGun;
 
         private PlayerGunSo _currentGunSo;
-        private GameObject _gunObj;
+        //private GameObject _gunObj;
         private ABaseGunComponent _currentGun;
         private ClipSo _currentClip;
         private int _currentCountAmmo;
         private float _percentUpgrade;
+
+        private Dictionary<PlayerGunSo,ABaseGunComponent> _currentGunInventory;
         public PlayerGunSo GetCurrentGun => _currentGunSo;
 
         public int CurrentCountAmmoInGun => _currentCountAmmo;
 
         private void Start()
         {
+            _currentGunInventory = new Dictionary<PlayerGunSo, ABaseGunComponent>();
             Signals.Get<OnRestart>().AddListener(UnSubscribe);
             Signals.Get<OnFinishReloadWeapon>().AddListener(PrintAmmo);
             Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeReloading);
+            
             if (_currentGunSo == null)
             {
                 _currentGunSo = firstGun;
+            }
+
+            if (InventoryPlayer.GetCountWeapon != 0)
+            {
+                var keys = InventoryPlayer.GunSos.Keys;
+                foreach (var key in keys)
+                {
+                    var gun = InventoryPlayer.GunSos[key];
+                    if(gun == _currentGunSo)
+                        continue;
+                    var gunObj = Instantiate(gun.GunObjectObject, pointPositionGun);
+                    var gunComponent = gunObj.GetComponent<ABaseGunComponent>();
+                    _currentGunInventory.Add(gun, gunComponent);
+                    gunComponent.SetParameters(gun.ClipInfo,0,0);
+                    gunObj.SetActive(false);
+                }
             }
             CreateWeapon();
         }
@@ -44,10 +66,21 @@ namespace _Source.FireSystem.Player
 
         private void CreateWeapon()
         {
-            _gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
-            _currentGun = _gunObj.GetComponent<ABaseGunComponent>();
-            _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             _currentClip = _currentGunSo.ClipInfo;
+            if (WeaponInInInventory(_currentGunSo))
+            {
+                var gun = _currentGunInventory[_currentGunSo];
+                gun.gameObject.SetActive(true);
+                _currentGun = gun;
+            }
+            else
+            {
+                var gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
+                _currentGun = gunObj.GetComponent<ABaseGunComponent>();
+                _currentGunInventory.Add(_currentGunSo, _currentGun);
+                SetParamInGun();
+            }
+            _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
             if (InventoryPlayer.GetWeapon(_currentGun.GetType()) == null)
             {
                 InventoryPlayer.AddWeapon(_currentGun.GetType(), _currentGunSo);
@@ -55,7 +88,7 @@ namespace _Source.FireSystem.Player
             }
             Signals.Get<OnUpdateIconWeapon>().Dispatch(_currentGunSo.IconGun);
             Signals.Get<OnSwitchFireMode>().Dispatch(_currentGun.isAutomatic);
-            SetParamInGun();
+            _currentGun.InvokeFireFromWeapon();
         }
 
         private void UnSubscribe()
@@ -69,6 +102,7 @@ namespace _Source.FireSystem.Player
         {
             _currentGunSo = savedGun;
             _currentCountAmmo = currentAmmo;
+            
         }
 
         private void SetParamInGun()
@@ -85,12 +119,8 @@ namespace _Source.FireSystem.Player
 
         public void PrintAmmo()
         {
-            if (_currentGun.GetType() == typeof(KnifeComponent))
-            {
-                Signals.Get<OnPrintInfoAboutFire>().Dispatch("");
-                return;
-            }
             var currentPath = InventoryPlayer.GetCountItem(_currentClip);
+            if (currentPath == -1) currentPath = 0;
             Signals.Get<OnPrintInfoAboutFire>().Dispatch(
                 ($"{_currentCountAmmo} / {currentPath}"));
         }
@@ -134,11 +164,16 @@ namespace _Source.FireSystem.Player
         {
             Signals.Get<OnFinishReloadWeapon>().Dispatch();
             _currentGun.OnFireFromWeapon -= UpdateCurrentCountAmmoInGun;
-            Destroy(_currentGun.gameObject);
+            _currentGun.gameObject.SetActive(false);
             _currentGunSo = weapon;
-            InventoryPlayer.AddItem(_currentClip,_currentCountAmmo);
+            //InventoryPlayer.AddItem(_currentClip,_currentCountAmmo);
             _currentCountAmmo = 0;
             CreateWeapon();
+        }
+
+        private bool WeaponInInInventory(PlayerGunSo gun)
+        {
+            return _currentGunInventory.ContainsKey(gun);
         }
 
         public void ReloadWeapon()

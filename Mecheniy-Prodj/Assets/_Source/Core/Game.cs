@@ -106,7 +106,6 @@ namespace _Source.Core
         }
         private void StartGame()
         {
-            Debug.Log("start");
             EnablePlayerInput();
             Bind();
             SetFireMode();

@@ -7,6 +7,7 @@ using _Source.HealthSystem;
 using _Source.Player;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.SavingEvents;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -41,7 +42,9 @@ namespace _Source.Saving_System
                     }
                     health.SetSavedHeath(currentdata.hp);
                     if(currentdata.currentGun != null)
+                    {
                         playerFireSystem.SetSavedParameters(currentdata.currentGun, currentdata.currentAmmoInGun);
+                    }
                     transform.position = currentdata.position;
                     systemUpdating.SetSavedData(currentdata.lvlSpeedMoving,
                         currentdata.lvlSpeedReloading,currentdata.lvlAngleView, currentdata.countPointUpdate);

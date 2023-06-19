@@ -10,27 +10,9 @@ namespace _Source.FireSystem.SOs
         [SerializeField] private ClipSo ammo;
         [SerializeField] private Sprite iconGun;
 
-        public ClipSo ClipInfo
-        {
-            get
-            {
-                return ammo;
-            }
-        }
-        public GameObject GunObjectObject
-        {
-            get
-            {
-                return gunObject;
-            }
-        }
+        public ClipSo ClipInfo => ammo;
+        public GameObject GunObjectObject => gunObject;
 
-        public Sprite IconGun
-        {
-            get
-            {
-                return iconGun;
-            }
-        }
+        public Sprite IconGun => iconGun;
     }
 }

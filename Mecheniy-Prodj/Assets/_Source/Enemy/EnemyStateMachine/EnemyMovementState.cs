@@ -42,11 +42,12 @@ namespace _Source.Enemy.EnemyStateMachine
                 MoveToNextPoint();
                 _lastPosition = position;
             }
+            if(_lastPosition == position)
+                return;
             var direction = position - _lastPosition;
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf. Rad2Deg;
             _agent.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             _lastPosition = position;
-            
         }
 
         public void Execute(Vector3 position)

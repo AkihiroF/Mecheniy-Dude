@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2511488288947821598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.027, y: 0.426, z: 0.0000000083819}
-  m_LocalScale: {x: 6.51787, y: 6.51787, z: 6.51787}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.14, y: 0.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7332722071133688052}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &4012653181095773636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,13 +73,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2074889641
   m_SortingLayer: 4
-  m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 6e9f37345256542a2b592f5a468f8ff6, type: 3}
+  m_SortingOrder: 150
+  m_Sprite: {fileID: 21300000, guid: 7c9f4023772ec417c94568755c2c1ff6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.67, y: 0.67}
+  m_Size: {x: 2.6, y: 0.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,7 +129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2779830856054389108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.018, y: 1.875, z: 0}
+  m_LocalPosition: {x: 0.13, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c5f3e2ffe348f6b12cdfe46b38d786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioController: {fileID: 6965865617835135826}
+  audioComponent: {fileID: 0}
   pointExitBullet: {fileID: 2947203280205452723}
   animator: {fileID: 5101976647198736225}
   timeReload: 3
