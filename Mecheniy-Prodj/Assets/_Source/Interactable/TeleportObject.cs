@@ -1,7 +1,4 @@
-using System;
 using _Source.Services;
-using _Source.SignalsEvents.CoreEvents;
-using _Source.SignalsEvents.SavingEvents;
 using _Source.SignalsEvents.UIEvents;
 using UnityEngine;
 
@@ -16,7 +13,6 @@ namespace _Source.Interactable
         public void Interact()
         {
             _player.position = pointTeleportation.position;
-            Signals.Get<OnSaving>().Dispatch();
         }
 
         private void OnTriggerEnter2D(Collider2D other)

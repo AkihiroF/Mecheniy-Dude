@@ -1,7 +1,6 @@
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
 using _Source.SignalsEvents.HealthEvents;
-using _Source.SignalsEvents.SavingEvents;
 using _Source.SignalsEvents.UIEvents;
 using _Source.SignalsEvents.WeaponsEvents;
 using DG.Tweening;
@@ -44,7 +43,6 @@ namespace _Source.UI
         [SerializeField] private GameObject pausedPanel;
         
         [SerializeField] private Button resumeButton;
-        [SerializeField] private Button loadLastGameButton;
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button toMainMenuButton;
 
@@ -52,8 +50,7 @@ namespace _Source.UI
         
         [SerializeField] private GameObject terminalPanel;
         [SerializeField] private Button closeTerminalButton;
-        [SerializeField] private Button savingButton;
-        
+
         [SerializeField] private GameObject upgradePanel;
         [SerializeField] private Button toUpgradeButton;
         [SerializeField] private Button closeUpgradeButton;
@@ -90,11 +87,6 @@ namespace _Source.UI
                 DisablePaused();
                 Signals.Get<OnResume>().Dispatch();
             });
-            loadLastGameButton.onClick.AddListener(() =>
-            {
-                Signals.Get<OnRestart>().Dispatch();
-                sceneLoader.LoadGame();
-            });
             toMainMenuButton.onClick.AddListener(() =>
             {
                 UnBindButtons();
@@ -103,7 +95,6 @@ namespace _Source.UI
             });
             
             closeTerminalButton.onClick.AddListener(() => DisableTerminal());
-            savingButton.onClick.AddListener(() => SavingData());
             toUpgradeButton.onClick.AddListener(() => EnableUpgrade());
             closeUpgradeButton.onClick.AddListener(() => DisableUpgrade());
         }
@@ -113,11 +104,9 @@ namespace _Source.UI
             restartButton.onClick.RemoveAllListeners();
             menuButton.onClick.RemoveAllListeners();
             resumeButton.onClick.RemoveAllListeners();
-            loadLastGameButton.onClick.RemoveAllListeners();
             toMainMenuButton.onClick.RemoveAllListeners();
             
             closeTerminalButton.onClick.RemoveAllListeners();
-            savingButton.onClick.RemoveAllListeners();
             toUpgradeButton.onClick.RemoveAllListeners();
             closeUpgradeButton.onClick.RemoveAllListeners();
         }
@@ -255,10 +244,6 @@ namespace _Source.UI
         {
             terminalPanel.SetActive(false);
             Signals.Get<OnResume>().Dispatch();
-        }
-        private void SavingData()
-        {
-            Signals.Get<OnSaving>().Dispatch();
         }
 
         private void EnableUpgrade()

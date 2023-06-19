@@ -1,5 +1,4 @@
 using _Source.Services;
-using _Source.SignalsEvents.SavingEvents;
 using _Source.SignalsEvents.UpgradesEvents;
 using DG.Tweening;
 using UnityEngine;
@@ -41,7 +40,6 @@ namespace _Source.HealthSystem
         {
             body.DOComplete();
             Signals.Get<OnAddScoreUpgrade>().Dispatch(countScore);
-            Signals.Get<OnSaveStateObject>().Dispatch(this.gameObject);
             SavedDead();
         }
 

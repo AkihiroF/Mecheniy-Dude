@@ -232,7 +232,6 @@ GameObject:
   - component: {fileID: 4326334850478315599}
   - component: {fileID: 4326334850478315594}
   - component: {fileID: 4326334850478315588}
-  - component: {fileID: 6285476433837717958}
   m_Layer: 6
   m_Name: Player 1
   m_TagString: Player
@@ -327,21 +326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   medicalKit: {fileID: 11400000, guid: 616cb093a50fa4b4aaae80babde172e7, type: 2}
---- !u!114 &6285476433837717958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4326334850478315598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc8e56a910e46b4bee60d343a933c3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 4326334850478315588}
-  playerFireSystem: {fileID: 7947829325322627821}
-  systemUpdating: {fileID: 0}
 --- !u!1 &5580542406934971752
 GameObject:
   m_ObjectHideFlags: 0

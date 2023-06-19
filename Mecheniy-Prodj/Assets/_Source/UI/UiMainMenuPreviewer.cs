@@ -1,4 +1,3 @@
-using _Source.Saving_System;
 using _Source.Services;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,11 +21,6 @@ namespace _Source.UI
         private void Awake()
         {
             BindButtons();
-            _isLoad = PlayerPrefs.GetString(PlayerSaverComponent.NameData).Length == 0;
-            if (_isLoad)
-            {
-                loadGameButton.enabled = false;
-            }
         }
 
         private void BindButtons()
