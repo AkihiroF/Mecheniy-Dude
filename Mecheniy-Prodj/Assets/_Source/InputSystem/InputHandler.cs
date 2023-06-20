@@ -69,5 +69,11 @@ namespace _Source.InputSystem
         {
             _fireSystem.SwitchWeapon(WeaponsTypes.Rifle);
         }
+
+        public void InputWeaponPanel(InputAction.CallbackContext obj)
+        {
+            var isPressed = obj.ReadValue<float>() > 0;
+            Signals.Get<OnEnableTableWeapon>().Dispatch(isPressed);
+        }
     }
 }

@@ -1,3 +1,4 @@
+using _Source.Core;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
 using _Source.SignalsEvents.HealthEvents;
@@ -45,6 +46,18 @@ namespace _Source.UI
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button toMainMenuButton;
+
+        [Space] 
+        [SerializeField] private RectTransform weaponPanel;
+
+        [SerializeField] private RectTransform startPoint;
+        [SerializeField] private RectTransform endPoint;
+        [SerializeField] private float timeTo;
+        [SerializeField] private float timeFrom;
+
+        [SerializeField] private GameObject weaponPanelObject;
+        [SerializeField] private VerticalLayoutGroup listWeapon;
+
 
         [Space] 
         
@@ -125,6 +138,9 @@ namespace _Source.UI
             Signals.Get<OnEnablePaused>().AddListener(EnablePaused);
             Signals.Get<OnRestart>().AddListener(UnSubscribe);
             
+            Signals.Get<OnEnableTableWeapon>().AddListener(SwitchStateWeaponPanel);
+            Signals.Get<OnAddWeaponToPanel>().AddListener(AddWeaponToPanel);
+            
             Signals.Get<OnEnableTerminal>().AddListener(EnableTerminal);
             
             Signals.Get<OnShowToNextLvl>().AddListener(SwitchStateNextLvl);
@@ -143,6 +159,9 @@ namespace _Source.UI
             
             Signals.Get<OnEnablePaused>().RemoveListener(EnablePaused);
             Signals.Get<OnRestart>().RemoveListener(UnSubscribe);
+            
+            Signals.Get<OnEnableTableWeapon>().RemoveListener(SwitchStateWeaponPanel);
+            Signals.Get<OnAddWeaponToPanel>().RemoveListener(AddWeaponToPanel);
             
             Signals.Get<OnEnableTerminal>().RemoveListener(EnableTerminal);
             
@@ -181,6 +200,24 @@ namespace _Source.UI
                 private void UpdateIconWeapon(Sprite obj)
                 {
                     iconWeapon.sprite = obj;
+                }
+
+                private void SwitchStateWeaponPanel(bool isActive)
+                {
+                    weaponPanel.DOComplete();
+                    var endPosition = isActive ? endPoint.position : startPoint.position;
+                    var time = isActive ? timeTo : timeFrom;
+                    weaponPanel.DOMove(endPosition, time);
+                }
+
+                private void AddWeaponToPanel(Sprite icon)
+                {
+                    var size = weaponPanelObject.GetComponent<RectTransform>().sizeDelta;
+                    var transformPanel = listWeapon.GetComponent<RectTransform>();
+                    var newSizePanel = transformPanel.sizeDelta + size + new Vector2(0, listWeapon.spacing);
+                    transformPanel.sizeDelta = newSizePanel;
+                    var newWeapon = Instantiate(weaponPanelObject, listWeapon.transform);
+                    newWeapon.GetComponent<Image>().sprite = icon;
                 }
 
         #endregion

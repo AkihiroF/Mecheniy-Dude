@@ -59,7 +59,8 @@ namespace _Source.Core
             input.ChooseRifle.performed += _inputHandler.InputChooseRifle;
 
             _input.Interface.Paused.performed += _inputHandler.InputPaused;
-            
+            _input.Interface.WeaponPanel.performed += _inputHandler.InputWeaponPanel;
+
         }
 
         private void UnBind()
@@ -79,11 +80,17 @@ namespace _Source.Core
             
             _input.Interface.Paused.performed -= _inputHandler.InputPaused;
         }
-        private void EnablePlayerInput() 
-            => _input.Player.Enable();
+        private void EnablePlayerInput()
+        {
+            _input.Player.Enable();
+            _input.Interface.WeaponPanel.Enable();
+        }
 
         private void DisablePlayerInput()
-            => _input.Player.Disable();
+            {
+            _input.Player.Disable();
+            _input.Interface.WeaponPanel.Disable();
+        }
 
         private void SwitchFireMode(bool isAutomatic)
         {

@@ -198,6 +198,7 @@ MonoBehaviour:
   parametersMovingEnemy:
     speed: 10.11
     stoppingDistance: 0.3
+    timeAroundSee: 2
   parametersFightEnemy:
     gunSo: {fileID: 11400000, guid: 4c387184e55234b0f875b40939afd4c2, type: 2}
     pointPositionGun: {fileID: 6290927972889021163}
@@ -221,7 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
-  countScore: 0
+  enemyBehaviorComponent: {fileID: 6290927972515993717}
+  countScore: 100
   body: {fileID: 3067886553246047218}
   colorReaction: {r: 0.6603774, g: 0.5408243, b: 0.23362409, a: 0.8235294}
   timeReaction: 0.2

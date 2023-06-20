@@ -307,6 +307,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WeaponPanel"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c1b5903-50c1-423a-9c28-1ff30317d3c5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -318,6 +327,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Paused"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55f414d4-c93a-4b4e-a7c5-af4b7aa1d7e6"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WeaponPanel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -354,6 +374,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         // Interface
         m_Interface = asset.FindActionMap("Interface", throwIfNotFound: true);
         m_Interface_Paused = m_Interface.FindAction("Paused", throwIfNotFound: true);
+        m_Interface_WeaponPanel = m_Interface.FindAction("WeaponPanel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -527,11 +548,13 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Interface;
     private IInterfaceActions m_InterfaceActionsCallbackInterface;
     private readonly InputAction m_Interface_Paused;
+    private readonly InputAction m_Interface_WeaponPanel;
     public struct InterfaceActions
     {
         private @Input m_Wrapper;
         public InterfaceActions(@Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Paused => m_Wrapper.m_Interface_Paused;
+        public InputAction @WeaponPanel => m_Wrapper.m_Interface_WeaponPanel;
         public InputActionMap Get() { return m_Wrapper.m_Interface; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -544,6 +567,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Paused.started -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnPaused;
                 @Paused.performed -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnPaused;
                 @Paused.canceled -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnPaused;
+                @WeaponPanel.started -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnWeaponPanel;
+                @WeaponPanel.performed -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnWeaponPanel;
+                @WeaponPanel.canceled -= m_Wrapper.m_InterfaceActionsCallbackInterface.OnWeaponPanel;
             }
             m_Wrapper.m_InterfaceActionsCallbackInterface = instance;
             if (instance != null)
@@ -551,6 +577,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Paused.started += instance.OnPaused;
                 @Paused.performed += instance.OnPaused;
                 @Paused.canceled += instance.OnPaused;
+                @WeaponPanel.started += instance.OnWeaponPanel;
+                @WeaponPanel.performed += instance.OnWeaponPanel;
+                @WeaponPanel.canceled += instance.OnWeaponPanel;
             }
         }
     }
@@ -581,5 +610,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
     public interface IInterfaceActions
     {
         void OnPaused(InputAction.CallbackContext context);
+        void OnWeaponPanel(InputAction.CallbackContext context);
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _Source.Enemy.EnemyStateMachine;
 using _Source.FireSystem.SOs;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -41,6 +42,7 @@ namespace _Source.Enemy
                 }
                 else
                 {
+                    transform.DOComplete();
                     SwitchState(typeof(EnemyFightState)); // Switch state to fight
                     return;
                 }
@@ -78,6 +80,15 @@ namespace _Source.Enemy
                     _currentState.Enter();
             }
         }
+
+        public void OnGetDamage()
+        {
+            if(_currentState.GetType() == typeof(EnemyFightState))
+                return;
+            transform.DORotate(new Vector3(0f, 0, 360f), parametersMovingEnemy.timeAroundSee, RotateMode.WorldAxisAdd)
+                .SetLoops(1, LoopType.Restart)
+                .SetEase(Ease.Linear);
+        }
     }
 
     [Serializable]
@@ -85,6 +96,7 @@ namespace _Source.Enemy
     {
         public float speed;
         public float stoppingDistance;
+        public float timeAroundSee;
     }
 
     [Serializable]

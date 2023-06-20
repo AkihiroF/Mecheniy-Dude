@@ -6,6 +6,7 @@ using _Source.InputSystem;
 using _Source.Player;
 using _Source.Services;
 using _Source.SignalsEvents.CoreEvents;
+using _Source.SignalsEvents.UIEvents;
 using _Source.SignalsEvents.UpgradesEvents;
 using _Source.SignalsEvents.WeaponsEvents;
 using UnityEngine;
@@ -18,16 +19,12 @@ namespace _Source.FireSystem.Player
         [SerializeField] private PlayerGunSo firstGun;
 
         private PlayerGunSo _currentGunSo;
-        //private GameObject _gunObj;
         private ABaseGunComponent _currentGun;
         private ClipSo _currentClip;
         private int _currentCountAmmo;
         private float _percentUpgrade;
 
         private Dictionary<PlayerGunSo,ABaseGunComponent> _currentGunInventory;
-        public PlayerGunSo GetCurrentGun => _currentGunSo;
-
-        public int CurrentCountAmmoInGun => _currentCountAmmo;
 
         private void Start()
         {
@@ -78,6 +75,7 @@ namespace _Source.FireSystem.Player
                 var gunObj = Instantiate(_currentGunSo.GunObjectObject, pointPositionGun);
                 _currentGun = gunObj.GetComponent<ABaseGunComponent>();
                 _currentGunInventory.Add(_currentGunSo, _currentGun);
+                Signals.Get<OnAddWeaponToPanel>().Dispatch(_currentGunSo.IconGun);
                 SetParamInGun();
             }
             _currentGun.OnFireFromWeapon += UpdateCurrentCountAmmoInGun;
@@ -96,13 +94,6 @@ namespace _Source.FireSystem.Player
             _currentGun.OnFireFromWeapon -= UpdateCurrentCountAmmoInGun;
             Signals.Get<OnFinishReloadWeapon>().RemoveListener(PrintAmmo);
             Signals.Get<OnRestart>().RemoveListener(UnSubscribe);
-        }
-
-        public void SetSavedParameters(PlayerGunSo savedGun, int currentAmmo)
-        {
-            _currentGunSo = savedGun;
-            _currentCountAmmo = currentAmmo;
-            
         }
 
         private void SetParamInGun()
