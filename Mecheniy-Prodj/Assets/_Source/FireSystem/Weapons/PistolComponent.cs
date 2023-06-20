@@ -27,7 +27,7 @@ namespace _Source.FireSystem.Weapons
             {
                 InitialiseBullet();
                 UpdateCountAmmo();
-                StartCoroutine(WaitFire());
+                WaitFire();
             }
             else
             {

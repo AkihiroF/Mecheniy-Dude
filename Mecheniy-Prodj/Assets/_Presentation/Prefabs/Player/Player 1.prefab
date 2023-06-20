@@ -562,4 +562,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointPositionGun: {fileID: 4326334849786636278}
-  firstGun: {fileID: 11400000, guid: 49a7ec07f4f60468a8ca57a5284c7646, type: 2}
+  firstGun: {fileID: 11400000, guid: 240fa854910f9415987f4df6dbcf8cc0, type: 2}

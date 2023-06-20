@@ -6,6 +6,7 @@ using _Source.Player;
 using _Source.Services;
 using _Source.SignalsEvents.UpgradesEvents;
 using _Source.SignalsEvents.WeaponsEvents;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -33,7 +34,11 @@ namespace _Source.FireSystem
         protected GameObject BulletObject;
         protected List<ABulletComponent> BulletPool;
 
-        private bool _isMainReloading;
+        private Tween _tweenReloading;
+        private Tween _tweenFire;
+
+        private bool _isActive;
+        protected bool IsMainReloading;
         private bool _isReloading;
 
         private bool _isFire;
@@ -56,7 +61,7 @@ namespace _Source.FireSystem
             _ammoInfo = info;
             BulletPool = new List<ABulletComponent>();
             UpgradeSpeedReloading(upgradeSpeed);
-            _isMainReloading = false;
+            IsMainReloading = false;
             if(isEnemy == false)
                 Signals.Get<OnUpgradeSpeedReloading>().AddListener(UpgradeSpeedReloading);
             _isEnemy = isEnemy;
@@ -76,7 +81,7 @@ namespace _Source.FireSystem
             {
                 _isFire = !_isFire;
             }
-            if(_isMainReloading)
+            if(IsMainReloading)
                 return;
             if(_isReloading)
                 return;
@@ -84,6 +89,24 @@ namespace _Source.FireSystem
         }
 
         protected abstract void DoFire();
+
+        private void OnEnable()
+        {
+            _isActive = true;
+        }
+
+
+        public void OnSwitchedWeapon()
+        {
+            if (IsMainReloading == false)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                _isActive = false;
+            }
+        }
 
         protected void UpdateCountAmmo()
         {
@@ -103,39 +126,86 @@ namespace _Source.FireSystem
 
         public void StartReloadWeapon()
         {
-            if(_isMainReloading)
+            if(IsMainReloading)
                 return;
             if(CurrentCountAmmoInGun == _countAmmoInClip)
                 return;
-            _isMainReloading = true;
-            var currentCountAmmoInInventory = InventoryPlayer.UseItem(_ammoInfo, _countAmmoInClip - CurrentCountAmmoInGun);
+            IsMainReloading = true;
+            var currentCountAmmoInInventory = InventoryPlayer.GetCountItem(_ammoInfo);
             if (currentCountAmmoInInventory > 0)
             {
                 if(_isEnemy == false)
                     Signals.Get<OnStartReloadWeapon>().Dispatch();
-                StartCoroutine(ReloadWeapon(currentCountAmmoInInventory));
+                ReloadWeapon();
             }
             else
                 InvokeFireFromWeapon();
         }
 
-        private IEnumerator ReloadWeapon(int countAmmo)
+        protected virtual bool IsBulletReloading()
         {
+            return false;
+        }
+
+        private void ReloadWeapon()
+        {
+            var currentTime = 0;
             audioComponent.PlayAudioReloading();
-            yield return new WaitForSeconds(timeReload);
-            CurrentCountAmmoInGun += countAmmo;
+            _tweenReloading = DOTween.To(() => currentTime, x => currentTime = x, 1, timeReload)
+                .OnUpdate(() => CheckStateWeapon()).OnComplete(() => AddAmmoInGun());
+        }
+
+        private void CheckStateWeapon()
+        {
+            if (_isActive == false)
+            {
+                _tweenReloading.Kill(false);
+                _tweenFire.Kill();
+                this.gameObject.SetActive(false);
+            }
+        }
+
+        private void AddAmmoInGun()
+        {
+            var isBullets = IsBulletReloading();
+            var countAmmo = isBullets ? 1:_countAmmoInClip - CurrentCountAmmoInGun -1;
+            var currentCountBulletsInInventory = InventoryPlayer.UseItem(_ammoInfo, countAmmo);
+            if (isBullets)
+            {
+                if (currentCountBulletsInInventory > 0 & CurrentCountAmmoInGun < _ammoInfo.CountBullet-1)
+                {
+                    CurrentCountAmmoInGun += currentCountBulletsInInventory;
+                    InvokeFireFromWeapon();
+                    ReloadWeapon();
+                    return;
+                }
+            }
+            else
+            {
+                CurrentCountAmmoInGun += currentCountBulletsInInventory;
+            }
             if(_isEnemy == false)
                 Signals.Get<OnFinishReloadWeapon>().Dispatch();
-            _isMainReloading = false;
+            IsMainReloading = false;
             InvokeFireFromWeapon();
         }
 
-        protected IEnumerator WaitFire()
+        protected void WaitFire()
+        {
+            var currentTime = 0;
+            _tweenFire = DOTween.To(() => currentTime, x => currentTime = x, 1, speedAttack)
+                .OnStart(() => StartFire()).OnUpdate(() => CheckStateWeapon()).OnComplete(() => FinishFire());
+        }
+
+        private void StartFire()
         {
             audioComponent.PlayAudioFire();
             _isReloading = true;
             if(animator != null)animator.SetTrigger("Fire");
-            yield return new WaitForSeconds(speedAttack);
+        }
+
+        private void FinishFire()
+        {
             _isReloading = false;
             if (isAutomatic & _isFire)
             {

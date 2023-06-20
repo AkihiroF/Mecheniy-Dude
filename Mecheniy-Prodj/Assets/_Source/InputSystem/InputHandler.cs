@@ -50,11 +50,6 @@ namespace _Source.InputSystem
             Signals.Get<OnEnablePaused>().Dispatch();
         }
 
-        public void InputChooseKnife(InputAction.CallbackContext obj)
-        {
-            _fireSystem.SwitchWeapon(WeaponsTypes.Knife);
-        }
-
         public void InputChoosePistol(InputAction.CallbackContext obj)
         {
             _fireSystem.SwitchWeapon(WeaponsTypes.Pistol);

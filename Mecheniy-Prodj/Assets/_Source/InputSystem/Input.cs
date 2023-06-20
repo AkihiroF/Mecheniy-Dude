@@ -91,15 +91,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChooseKnife"",
-                    ""type"": ""Button"",
-                    ""id"": ""b86af93c-9625-404e-aff4-2176ea71539f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""ChoosePistol"",
                     ""type"": ""Button"",
                     ""id"": ""9ffcbaff-bec5-4322-84cd-966d66c62584"",
@@ -240,19 +231,8 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8b38f54f-202c-4721-98a5-090e3b0f0d5c"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChooseKnife"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""004733e4-2963-4e9f-94a1-68b4c0865ff0"",
-                    ""path"": ""<Keyboard>/2"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -263,7 +243,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d6cb12b5-8575-4552-b250-40f31e5a87a7"",
-                    ""path"": ""<Keyboard>/4"",
+                    ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -274,7 +254,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""31279711-a3f3-4237-9336-5297391538bc"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -367,7 +347,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_Healing = m_Player.FindAction("Healing", throwIfNotFound: true);
         m_Player_Interactive = m_Player.FindAction("Interactive", throwIfNotFound: true);
-        m_Player_ChooseKnife = m_Player.FindAction("ChooseKnife", throwIfNotFound: true);
         m_Player_ChoosePistol = m_Player.FindAction("ChoosePistol", throwIfNotFound: true);
         m_Player_ChooseShortGun = m_Player.FindAction("ChooseShortGun", throwIfNotFound: true);
         m_Player_ChooseRifle = m_Player.FindAction("ChooseRifle", throwIfNotFound: true);
@@ -441,7 +420,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_Healing;
     private readonly InputAction m_Player_Interactive;
-    private readonly InputAction m_Player_ChooseKnife;
     private readonly InputAction m_Player_ChoosePistol;
     private readonly InputAction m_Player_ChooseShortGun;
     private readonly InputAction m_Player_ChooseRifle;
@@ -456,7 +434,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputAction @Healing => m_Wrapper.m_Player_Healing;
         public InputAction @Interactive => m_Wrapper.m_Player_Interactive;
-        public InputAction @ChooseKnife => m_Wrapper.m_Player_ChooseKnife;
         public InputAction @ChoosePistol => m_Wrapper.m_Player_ChoosePistol;
         public InputAction @ChooseShortGun => m_Wrapper.m_Player_ChooseShortGun;
         public InputAction @ChooseRifle => m_Wrapper.m_Player_ChooseRifle;
@@ -490,9 +467,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Interactive.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
                 @Interactive.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
                 @Interactive.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractive;
-                @ChooseKnife.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseKnife;
-                @ChooseKnife.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseKnife;
-                @ChooseKnife.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChooseKnife;
                 @ChoosePistol.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChoosePistol;
                 @ChoosePistol.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChoosePistol;
                 @ChoosePistol.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChoosePistol;
@@ -527,9 +501,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Interactive.started += instance.OnInteractive;
                 @Interactive.performed += instance.OnInteractive;
                 @Interactive.canceled += instance.OnInteractive;
-                @ChooseKnife.started += instance.OnChooseKnife;
-                @ChooseKnife.performed += instance.OnChooseKnife;
-                @ChooseKnife.canceled += instance.OnChooseKnife;
                 @ChoosePistol.started += instance.OnChoosePistol;
                 @ChoosePistol.performed += instance.OnChoosePistol;
                 @ChoosePistol.canceled += instance.OnChoosePistol;
@@ -602,7 +573,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnHealing(InputAction.CallbackContext context);
         void OnInteractive(InputAction.CallbackContext context);
-        void OnChooseKnife(InputAction.CallbackContext context);
         void OnChoosePistol(InputAction.CallbackContext context);
         void OnChooseShortGun(InputAction.CallbackContext context);
         void OnChooseRifle(InputAction.CallbackContext context);

@@ -126,9 +126,6 @@ namespace _Source.FireSystem.Player
             PlayerGunSo weapon;
             switch (id)
             {
-                case WeaponsTypes.Knife:
-                    weapon = InventoryPlayer.GetWeapon(typeof(KnifeComponent));
-                    break;
                 case WeaponsTypes.Pistol:
                     weapon = InventoryPlayer.GetWeapon(typeof(PistolComponent));
                     break;
@@ -140,7 +137,6 @@ namespace _Source.FireSystem.Player
                     break;
                 default:
                     weapon = null;
-                    Debug.Log("Idi nahui");
                     break;
             }
             if (weapon is not null)
@@ -155,7 +151,7 @@ namespace _Source.FireSystem.Player
         {
             Signals.Get<OnFinishReloadWeapon>().Dispatch();
             _currentGun.OnFireFromWeapon -= UpdateCurrentCountAmmoInGun;
-            _currentGun.gameObject.SetActive(false);
+            _currentGun.OnSwitchedWeapon();
             _currentGunSo = weapon;
             //InventoryPlayer.AddItem(_currentClip,_currentCountAmmo);
             _currentCountAmmo = 0;

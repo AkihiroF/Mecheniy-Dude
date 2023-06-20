@@ -53,7 +53,6 @@ namespace _Source.Core
             input.Healing.performed += _inputHandler.InputHealing;
             input.Interactive.performed += _inputHandler.InputInteractive;
             
-            input.ChooseKnife.performed += _inputHandler.InputChooseKnife;
             input.ChoosePistol.performed += _inputHandler.InputChoosePistol;
             input.ChooseShortGun.performed += _inputHandler.InputChooseShortGun;
             input.ChooseRifle.performed += _inputHandler.InputChooseRifle;
@@ -70,7 +69,6 @@ namespace _Source.Core
             input.Fire.performed -= _inputHandler.InputFire;
             input.FireAutomatic.performed -= _inputHandler.InputFire;
             
-            input.ChooseKnife.performed -= _inputHandler.InputChooseKnife;
             input.ChoosePistol.performed -= _inputHandler.InputChoosePistol;
             input.ChooseShortGun.performed -= _inputHandler.InputChooseShortGun;
             input.ChooseRifle.performed -= _inputHandler.InputChooseRifle;

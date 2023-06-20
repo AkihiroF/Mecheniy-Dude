@@ -83,7 +83,7 @@ namespace _Source.Enemy
 
         public void OnGetDamage()
         {
-            if(_currentState.GetType() == typeof(EnemyFightState))
+            if(_currentState.GetType() == typeof(EnemyFightState) &&_currentState.GetType() == typeof(EnemyStalkingState))
                 return;
             transform.DORotate(new Vector3(0f, 0, 360f), parametersMovingEnemy.timeAroundSee, RotateMode.WorldAxisAdd)
                 .SetLoops(1, LoopType.Restart)

@@ -48,12 +48,14 @@ namespace _Source.FireSystem.Weapons
             {
                 InitialiseBullet();
                 UpdateCountAmmo();
-                StartCoroutine(WaitFire());
+                WaitFire();
             }
             else
             {
                 StartReloadWeapon();
             }
         }
+
+        protected override bool IsBulletReloading() => true;
     }
 }
