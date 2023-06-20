@@ -42,7 +42,6 @@ namespace _Source.Enemy
                 }
                 else
                 {
-                    transform.DOComplete();
                     SwitchState(typeof(EnemyFightState)); // Switch state to fight
                     return;
                 }
@@ -69,6 +68,7 @@ namespace _Source.Enemy
 
         private void SwitchState(Type state, bool isVector = false)
         {
+            transform.DOComplete();
             if (_states.TryGetValue(state, out var state1))
             {
                 if (_currentState != null)

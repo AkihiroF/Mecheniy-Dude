@@ -44,7 +44,6 @@ namespace _Source.UI
         [SerializeField] private GameObject pausedPanel;
         
         [SerializeField] private Button resumeButton;
-        [SerializeField] private Button settingsButton;
         [SerializeField] private Button toMainMenuButton;
 
         [Space] 

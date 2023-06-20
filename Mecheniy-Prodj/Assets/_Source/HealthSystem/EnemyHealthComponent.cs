@@ -1,5 +1,6 @@
 using _Source.Enemy;
 using _Source.Services;
+using _Source.SignalsEvents;
 using _Source.SignalsEvents.UpgradesEvents;
 using DG.Tweening;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace _Source.HealthSystem
         {
             base.Start();
             _startColor = body.color;
+            Signals.Get<OnDeadEnemy>().Dispatch(false);
         }
         public override void GetDamage(float damage)
         {
@@ -43,6 +45,7 @@ namespace _Source.HealthSystem
         {
             body.DOComplete();
             Signals.Get<OnAddScoreUpgrade>().Dispatch(countScore);
+            Signals.Get<OnDeadEnemy>().Dispatch(true);
             SavedDead();
         }
 

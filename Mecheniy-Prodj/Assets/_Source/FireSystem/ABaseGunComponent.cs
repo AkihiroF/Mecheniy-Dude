@@ -149,6 +149,14 @@ namespace _Source.FireSystem
 
         private void ReloadWeapon()
         {
+            if (CurrentCountAmmoInGun == _countAmmoInClip)
+            {
+                if(_isEnemy == false)
+                    Signals.Get<OnFinishReloadWeapon>().Dispatch();
+                IsMainReloading = false;
+                InvokeFireFromWeapon();
+                return;
+            }
             var currentTime = 0;
             audioComponent.PlayAudioReloading();
             _tweenReloading = DOTween.To(() => currentTime, x => currentTime = x, 1, timeReload)
@@ -168,11 +176,11 @@ namespace _Source.FireSystem
         private void AddAmmoInGun()
         {
             var isBullets = IsBulletReloading();
-            var countAmmo = isBullets ? 1:_countAmmoInClip - CurrentCountAmmoInGun -1;
+            var countAmmo = isBullets ? 1:_countAmmoInClip - CurrentCountAmmoInGun;
             var currentCountBulletsInInventory = InventoryPlayer.UseItem(_ammoInfo, countAmmo);
             if (isBullets)
             {
-                if (currentCountBulletsInInventory > 0 & CurrentCountAmmoInGun < _ammoInfo.CountBullet-1)
+                if (currentCountBulletsInInventory > 0 & CurrentCountAmmoInGun < _ammoInfo.CountBullet)
                 {
                     CurrentCountAmmoInGun += currentCountBulletsInInventory;
                     InvokeFireFromWeapon();

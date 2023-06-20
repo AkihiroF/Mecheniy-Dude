@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldOfView: {fileID: 6290927974509065821}
   parametersMovingEnemy:
-    speed: 10.11
+    speed: 20
     stoppingDistance: 0.3
     timeAroundSee: 2
   parametersFightEnemy:

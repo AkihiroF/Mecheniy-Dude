@@ -6,7 +6,7 @@ namespace _Source.Player
 {
     public static class InventoryPlayer
     {
-        public static Dictionary<int, int> Inventory { get; private set; }
+        private static Dictionary<int, int> Inventory { get; set; }
         public static Dictionary<Type,PlayerGunSo> GunSos { get; private set; }
 
         static InventoryPlayer()
@@ -15,7 +15,11 @@ namespace _Source.Player
             GunSos = new Dictionary<Type, PlayerGunSo>();
         }
 
-        public static void ClearInventory() => Inventory = new Dictionary<int, int>();
+        public static void ClearInventory()
+        {
+            Inventory = new Dictionary<int, int>();
+            GunSos = new Dictionary<Type, PlayerGunSo>();
+        }
 
         #region UseObject
 

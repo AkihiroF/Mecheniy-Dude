@@ -64,7 +64,6 @@ namespace _Source.Enemy
             var nearestPoint = GetNearestPoint(currentPoint.Position);
             if (first)
                 return nearestPoint;
-            //var sortedPoints = _currentPointInterests.OrderByDescending(p => p.Position.DistanceTo(currentPoint.Position)).ToList();
             var sortedPoints = new List<PointInterest>(_currentPointInterests);
             sortedPoints.Sort((v1, v2) => 
                 (v1.Position - currentPoint.Position).sqrMagnitude.CompareTo((v2.Position - currentPoint.Position).sqrMagnitude));
@@ -78,10 +77,6 @@ namespace _Source.Enemy
             return sortedPoints[id + 1];
         }
 
-        public static float DistanceTo(this Vector2 current, Vector2 destination) =>
-            Vector2.Distance(current, destination);
-
-        public static Vector3 ConvertToVector3(this Vector2 current) => new Vector3(current.x, current.y, 0);
     }
 
     public struct PointInterest

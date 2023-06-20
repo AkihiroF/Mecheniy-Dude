@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5853f03e9a784b249b5765fcd986d4d3, type: 3}
-  m_Name: PistolAmmo
+  m_Name: EnemyRifleAmmo
   m_EditorClassIdentifier: 
-  bulletObject: {fileID: 2412832618683433376, guid: d8fed4a04b6b248adbc84ea07d96c1db, type: 3}
-  countBulletInClip: 10
-  speedBullet: 1700
-  damage: 10
+  bulletObject: {fileID: 599393076552854332, guid: 96c5001b47f464bb9916b8a2788efb20, type: 3}
+  countBulletInClip: 30
+  speedBullet: 800
+  damage: 15

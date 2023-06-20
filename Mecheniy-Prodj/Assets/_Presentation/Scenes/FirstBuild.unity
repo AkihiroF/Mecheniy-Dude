@@ -522,28 +522,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1523471101127388885, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-      propertyPath: timeTo
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1523471101127388885, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-      propertyPath: timeFrom
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1523471101127388885, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 632028698}
-    - target: {fileID: 1523471101127388885, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-      propertyPath: weaponPanel
-      value: 
-      objectReference: {fileID: 947266664}
     - target: {fileID: 1523471102705028306, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1523471102705028306, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1523471102705028310, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
       propertyPath: m_Pivot.x
@@ -629,17 +613,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281214901646602752, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-      propertyPath: m_Color.a
+    - target: {fileID: 8554583316667625100, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8554583316667625100, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.762
-      objectReference: {fileID: 0}
-    - target: {fileID: 8554583316667625100, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
@@ -2633,11 +2613,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!224 &947266664 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2278292590116629403, guid: 234a1dc2807a3514ab2eda88242e559b, type: 3}
-  m_PrefabInstance: {fileID: 276323796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &960507678
 GameObject:
   m_ObjectHideFlags: 0
